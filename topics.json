@@ -70,7 +70,7 @@
                 "description": "Understanding the basic components of a computer system, including CPU, RAM, and storage.",
                 "references": [
                     {
-                        "title": "Computer Architecture: A Quantitative Approach",
+                        "title": "Memory Organization Computer Architecture",
                         "link": "https://www.geeksforgeeks.org/memory-organisation-in-computer-architecture/"
                     }
                 ]
