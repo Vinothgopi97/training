@@ -1,0 +1,144 @@
+{
+    "topics": [
+      {
+        "sl_no": 1,
+        "title": "Computer Basics & OS Overview",
+        "subtopics": [
+            {
+                "sl_no": 1,
+                "title": "Basics of Computer",
+                "description": "Understanding the basic components of a computer system, including CPU, RAM, and storage.",           
+                "references": [
+                    {
+                        "title": "Basics of Computer",
+                        "link": "https://youtu.be/-AP1nNK3bRs?list=PLWPirh4EWFpF_2T13UeEgZWZHc8nHBuXp"
+                    },
+                    {
+                         "title": "Working of Transistors in Computer. In Tamil",
+                        "link": "https://youtu.be/8I_fgfL4260?si=oDlM75b3rrIvvzkg"
+                       
+                    }
+                ]
+            },
+            {
+                "sl_no": 2,
+                "title": "Binary Numbers in Computer",
+                "description": "Understanding how computers use binary numbers to represent data and perform calculations.",
+                "references": [
+                    {
+                        "title": "Why do computer understand 0s AND 1s? in Tamil",
+                        "link": "https://youtu.be/qmlIvT-mnUY"
+                    },
+                    {
+                        "title": "Why not Quinary? Why Binary? in Tamil",
+                        "link": "https://youtu.be/wppTu0BItwQ?si=HfvWwtfWOpte2pmP&t=113"
+                    },
+                    
+                    {
+                        "title": "Text Representation in Computer as binary",
+                        "link": "https://www.techtarget.com/whatis/definition/binary"
+                    }, {
+                        "title": "Why Binary is used in computers?",
+                        "link": "https://www.convertbinary.com/blog/why-computers-use-binary/"
+                    },
+                    {
+                        "title": "Additional: Binary - Transistors in Computer",
+                        "link": "https://youtu.be/nOKPuUo8v7E?si=qE8g_MD8AfWlhZGH"
+                    }
+                ]
+            },
+            
+            {
+                "sl_no": 3,
+                "title": "Memory Organization Computer Architecture",
+                "description": "Understanding the basic components of a computer system, including CPU, RAM, and storage.",
+                "references": [
+                    {
+                        "title": "Computer Architecture: A Quantitative Approach",
+                        "link": "https://www.geeksforgeeks.org/memory-organisation-in-computer-architecture/"
+                    }
+                ]
+            },
+            {
+                "sl_no": 4,
+                "title": "Binary Number System",
+                "description": "Understanding binary numbers and their conversion to decimal and hexadecimal.",                
+                "references": [
+                    {
+                        "title": "Binary Number System",
+                        "link": "https://www.geeksforgeeks.org/binary-number-system/"
+                    }
+                ]
+            }            
+        ],
+       
+        "practice_assignments": ["Binary & hexadecimal conversion", "Diagram a CPU-RAM interaction"]
+      },
+      {
+        "sl_no": 2,
+        "title": "Git, CLI Tools & IDE Setup",
+        "subtopics": ["Git basics", "GitHub setup", "terminal commands", "VS Code/IntelliJ"],
+        "practice_assignments": ["Initialize Git repo", "Push/pull", "Commit history"]
+      },
+      {
+        "sl_no": 3,
+        "title": "JVM, JDK, JRE, Java Compiler (javac)",
+        "subtopics": ["Java compiler & JVM internals", "JDK tools (javac, java, javap)"],
+        "practice_assignments": ["Compile Java manually", "View bytecode", "Simulate JVM memory"]
+      },
+      {
+        "sl_no": 4,
+        "title": "Java Basics – Variables, Data Types, Operators",
+        "subtopics": ["Primitive types", "Operators", "Type casting", "Literals"],
+        "practice_assignments": ["Create calculator app", "Type conversions"]
+      },
+      {
+        "sl_no": 5,
+        "title": "Conditionals, Loops, and Switch Case",
+        "subtopics": ["If-else", "Loops", "Switch case syntax and use cases"],
+        "practice_assignments": ["ATM menu using switch", "Loop-based problems"]
+      },
+      {
+        "sl_no": 6,
+        "title": "Methods, Arrays, and Intro to OOP",
+        "subtopics": ["Method declaration", "Overloading", "Arrays", "Recursion"],
+        "practice_assignments": ["Student grades with arrays and methods"]
+      },
+      {
+        "sl_no": 7,
+        "title": "Classes, Objects, Constructors",
+        "subtopics": ["Object creation", "Constructors", "Static/instance members"],
+        "practice_assignments": ["Book/Author class with constructors"]
+      },
+      {
+        "sl_no": 8,
+        "title": "Inheritance, Polymorphism, Encapsulation",
+        "subtopics": ["Core OOP concepts with real-world modeling"],
+        "practice_assignments": ["Animal hierarchy with overriding"]
+      },
+      {
+        "sl_no": 9,
+        "title": "Exception Handling and Custom Exceptions",
+        "subtopics": ["Try-catch-finally", "Custom exceptions", "Throw/throws"],
+        "practice_assignments": ["Custom exception for age validation"]
+      },
+      {
+        "sl_no": 10,
+        "title": "File I/O in Java (Text, CSV)",
+        "subtopics": ["BufferedReader", "FileWriter", "Scanner", "CSV file handling"],
+        "practice_assignments": ["File read/write employee records"]
+      },
+      {
+        "sl_no": 11,
+        "title": "Threads and Multithreading Basics",
+        "subtopics": ["Thread creation", "Lifecycle", "Runnable", "Synchronization"],
+        "practice_assignments": ["Thread-safe updater using threads"]
+      },
+      {
+        "sl_no": 12,
+        "title": "Collections Framework (List, Set, Map)",
+        "subtopics": ["ArrayList", "HashSet", "HashMap", "Iteration"],
+        "practice_assignments": ["Shopping cart using collections"]
+      }
+    ]
+  }

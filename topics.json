@@ -1,0 +1,84 @@
+{
+    "topics": [
+      {
+        "sl_no": 1,
+        "title": "Computer Basics & OS Overview",
+        "subtopics": [
+            {
+                "sl_no": 1,
+                "title": "Basics of Computer",
+                "description": "Understanding the basic components of a computer system, including CPU, RAM, and storage.",           
+                "references": [
+                    {
+                        "title": "Basics of Computer",
+                        "link": "https://youtu.be/-AP1nNK3bRs?list=PLWPirh4EWFpF_2T13UeEgZWZHc8nHBuXp"
+                    },
+                    {
+                         "title": "Working of Transistors in Computer. In Tamil",
+                        "link": "https://youtu.be/8I_fgfL4260?si=oDlM75b3rrIvvzkg"
+                       
+                    }
+                ]
+            },
+            {
+                "sl_no": 2,
+                "title": "Binary Numbers in Computer",
+                "description": "Understanding how computers use binary numbers to represent data and perform calculations.",
+                "references": [
+                    {
+                        "title": "Why do computer understand 0s AND 1s? in Tamil",
+                        "link": "https://youtu.be/qmlIvT-mnUY"
+                    },
+                    {
+                        "title": "Why not Quinary? Why Binary? in Tamil",
+                        "link": "https://youtu.be/wppTu0BItwQ?si=HfvWwtfWOpte2pmP&t=113"
+                    },
+                    
+                    {
+                        "title": "Text Representation in Computer as binary",
+                        "link": "https://www.techtarget.com/whatis/definition/binary"
+                    }, {
+                        "title": "Why Binary is used in computers?",
+                        "link": "https://www.convertbinary.com/blog/why-computers-use-binary/"
+                    },
+                    {
+                        "title": "Additional: Binary - Transistors in Computer",
+                        "link": "https://youtu.be/nOKPuUo8v7E?si=qE8g_MD8AfWlhZGH"
+                    }
+                ]
+            },
+            {
+                "sl_no": 3,
+                "title": "Logic Gates and Transistors",
+                "description": "Understanding the basic building blocks of digital circuits, including AND, OR, NOT gates.",
+                "references": [
+                    {
+                        "title": "Logic Gates and Transistors (English)",
+                        "link": "https://youtu.be/INEtYZqtjTo"
+                    },
+                    {
+                        "title": "Logic Gates demonstration",
+                        "link": "https://youtube.com/shorts/DNiGb4fOgtI?si=6IEzkVSRBQnSEdPO"
+                        
+                    }
+                ]
+            },
+            
+            {
+                "sl_no": 4,
+                "title": "Memory Organization Computer Architecture",
+                "description": "Understanding the basic components of a computer system, including CPU, RAM, and storage.",
+                "references": [
+                    {
+                        "title": "Computer Architecture: A Quantitative Approach",
+                        "link": "https://www.geeksforgeeks.org/memory-organisation-in-computer-architecture/"
+                    }
+                ]
+            }  
+        ],
+       
+        "practice_assignments": ["Binary & hexadecimal conversion", "Diagram a CPU-RAM interaction"]
+      }
+      
+    ]
+  }
