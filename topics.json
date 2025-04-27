@@ -166,7 +166,7 @@
         "practice_assignments": ["Binary & hexadecimal conversion", "Diagram a CPU-RAM interaction"]
       },
       {
-        "sl_no": 3,
+        "sl_no": 2,
         "title": "Soruce code management",
         "subtopics": [
             {
@@ -189,7 +189,25 @@
                     {
                         "title": "Git Commands",
                         "link": "https://www.geeksforgeeks.org/git-cheat-sheet/"
+                    }                    
+                ]
+            },
+            {
+                "sl_no": 2,
+                "title": "Assignment",
+                "description": "Complete the following tasks:.",
+                "references": [
+                    {
+                        "title":"Completion Confirmation",
+                        "link":"https://forms.cloud.microsoft/r/xSAjEesUhU"
                     }
+                ],
+                "assignment": [
+                    "Create a new branch named 'feature' in your local repository.",
+                    "Switch to the 'feature' branch.",
+                    "Create a new file named 'feature.txt' and add some content to it.",
+                    "Commit the changes with a meaningful message.",
+                    "Push the 'feature' branch to the remote repository."
                 ]
             }
         ]

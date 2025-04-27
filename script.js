@@ -97,16 +97,72 @@ document.addEventListener('DOMContentLoaded', function() {
                   scrollableDiv.appendChild(desc);
                 }
 
-                // References
+                // Assignment array rendering
+                if (Array.isArray(sub.assignment) && sub.assignment.length > 0) {
+                  const assignDiv = document.createElement('div');
+                  assignDiv.className = 'assignment';
+                  const assignTitle = document.createElement('strong');
+                  assignTitle.textContent = 'Assignment:';
+                  assignDiv.appendChild(assignTitle);
+
+                  const assignList = document.createElement('ol');
+                  sub.assignment.forEach(item => {
+                    const li = document.createElement('li');
+                    li.textContent = item;
+                    assignList.appendChild(li);
+                  });
+                  assignDiv.appendChild(assignList);
+
+                  // If there is a reference to a Microsoft Form, embed it below the assignment list
+                  if (Array.isArray(sub.references)) {
+                    sub.references.forEach(ref => {
+                      if (ref.link && ref.link.startsWith('https://forms.cloud.microsoft/')) {
+                        // Try to embed the form in an iframe
+                        const iframe = document.createElement('iframe');
+                        iframe.src = ref.link;
+                        iframe.width = "640";
+                        iframe.height = "800";
+                        iframe.frameBorder = "0";
+                        iframe.allowFullscreen = true;
+                        iframe.style.border = "1px solid #ccc";
+                        iframe.style.marginTop = "0.5em";
+                        // If iframe fails to load, show as link
+                        iframe.onerror = function() {
+                          if (!iframe._fallbackShown) {
+                            const formTitle = document.createElement('div');
+                            const formLink = document.createElement('a');
+                            formLink.href = ref.link;
+                            formLink.textContent = ref.title;
+                            formLink.target = '_blank';
+                            formTitle.appendChild(formLink);
+                            formTitle.style.marginBottom = '0.5em';
+                            assignDiv.appendChild(formTitle);
+                            iframe._fallbackShown = true;
+                          }
+                        };
+                        assignDiv.appendChild(iframe);
+                      }
+                    });
+                  }
+
+                  scrollableDiv.appendChild(assignDiv);
+                }
+
+                // References or Submit (for assignment)
                 if (Array.isArray(sub.references) && sub.references.length > 0) {
                   const refDiv = document.createElement('div');
                   refDiv.className = 'references';
                   const refTitle = document.createElement('strong');
-                  refTitle.textContent = 'References:';
+                  // If assignment exists, heading is 'Submit', else 'References'
+                  refTitle.textContent = (Array.isArray(sub.assignment) && sub.assignment.length > 0) ? 'Submit:' : 'References:';
                   refDiv.appendChild(refTitle);
 
                   const refList = document.createElement('ul');
                   sub.references.forEach(ref => {
+                    // For assignment, skip MS Form links here (already shown above)
+                    if (Array.isArray(sub.assignment) && sub.assignment.length > 0 && ref.link && ref.link.startsWith('https://forms.office.com')) {
+                      return;
+                    }
                     const li = document.createElement('li');
                     // Check for YouTube short link
                     if (ref.link && ref.link.startsWith('https://youtu.be/')) {
@@ -151,6 +207,8 @@ document.addEventListener('DOMContentLoaded', function() {
                       videoTitle.style.marginBottom = '0.5em';
                       li.appendChild(videoTitle);
                       li.appendChild(iframe);
+                    } else if (ref.link && ref.link.startsWith('https://forms.office.com')) {
+                      // (skip, already handled above)
                     } else if (ref.link) {
                       // Only show the title as a link, do not load iframe
                       const pageTitle = document.createElement('div');
