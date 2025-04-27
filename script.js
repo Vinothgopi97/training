@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
           centerContent.style.marginLeft = '320px';
           document.body.appendChild(centerContent);
         }
-        centerContent.innerHTML = '<p>Select a subtopic to view details.</p>';
+        centerContent.innerHTML = '<div><h2 class="text-secondary mb-3">Welcome to the Developer Training based on Java</h2><p>Select a subtopic to view details.</p><div/>';
 
         topics.forEach((topic, topicIdx) => {
           // Topic button

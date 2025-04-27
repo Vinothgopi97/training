@@ -1,5 +1,73 @@
 {
     "topics": [
+        {
+            "sl_no": 0,
+            "title": "Pre-requisites",
+            "subtopics": [
+                {
+                    "sl_no": 1,
+                    "title": "Softwares Installation",
+                    "description": "Here are the references for downloading and installing many softwares. Installing only required softwares out of these is enough.",
+                    "references": [
+                        {
+                            "title": "Git",                            
+                            "link": "https://git-scm.com/downloads"
+                        },
+                        {
+                            "title": "VS Code",
+                            "link": "https://code.visualstudio.com/download"                           
+                        },
+                        { 
+                            "title": "IntelliJ",
+                            "link": "https://www.jetbrains.com/idea/download/"
+                        },
+                        {
+                            "title": "Java JDK",
+                            "link": "https://www.oracle.com/java/technologies/downloads/"
+                        },
+                        {
+                            "title": "Node.js",
+                            "link": "https://nodejs.org/en/download/"
+                        },                        
+                        {
+                            "title": "Postman",
+                            "link": "https://www.postman.com/downloads/"
+                        },
+                        {
+                            "title": "Docker",
+                            "link": "https://www.docker.com/products/docker-desktop/"
+                        },
+                        {
+                            "title": "MySQL",
+                            "link": "https://dev.mysql.com/downloads/installer/"
+                        },
+                        {
+                            "title": "MongoDB Community Server",
+                            "link": "https://www.mongodb.com/try/download/community"
+                        },                        
+                        {
+                            "title": "MongoDB Compass",
+                            "link": "https://www.mongodb.com/try/download/compass"
+                        },                        
+                        {
+                            "title": "PostgreSQL",
+                            "link": "https://www.postgresql.org/download/"
+                        }
+                    ]
+                },
+                {
+                    "sl_no": 2,
+                    "title": "Account Creations",
+                    "description": "Here are the references for creating accounts in required platforms.",
+                    "references": [
+                        {
+                            "title": "Github", 
+                            "link": "https://github.com/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F&source=header-home"
+                        }
+                    ]
+                }
+            ]
+        },
       {
         "sl_no": 1,
         "title": "Computer Basics & OS Overview",
@@ -17,6 +85,12 @@
                          "title": "Working of Transistors in Computer. In Tamil",
                         "link": "https://youtu.be/8I_fgfL4260?si=oDlM75b3rrIvvzkg"
                        
+                    }, {
+                        "title":"Types  of Memory in Computer",
+                        "link":"https://www.upgrad.com/blog/types-of-memory-in-computer/"
+                    }, {
+                        "title":"RAM vs ROM in Tamil",
+                        "link":"https://youtube.com/shorts/QsSTN3dW-Lo?si=3VTQdeQ0scHHAZ2E"
                     }
                 ]
             },
@@ -74,11 +148,51 @@
                         "link": "https://www.geeksforgeeks.org/memory-organisation-in-computer-architecture/"
                     }
                 ]
-            }  
+            },
+            {
+                "sl_no": 5,
+                "title": "Operating System",
+                "description": "Understanding the role of an operating system in managing hardware and software resources.",                
+                "references": [
+                    {
+                        "title": "Operating System Basics to Advanced",
+                        "link": "https://youtu.be/bSTSYcHuKok"
+                    }
+                ]
+                
+            }        
         ],
        
         "practice_assignments": ["Binary & hexadecimal conversion", "Diagram a CPU-RAM interaction"]
-      }
-      
+      },
+      {
+        "sl_no": 3,
+        "title": "Soruce code management",
+        "subtopics": [
+            {
+                "sl_no": 1,
+                "title": "Create and clone a Public Github repository",
+                "description": "Create a new public repository named 'myfirstrepo' on GitHub and clone it to your local machine.",
+                "references": [
+                    {
+                        "title": "Create and clone a Github repository",
+                        "link": "https://github.com/new"
+                    },
+                    {
+                        "title": "Why Git & Github required?",
+                        "link": "https://youtube.com/shorts/e022araag8o?si=FQ4OXvVP6H73Qjrg"
+                    },
+                    {
+                        "title": "Version Control with Git and GitHub (Tamil)",
+                        "link": "https://youtu.be/VIBWdLLq9kQ"
+                    },
+                    {
+                        "title": "Git Commands",
+                        "link": "https://www.geeksforgeeks.org/git-cheat-sheet/"
+                    }
+                ]
+            }
+        ]
+    }
     ]
   }
