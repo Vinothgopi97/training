@@ -53,6 +53,14 @@
                             "title": "PostgreSQL",
                             "link": "https://www.postgresql.org/download/"
                         }
+                    ],
+                    "assignment": [
+                        "Install Git",
+                        "Install VS Code",
+                        "Install IntelliJ, suggested for Java",
+                        "Install Java JDK",
+                        "Install PostgreSQL",
+                        "Install Postman"
                     ]
                 },
                 {
