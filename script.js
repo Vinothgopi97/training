@@ -114,116 +114,171 @@ document.addEventListener('DOMContentLoaded', function() {
                   assignDiv.appendChild(assignList);
 
                   // If there is a reference to a Microsoft Form, embed it below the assignment list
-                  if (Array.isArray(sub.references)) {
-                    sub.references.forEach(ref => {
-                      if (ref.link && ref.link.startsWith('https://forms.cloud.microsoft/')) {
-                        // Try to embed the form in an iframe
-                        const iframe = document.createElement('iframe');
-                        iframe.src = ref.link;
-                        iframe.width = "640";
-                        iframe.height = "800";
-                        iframe.frameBorder = "0";
-                        iframe.allowFullscreen = true;
-                        iframe.style.border = "1px solid #ccc";
-                        iframe.style.marginTop = "0.5em";
-                        // If iframe fails to load, show as link
-                        iframe.onerror = function() {
-                          if (!iframe._fallbackShown) {
-                            const formTitle = document.createElement('div');
-                            const formLink = document.createElement('a');
-                            formLink.href = ref.link;
-                            formLink.textContent = ref.title;
-                            formLink.target = '_blank';
-                            formTitle.appendChild(formLink);
-                            formTitle.style.marginBottom = '0.5em';
-                            assignDiv.appendChild(formTitle);
-                            iframe._fallbackShown = true;
-                          }
-                        };
-                        assignDiv.appendChild(iframe);
-                      }
-                    });
-                  }
+                  // if (Array.isArray(sub.references)) {
+                  //   sub.references.forEach(ref => {
+                  //     if (ref.link && ref.link.startsWith('https://forms.cloud.microsoft/')) {
+                  //       // Try to embed the form in an iframe
+                  //       const iframe = document.createElement('iframe');
+                  //       iframe.src = ref.link;
+                  //       iframe.width = "640";
+                  //       iframe.height = "800";
+                  //       iframe.frameBorder = "0";
+                  //       iframe.allowFullscreen = true;
+                  //       iframe.style.border = "1px solid #ccc";
+                  //       iframe.style.marginTop = "0.5em";
+                  //       // If iframe fails to load, show as link
+                  //       iframe.onerror = function() {
+                  //         if (!iframe._fallbackShown) {
+                  //           const formTitle = document.createElement('div');
+                  //           const formLink = document.createElement('a');
+                  //           formLink.href = ref.link;
+                  //           formLink.textContent = ref.title;
+                  //           formLink.target = '_blank';
+                  //           formTitle.appendChild(formLink);
+                  //           formTitle.style.marginBottom = '0.5em';
+                  //           assignDiv.appendChild(formTitle);
+                  //           iframe._fallbackShown = true;
+                  //         }
+                  //       };
+                  //       assignDiv.appendChild(iframe);
+                  //     }
+                  //   });
+                  // }
 
                   scrollableDiv.appendChild(assignDiv);
                 }
 
                 // References or Submit (for assignment)
                 if (Array.isArray(sub.references) && sub.references.length > 0) {
-                  const refDiv = document.createElement('div');
-                  refDiv.className = 'references';
-                  const refTitle = document.createElement('strong');
-                  // If assignment exists, heading is 'Submit', else 'References'
-                  refTitle.textContent = (Array.isArray(sub.assignment) && sub.assignment.length > 0) ? 'Submit:' : 'References:';
-                  refDiv.appendChild(refTitle);
+                  let msFormHandled = false;
+                  // For assignment, try to embed MS Form in iframe, else show as link if iframe fails
+                  if (Array.isArray(sub.assignment) && sub.assignment.length > 0) {
+                    sub.references.forEach(ref => {
+                      if (ref.link && ref.link.startsWith('https://forms.cloud.microsoft/')) {
+                        if (!msFormHandled) {
+                          const iframe = document.createElement('iframe');
+                          iframe.src = ref.link;
+                          iframe.width = "640";
+                          iframe.height = "800";
+                          iframe.frameBorder = "0";
+                          iframe.allowFullscreen = true;
+                          iframe.style.border = "1px solid #ccc";
+                          iframe.style.marginTop = "0.5em";
+                          let fallbackShown = false;
+                          iframe.onerror = function() {
+                            if (!fallbackShown) {
+                              const formTitle = document.createElement('div');
+                              const formLink = document.createElement('a');
+                              formLink.href = ref.link;
+                              formLink.textContent = ref.title;
+                              formLink.target = '_blank';
+                              formTitle.appendChild(formLink);
+                              formTitle.style.marginBottom = '0.5em';
+                              scrollableDiv.appendChild(formTitle);
+                              fallbackShown = true;
+                              iframe.remove();
+                            }
+                          };
+                          // Add a timeout fallback in case onerror doesn't fire (e.g., CORS blocks)
+                          setTimeout(() => {
+                            // If iframe didn't load after 5s, show link
+                            if (!iframe.contentWindow || !iframe.contentDocument || iframe.contentDocument.body.innerHTML === "") {
+                              if (!fallbackShown) {
+                                const formTitle = document.createElement('div');
+                                const formLink = document.createElement('a');
+                                formLink.href = ref.link;
+                                formLink.textContent = ref.title;
+                                formLink.target = '_blank';
+                                formTitle.appendChild(formLink);
+                                formTitle.style.marginBottom = '0.5em';
+                                scrollableDiv.appendChild(formTitle);
+                                fallbackShown = true;
+                                iframe.remove();
+                              }
+                            }
+                          }, 5000);
+                          scrollableDiv.appendChild(iframe);
+                          msFormHandled = true;
+                        }
+                      }
+                    });
+                  }
 
-                  const refList = document.createElement('ul');
-                  sub.references.forEach(ref => {
-                    // For assignment, skip MS Form links here (already shown above)
-                    if (Array.isArray(sub.assignment) && sub.assignment.length > 0 && ref.link && ref.link.startsWith('https://forms.office.com')) {
-                      return;
-                    }
-                    const li = document.createElement('li');
-                    // Check for YouTube short link
-                    if (ref.link && ref.link.startsWith('https://youtu.be/')) {
-                      // Extract video ID
-                      const videoId = ref.link.split('https://youtu.be/')[1].split('?')[0];
-                      // Embed YouTube video
-                      const iframe = document.createElement('iframe');
-                      iframe.width = "560";
-                      iframe.height = "315";
-                      iframe.src = `https://www.youtube.com/embed/${videoId}`;
-                      iframe.title = ref.title;
-                      iframe.frameBorder = "0";
-                      iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
-                      iframe.allowFullscreen = true;
-                      // Add title as link above video
-                      const videoTitle = document.createElement('div');
-                      const videoLink = document.createElement('a');
-                      videoLink.href = ref.link;
-                      videoLink.textContent = ref.title;
-                      videoLink.target = '_blank';
-                      videoTitle.appendChild(videoLink);
-                      videoTitle.style.marginBottom = '0.5em';
-                      li.appendChild(videoTitle);
-                      li.appendChild(iframe);
-                    } else if (ref.link && ref.link.startsWith('https://youtube.com/shorts/')) {
-                      // Handle YouTube Shorts
-                      const shortsId = ref.link.split('https://youtube.com/shorts/')[1].split('?')[0].split('/')[0];
-                      const iframe = document.createElement('iframe');
-                      iframe.width = "560";
-                      iframe.height = "315";
-                      iframe.src = `https://www.youtube.com/embed/${shortsId}`;
-                      iframe.title = ref.title;
-                      iframe.frameBorder = "0";
-                      iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
-                      iframe.allowFullscreen = true;
-                      const videoTitle = document.createElement('div');
-                      const videoLink = document.createElement('a');
-                      videoLink.href = ref.link;
-                      videoLink.textContent = ref.title;
-                      videoLink.target = '_blank';
-                      videoTitle.appendChild(videoLink);
-                      videoTitle.style.marginBottom = '0.5em';
-                      li.appendChild(videoTitle);
-                      li.appendChild(iframe);
-                    } else if (ref.link && ref.link.startsWith('https://forms.office.com')) {
-                      // (skip, already handled above)
-                    } else if (ref.link) {
-                      // Only show the title as a link, do not load iframe
-                      const pageTitle = document.createElement('div');
-                      const pageLink = document.createElement('a');
-                      pageLink.href = ref.link;
-                      pageLink.textContent = ref.title;
-                      pageLink.target = '_blank';
-                      pageTitle.appendChild(pageLink);
-                      pageTitle.style.marginBottom = '0.5em';
-                      li.appendChild(pageTitle);
-                    }
-                    refList.appendChild(li);
-                  });
-                  refDiv.appendChild(refList);
-                  scrollableDiv.appendChild(refDiv);
+                  // Only show the references section if there are non-MS Form links, or if not assignment
+                  const hasNonMsFormLinks = sub.references.some(ref =>
+                    !(Array.isArray(sub.assignment) && sub.assignment.length > 0 && ref.link && ref.link.startsWith('https://forms.cloud.microsoft/'))
+                  );
+                  if (hasNonMsFormLinks || !(Array.isArray(sub.assignment) && sub.assignment.length > 0)) {
+                    const refDiv = document.createElement('div');
+                    refDiv.className = 'references';
+                    const refList = document.createElement('ul');
+                    sub.references.forEach(ref => {
+                      // For assignment, skip MS Form links here (already shown above)
+                      if (Array.isArray(sub.assignment) && sub.assignment.length > 0 && ref.link && ref.link.startsWith('https://forms.cloud.microsoft/')) {
+                        return;
+                      }
+                      const li = document.createElement('li');
+                      // Check for YouTube short link
+                      if (ref.link && ref.link.startsWith('https://youtu.be/')) {
+                        // Extract video ID
+                        const videoId = ref.link.split('https://youtu.be/')[1].split('?')[0];
+                        // Embed YouTube video
+                        const iframe = document.createElement('iframe');
+                        iframe.width = "560";
+                        iframe.height = "315";
+                        iframe.src = `https://www.youtube.com/embed/${videoId}`;
+                        iframe.title = ref.title;
+                        iframe.frameBorder = "0";
+                        iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+                        iframe.allowFullscreen = true;
+                        // Add title as link above video
+                        const videoTitle = document.createElement('div');
+                        const videoLink = document.createElement('a');
+                        videoLink.href = ref.link;
+                        videoLink.textContent = ref.title;
+                        videoLink.target = '_blank';
+                        videoTitle.appendChild(videoLink);
+                        videoTitle.style.marginBottom = '0.5em';
+                        li.appendChild(videoTitle);
+                        li.appendChild(iframe);
+                      } else if (ref.link && ref.link.startsWith('https://youtube.com/shorts/')) {
+                        // Handle YouTube Shorts
+                        const shortsId = ref.link.split('https://youtube.com/shorts/')[1].split('?')[0].split('/')[0];
+                        const iframe = document.createElement('iframe');
+                        iframe.width = "560";
+                        iframe.height = "315";
+                        iframe.src = `https://www.youtube.com/embed/${shortsId}`;
+                        iframe.title = ref.title;
+                        iframe.frameBorder = "0";
+                        iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+                        iframe.allowFullscreen = true;
+                        const videoTitle = document.createElement('div');
+                        const videoLink = document.createElement('a');
+                        videoLink.href = ref.link;
+                        videoLink.textContent = ref.title;
+                        videoLink.target = '_blank';
+                        videoTitle.appendChild(videoLink);
+                        videoTitle.style.marginBottom = '0.5em';
+                        li.appendChild(videoTitle);
+                        li.appendChild(iframe);
+                      } else if (ref.link && ref.link.startsWith('https://forms.cloud.microsoft/')) {
+                        // (skip, already handled above)
+                      } else if (ref.link) {
+                        // Only show the title as a link, do not load iframe
+                        const pageTitle = document.createElement('div');
+                        const pageLink = document.createElement('a');
+                        pageLink.href = ref.link;
+                        pageLink.textContent = ref.title;
+                        pageLink.target = '_blank';
+                        pageTitle.appendChild(pageLink);
+                        pageTitle.style.marginBottom = '0.5em';
+                        li.appendChild(pageTitle);
+                      }
+                      refList.appendChild(li);
+                    });
+                    refDiv.appendChild(refList);
+                    scrollableDiv.appendChild(refDiv);
+                  }
                 }
 
                 centerContent.appendChild(scrollableDiv);
