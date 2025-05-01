@@ -73,6 +73,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Remove active from all subtopics
                 document.querySelectorAll('.subtopic-menu-item.active').forEach(el => el.classList.remove('active'));
                 subBtn.classList.add('active');
+                // Remove content-container if present (always remove before loading new content)
+                document.querySelectorAll('#content-container').forEach(el => el.remove());
+                // If subtopic has content_html, load it and return
+                if (sub.content_html) {
+                    // Remove centerContent content as well
+                    if (centerContent) centerContent.innerHTML = '';
+                    loadSubtopicContent(sub);
+                    return;
+                }
                 // Show subtopic details in center
                 centerContent.innerHTML = '';
 
@@ -318,3 +327,127 @@ document.addEventListener('DOMContentLoaded', function() {
         console.error('Error loading topics:', err);
       });
 });
+
+function loadSubtopicContent(subtopic) {
+    if (subtopic.content_html) {
+        // Remove any previous content-containers to avoid duplicates
+        document.querySelectorAll('#content-container').forEach(el => el.remove());
+        let contentContainer = document.createElement('div');
+        contentContainer.id = 'content-container';
+        contentContainer.style.display = 'flex';
+        contentContainer.style.flexDirection = 'column';
+        contentContainer.style.alignItems = 'center';
+        contentContainer.style.justifyContent = 'center';
+        contentContainer.style.marginTop = '2em';
+        // Insert after center-content if it exists
+        const centerContent = document.getElementById('center-content');
+        if (centerContent && centerContent.parentNode) {
+            centerContent.parentNode.insertBefore(contentContainer, centerContent.nextSibling);
+        } else {
+            document.body.appendChild(contentContainer);
+        }
+        fetch(subtopic.content_html)
+            .then(response => {
+                if (!response.ok) throw new Error('Failed to load HTML file');
+                return response.text();
+            })
+            .then(html => {
+                // Center the loaded HTML
+                const htmlWrapper = document.createElement('div');
+                htmlWrapper.style.textAlign = 'left';
+                htmlWrapper.style.paddingLeft = '22em';
+                htmlWrapper.innerHTML = html;
+                contentContainer.appendChild(htmlWrapper);
+
+                // Show references below, if any
+                if (Array.isArray(subtopic.references) && subtopic.references.length > 0) {
+                    const refDiv = document.createElement('div');
+                    refDiv.className = 'references';
+                    refDiv.style.marginTop = '2em';
+                    refDiv.style.width = '100%';
+                    refDiv.style.maxWidth = '700px';
+                    refDiv.style.textAlign = 'left';
+                    const refTitle = document.createElement('h3');
+                    refTitle.textContent = 'References';
+                    refDiv.appendChild(refTitle);
+                    const refList = document.createElement('ul');
+                    subtopic.references.forEach(ref => {
+                        if (ref.link) {
+                            const li = document.createElement('li');
+                            // Embed YouTube videos directly
+                            if (ref.link.startsWith('https://youtu.be/')) {
+                                const videoId = ref.link.split('https://youtu.be/')[1].split('?')[0];
+                                const iframe = document.createElement('iframe');
+                                iframe.width = "560";
+                                iframe.height = "315";
+                                iframe.src = `https://www.youtube.com/embed/${videoId}`;
+                                iframe.title = ref.title;
+                                iframe.frameBorder = "0";
+                                iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+                                iframe.allowFullscreen = true;
+                                const videoTitle = document.createElement('div');
+                                const videoLink = document.createElement('a');
+                                videoLink.href = ref.link;
+                                videoLink.textContent = ref.title;
+                                videoLink.target = '_blank';
+                                videoTitle.appendChild(videoLink);
+                                videoTitle.style.marginBottom = '0.5em';
+                                li.appendChild(videoTitle);
+                                li.appendChild(iframe);
+                            } else if (ref.link.startsWith('https://youtube.com/shorts/')) {
+                                const shortsId = ref.link.split('https://youtube.com/shorts/')[1].split('?')[0].split('/')[0];
+                                const iframe = document.createElement('iframe');
+                                iframe.width = "560";
+                                iframe.height = "315";
+                                iframe.src = `https://www.youtube.com/embed/${shortsId}`;
+                                iframe.title = ref.title;
+                                iframe.frameBorder = "0";
+                                iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+                                iframe.allowFullscreen = true;
+                                const videoTitle = document.createElement('div');
+                                const videoLink = document.createElement('a');
+                                videoLink.href = ref.link;
+                                videoLink.textContent = ref.title;
+                                videoLink.target = '_blank';
+                                videoTitle.appendChild(videoLink);
+                                videoTitle.style.marginBottom = '0.5em';
+                                li.appendChild(videoTitle);
+                                li.appendChild(iframe);
+                            } else if (ref.link.startsWith('https://forms.office.com/') || ref.link.startsWith('https://forms.cloud.microsoft/')) {
+                                // Microsoft Forms: show as a clickable link with a note
+                                const formNote = document.createElement('div');
+                                formNote.style.marginBottom = '0.5em';
+                                const formLink = document.createElement('a');
+                                formLink.href = ref.link;
+                                formLink.textContent = ref.title + " (Open in new tab)";
+                                formLink.target = '_blank';
+                                formNote.appendChild(formLink);
+                                // Optionally, add a message about iframe restrictions
+                                const msg = document.createElement('div');
+                                msg.style.fontSize = '0.9em';
+                                msg.style.color = '#888';
+                                msg.textContent = 'Note: Microsoft Forms cannot be embedded due to browser security restrictions. Please open in a new tab.';
+                                formNote.appendChild(msg);
+                                li.appendChild(formNote);
+                            } else {
+                                // Only show the title as a link, do not load iframe
+                                const a = document.createElement('a');
+                                a.href = ref.link;
+                                a.textContent = ref.title;
+                                a.target = '_blank';
+                                li.appendChild(a);
+                            }
+                            refList.appendChild(li);
+                        }
+                    });
+                    refDiv.appendChild(refList);
+                    contentContainer.appendChild(refDiv);
+                }
+            })
+            .catch(err => {
+                contentContainer.innerHTML = '<div style="color:red;">Failed to load content.</div>';
+            });
+    } else {
+        // ...existing code for loading other content...
+    }
+}

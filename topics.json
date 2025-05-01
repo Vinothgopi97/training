@@ -149,7 +149,8 @@
             {
                 "sl_no": 4,
                 "title": "Memory Organization Computer Architecture",
-                "description": "Understanding the basic components of a computer system, including CPU, RAM, and storage.",
+                "description": "Understanding the basic components of a computer system, including CPU, RAM, and storage.",                
+                "content_html": "memory_organization.html",
                 "references": [
                     {
                         "title": "Memory Organization Computer Architecture",
@@ -167,6 +168,13 @@
                         "link": "https://youtu.be/bSTSYcHuKok"
                     }
                 ]
+                
+            },      
+            {
+                "sl_no": 6,
+                "title": "Quiz",
+                "description": "Test your knowledge on computer basics and operating systems.",                               
+                "content_html": "computer_quiz.html"
                 
             }        
         ],
@@ -204,18 +212,42 @@
                 "sl_no": 2,
                 "title": "Assignment",
                 "description": "Complete the following tasks:.",
-                "references": [
-                    {
-                        "title":"Completion Confirmation",
-                        "link":"https://forms.cloud.microsoft/r/xSAjEesUhU"
-                    }
-                ],
+                "content_html": "git_assignment.html",                
                 "assignment": [
                     "Create a new branch named 'feature' in your local repository.",
                     "Switch to the 'feature' branch.",
                     "Create a new file named 'feature.txt' and add some content to it.",
                     "Commit the changes with a meaningful message.",
                     "Push the 'feature' branch to the remote repository."
+                ]
+            }
+        ]
+    },    
+      {
+        "sl_no": 3,
+        "title": "Programming Language",
+        "subtopics": [
+            {
+                "sl_no": 1,
+                "title": "What is a Programming Language?",
+                "description": "A programming language is a formal language used to communicate instructions to a computer. It allows developers to write software by expressing logic, operations, and behavior that the machine can eventually execute. Examples: Python, C, Java, JavaScript, etc.",
+                "references": [
+                    {
+                        "title": "What are Programming Languages and How are they Created?",
+                        "link": "https://youtu.be/hSPwGniAafE"
+                    }
+                ],
+                "content_html": "programming_language_intro.html"
+            },
+            {
+                "sl_no": 2,
+                "title": "Compiler vs Interpreter",
+                "description": "Understanding the difference between compilers and interpreters, and how they execute code.",
+                "references": [
+                    {
+                        "title":"Compiler vs Interpreter",
+                        "link":"https://youtu.be/E3TDMVETp08"
+                    }
                 ]
             }
         ]
