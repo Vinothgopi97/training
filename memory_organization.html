@@ -2,98 +2,115 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>What is a Programming Language?</title>
+    <title>Memory Organization in Computer Architecture</title>
 </head>
 <body>
-    <h2>What is a Programming Language?</h2>
+
+
+    <h2>Memory Organization in Computer Architecture</h2>
     <p>
-        A programming language is a formal language comprising a set of instructions that produce various kinds of output. Programming languages are used in computer programming to implement algorithms and control the behavior of machines.
+        Memory organization refers to the way data is stored, accessed, and managed in a computer system. It is a fundamental aspect of computer architecture, affecting performance, efficiency, and reliability.
     </p>
+    <h3>Main Types of Memory</h3>
     <ul>
-        <li>Examples: Python, C, Java, JavaScript, etc.</li>
-        <li>Used to communicate instructions to a computer.</li>
-        <li>Allows developers to express logic, operations, and behavior.</li>
+        <li><strong>Primary Memory (Main Memory):</strong> Fast, directly accessible by the CPU. Includes RAM (Random Access Memory) and cache.</li>
+        <li><strong>Secondary Memory:</strong> Slower, used for long-term storage. Includes hard drives, SSDs, CDs, etc.</li>
+        <li><strong>Cache Memory:</strong> Very fast, small-sized memory located close to the CPU to speed up access to frequently used data.</li>
+        <li><strong>Registers:</strong> Smallest and fastest memory, located inside the CPU, used to hold instructions and data currently being processed.</li>
     </ul>
+
+    <h3>Memory Hierarchy Diagram</h3>
     <div>
-        <img src="assets/programming_hierarchy.png" alt="Programming Language Image" style="width:60%; height:auto;">
+        <img src="assets/memory_hierarchy.png" alt="Memory Hierarchy" style="width:60%; height:auto;">
     </div>
-    <h3>Low-Level Languages</h3>
+    <ul>
+        <li><strong>Registers</strong> &rarr; <strong>Cache</strong> &rarr; <strong>Main Memory (RAM)</strong> &rarr; <strong>Secondary Storage</strong></li>
+        <li>Speed decreases and capacity increases as you move down the hierarchy.</li>
+    </ul>
+
+    <h3>Primary Memory (RAM)</h3>
     <p>
-        Low-level languages are closer to machine hardware and provide little or no abstraction from a computer's instruction set architecture. They are fast and memory-efficient but harder to write and understand.
+        RAM is volatile memory, meaning its contents are lost when power is turned off. It is used to store data and instructions that are currently in use.
+    </p>
+    <pre><code>
++-------------------+
+|      CPU          |
++-------------------+
+         |
++-------------------+
+|    Cache Memory   |
++-------------------+
+         |
++-------------------+
+|       RAM         |
++-------------------+
+         |
++-------------------+
+| Secondary Storage |
++-------------------+
+    </code></pre>
+
+    <h3>Cache Memory</h3>
+    <p>
+        Cache memory is a small, high-speed memory between the CPU and RAM. It stores frequently accessed data and instructions to reduce access time.
     </p>
     <ul>
-        <li><strong>Machine Language:</strong> The native binary code (0s and 1s) understood directly by the CPU.</li>
-        <li><strong>Assembly Language:</strong> Uses mnemonic codes and labels instead of binary, but still closely maps to machine instructions.</li>
+        <li><strong>L1 Cache:</strong> Smallest and fastest, located inside the CPU core.</li>
+        <li><strong>L2 Cache:</strong> Larger than L1, may be inside or outside the CPU core.</li>
+        <li><strong>L3 Cache:</strong> Shared among CPU cores, larger and slower than L1/L2.</li>
     </ul>
-    <pre><code>; Example: x86 Assembly to add two numbers
-MOV AX, 5
-ADD AX, 3
-; AX now contains 8
-</code></pre>
 
-
-
-    <h3>High-Level Languages</h3>
+    <h3>Secondary Memory</h3>
     <p>
-        High-level languages are more abstract, easier to read, write, and maintain. They are portable across platforms and allow developers to focus on logic rather than hardware details.
+        Secondary memory is non-volatile and used for permanent data storage. Examples include HDDs, SSDs, USB drives, and optical disks.
     </p>
-    <ul>
-        <li>Examples: Python, Java, C++, JavaScript</li>
-    </ul>
-    <pre><code># Example: Python code to add two numbers
-a = 5
-b = 3
-print(a + b)  # Output: 8
-</code></pre>
 
-    <h3>Assembly Language</h3>
-    <p>
-        Assembly language is a type of low-level language that uses symbolic names (mnemonics) for instructions and memory locations. It requires an assembler to convert it to machine code.
-    </p>
-    <pre><code>; Example: ARM Assembly
-MOV R0, #5
-MOV R1, #3
-ADD R2, R0, R1
-; R2 now contains 8
-</code></pre>
+    <h3>Example: How Data Flows</h3>
+    <ol>
+        <li>CPU requests data.</li>
+        <li>If data is in a register, it is accessed instantly.</li>
+        <li>If not, CPU checks cache memory (L1, L2, L3).</li>
+        <li>If not in cache, data is fetched from RAM.</li>
+        <li>If not in RAM, data is loaded from secondary storage into RAM, then to cache, then to CPU.</li>
+    </ol>
 
-    <h3>Bytecode</h3>
-    <p>
-        Bytecode is an intermediate code between source code and machine code. It is generated by compiling high-level code and is executed by a virtual machine (e.g., Java Virtual Machine).
-    </p>
-    <ul>
-        <li>Platform-independent: Write once, run anywhere (with the right VM).</li>
-        <li>Examples: Java bytecode, Python bytecode (.pyc files)</li>
-    </ul>
-    <pre><code>// Example: Java source code
-public class HelloWorld {
-    public static void main(String[] args) {
-        System.out.println("Hello, World!");
-    }
-}
-
-/*
-After compilation, the Java compiler generates bytecode (HelloWorld.class):
-Compiled bytecode (simplified):
-0: getstatic     #2 // Field java/lang/System.out:Ljava/io/PrintStream;
-3: ldc           #1 // String Hello, World!
-6: invokevirtual #3 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
-9: return
-*/
-</code></pre>
-<h3>Machine Code</h3>
-<p>
-    Machine code is the lowest-level programming language, consisting entirely of binary digits (0s and 1s) that are directly executed by a computer's CPU. Each instruction performs a very specific task, such as loading data from memory or performing arithmetic.
-</p>
-<ul>
-    <li>Directly understood by the hardware (CPU).</li>
-    <li>Not human-readable and highly hardware-specific.</li>
-</ul>
-<pre><code>
-# Example: Machine code (x86, hexadecimal representation)
-B8 05 00        ; MOV AX, 5
-05 03 00        ; ADD AX, 3
-# After execution, AX register contains 8
-</code></pre>
+    <h3>Summary Table</h3>
+    <table border="1" cellpadding="6" style="border-collapse:collapse;">
+        <tr>
+            <th>Memory Type</th>
+            <th>Speed</th>
+            <th>Cost</th>
+            <th>Volatility</th>
+            <th>Capacity</th>
+        </tr>
+        <tr>
+            <td>Register</td>
+            <td>Fastest</td>
+            <td>Very High</td>
+            <td>Volatile</td>
+            <td>Very Low</td>
+        </tr>
+        <tr>
+            <td>Cache</td>
+            <td>Very Fast</td>
+            <td>High</td>
+            <td>Volatile</td>
+            <td>Low</td>
+        </tr>
+        <tr>
+            <td>RAM</td>
+            <td>Fast</td>
+            <td>Medium</td>
+            <td>Volatile</td>
+            <td>Medium</td>
+        </tr>
+        <tr>
+            <td>Secondary Storage</td>
+            <td>Slow</td>
+            <td>Low</td>
+            <td>Non-Volatile</td>
+            <td>High</td>
+        </tr>
+    </table>
 </body>
 </html>
