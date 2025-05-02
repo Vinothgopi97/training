@@ -14,27 +14,52 @@
     <h3>Main Types of Memory</h3>
     <ul>
         <li><strong>Primary Memory (Main Memory):</strong> Fast, directly accessible by the CPU. Includes RAM (Random Access Memory) and cache.</li>
-        <li><strong>Secondary Memory:</strong> Slower, used for long-term storage. Includes hard drives, SSDs, CDs, etc.</li>
+        <li><strong>Secondary Memory:</strong> Slower, used for long-term storage. Includes hard drives, SSDs, CDs, DVDs, Blu-ray discs, USB drives, magnetic tapes, etc.</li>
         <li><strong>Cache Memory:</strong> Very fast, small-sized memory located close to the CPU to speed up access to frequently used data.</li>
-        <li><strong>Registers:</strong> Smallest and fastest memory, located inside the CPU, used to hold instructions and data currently being processed.</li>
+        <li><strong>Registers:</strong> Smallest and fastest memory, located inside the CPU, used to hold instructions, addresses, and data currently being processed. Examples include Accumulator, Program Counter, Instruction Register, Stack Pointer, and General Purpose Registers.</li>
+        <li><strong>ROM (Read Only Memory):</strong> Non-volatile memory that stores firmware or permanent instructions required for booting and basic operations. Types include PROM, EPROM, and EEPROM.</li>
     </ul>
 
     <h3>Memory Hierarchy Diagram</h3>
     <div>
-        <img src="assets/memory_hierarchy.png" alt="Memory Hierarchy" style="width:60%; height:auto;">
+        <img src="assets/memory_hierarchy.jpg" alt="Memory Hierarchy" style="width:60%; height:auto;">
     </div>
     <ul>
-        <li><strong>Registers</strong> &rarr; <strong>Cache</strong> &rarr; <strong>Main Memory (RAM)</strong> &rarr; <strong>Secondary Storage</strong></li>
+        <li><strong>Registers</strong> &rarr; <strong>Cache</strong> &rarr; <strong>Main Memory (RAM/ROM)</strong> &rarr; <strong>Secondary Storage</strong></li>
         <li>Speed decreases and capacity increases as you move down the hierarchy.</li>
     </ul>
 
-    <h3>Primary Memory (RAM)</h3>
+    <h3>Registers</h3>
     <p>
-        RAM is volatile memory, meaning its contents are lost when power is turned off. It is used to store data and instructions that are currently in use.
+        Registers are the fastest memory elements in a computer system, located inside the CPU. They temporarily hold data, instructions, and addresses that are being used immediately by the CPU. Common types of registers include:
     </p>
+    <ul>
+        <li><strong>Accumulator (ACC):</strong> Used for arithmetic and logic operations.</li>
+        <li><strong>Program Counter (PC):</strong> Holds the address of the next instruction to be executed.</li>
+        <li><strong>Instruction Register (IR):</strong> Holds the current instruction being executed.</li>
+        <li><strong>Stack Pointer (SP):</strong> Points to the top of the stack in memory.</li>
+        <li><strong>General Purpose Registers:</strong> Used for temporary data storage during program execution.</li>
+    </ul>
+
+    <h3>Primary Memory (RAM and ROM)</h3>
+    <p>
+        <strong>RAM (Random Access Memory):</strong> Volatile memory, meaning its contents are lost when power is turned off. It is used to store data and instructions that are currently in use.
+    </p>
+    <p>
+        <strong>ROM (Read Only Memory):</strong> Non-volatile memory that retains its contents even when power is off. ROM stores firmware and system boot instructions. Types of ROM include:
+    </p>
+    <ul>
+        <li><strong>PROM (Programmable ROM):</strong> Can be programmed once after manufacturing.</li>
+        <li><strong>EPROM (Erasable Programmable ROM):</strong> Can be erased by exposure to UV light and reprogrammed.</li>
+        <li><strong>EEPROM (Electrically Erasable Programmable ROM):</strong> Can be erased and reprogrammed electrically.</li>
+    </ul>
     <pre><code>
 +-------------------+
 |      CPU          |
++-------------------+
+         |
++-------------------+
+|    Registers      |
 +-------------------+
          |
 +-------------------+
@@ -42,7 +67,7 @@
 +-------------------+
          |
 +-------------------+
-|       RAM         |
+|       RAM/ROM     |
 +-------------------+
          |
 +-------------------+
@@ -62,16 +87,24 @@
 
     <h3>Secondary Memory</h3>
     <p>
-        Secondary memory is non-volatile and used for permanent data storage. Examples include HDDs, SSDs, USB drives, and optical disks.
+        Secondary memory is non-volatile and used for permanent data storage. It is slower than primary memory but offers much higher capacity. Types of secondary memory include:
     </p>
+    <ul>
+        <li><strong>Hard Disk Drives (HDDs):</strong> Magnetic storage devices for large data storage.</li>
+        <li><strong>Solid State Drives (SSDs):</strong> Faster, flash-based storage devices.</li>
+        <li><strong>Optical Disks:</strong> CDs, DVDs, Blu-ray discs used for media and data storage.</li>
+        <li><strong>USB Flash Drives:</strong> Portable, flash-based storage devices.</li>
+        <li><strong>Magnetic Tapes:</strong> Used for archival and backup storage.</li>
+        <li><strong>Memory Cards:</strong> Used in cameras, smartphones, and other portable devices.</li>
+    </ul>
 
     <h3>Example: How Data Flows</h3>
     <ol>
         <li>CPU requests data.</li>
         <li>If data is in a register, it is accessed instantly.</li>
         <li>If not, CPU checks cache memory (L1, L2, L3).</li>
-        <li>If not in cache, data is fetched from RAM.</li>
-        <li>If not in RAM, data is loaded from secondary storage into RAM, then to cache, then to CPU.</li>
+        <li>If not in cache, data is fetched from RAM or ROM.</li>
+        <li>If not in RAM/ROM, data is loaded from secondary storage into RAM, then to cache, then to CPU.</li>
     </ol>
 
     <h3>Summary Table</h3>
@@ -102,6 +135,13 @@
             <td>Fast</td>
             <td>Medium</td>
             <td>Volatile</td>
+            <td>Medium</td>
+        </tr>
+        <tr>
+            <td>ROM</td>
+            <td>Fast</td>
+            <td>Medium</td>
+            <td>Non-Volatile</td>
             <td>Medium</td>
         </tr>
         <tr>
