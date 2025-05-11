@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Add heading to the side menu (fixed)
         const menuHeading = document.createElement('h1');
-        menuHeading.textContent = 'Topics Reference List';
+        menuHeading.textContent = 'Topics';
         menuHeading.className = 'my-4 text-primary';
         leftMenu.appendChild(menuHeading);
 

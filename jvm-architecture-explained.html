@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JVM Architecture Explained Simply</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2em; }
+        h1 { color: #2c3e50; }
+        h2 { color: #2980b9; }
+        ul { margin-bottom: 1em; }
+        .diagram {
+            background: #f4f4f4;
+            border: 1px solid #ccc;
+            padding: 1em;
+            margin: 1em 0;
+            font-family: monospace;
+            white-space: pre;
+        }
+    </style>
+</head>
+<body>
+    <h1>JVM Architecture Explained (For Beginners)</h1>
+    <img src="assets/jvm_architecture.webp" alt="JVM Architecture Diagram" style="width:60%; height:auto; display:block; margin: 1em 0;">
+    <p>
+        <strong>JVM</strong> stands for <b>Java Virtual Machine</b>. It is a part of Java that runs your Java programs. Let's break down how it works in a simple way.
+    </p>
+    <h2>How Java Code Runs</h2>
+    <ol>
+        <li>You write Java code (.java files).</li>
+        <li>The Java compiler turns your code into <b>bytecode</b> (.class files).</li>
+        <li>The JVM reads and runs this bytecode on your computer.</li>
+    </ol>
+    <h2>Main Parts of the JVM</h2>
+    <ul>
+        <li><b>Class Loader</b>: Loads your .class files (bytecode) into the JVM.</li>
+        <li><b>Method Area</b>: Stores information about your classes (like variables and methods).</li>
+        <li><b>Heap</b>: Where all the objects (like <code>new MyClass()</code>) are stored.</li>
+        <li><b>Stack</b>: Keeps track of method calls and local variables for each thread.</li>
+        <li><b>Execution Engine</b>: Actually runs the bytecode instructions. <b>Includes the JIT (Just-In-Time) compiler</b>, which makes your code run faster by converting bytecode into native machine code while the program runs.</li>
+        <li><b>Native Method Interface</b>: Lets Java code use code written in other languages like C or C++.</li>
+        <li><b>Native Method Libraries</b>: The actual code from other languages that Java can use.</li>
+    </ul>
+    <h2>What is the JIT Compiler?</h2>
+    <p>
+        The <b>JIT (Just-In-Time) compiler</b> is a key part of the JVM's <b>Execution Engine</b>. Its job is to make your Java programs run faster. Instead of interpreting bytecode line by line, the JIT compiler translates frequently used bytecode sections into native machine code while the program is running. This means the code can run directly on your computer's processor, making it much faster after the first few runs.
+    </p>
+    <ul>
+        <li><b>Why use JIT?</b> It improves performance by turning bytecode into optimized machine code at runtime.</li>
+        <li><b>How does it work?</b> When the JVM notices that some code is used a lot, the JIT compiler converts it to machine code and stores it. Next time, the JVM runs the machine code directly instead of interpreting the bytecode.</li>
+    </ul>
+    <h2>Simple Diagram</h2>
+    <div class="diagram">
+        +---------------------+
+        |   Java Source Code  |
+        +---------------------+
+                  |
+                  v
+        +---------------------+
+        |   Java Compiler     |
+        +---------------------+
+                  |
+                  v
+        +---------------------+
+        |   Bytecode (.class) |
+        +---------------------+
+                  |
+                  v
+        +---------------------+
+        |   JVM               |
+        |  +---------------+  |
+        |  | Class Loader   |  |
+        |  +---------------+  |
+        |  | Method Area    |  |
+        |  | Heap           |  |
+        |  | Stack          |  |
+        |  | Execution Eng. |  |
+        |  |   +---------+  |  |
+        |  |   |  JIT    |  |  |
+        |  |   +---------+  |  |
+        |  | Native Intf.   |  |
+        |  | Native Libs    |  |
+        +---------------------+
+    </div>
+    <h2>Summary</h2>
+    <p>
+        The JVM makes Java programs run on any computer, by converting bytecode into instructions your computer understands. It manages memory, runs your code, and keeps everything safe and organized.
+    </p>
+</body>
+</html>

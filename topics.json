@@ -258,6 +258,36 @@
     },
     {
         "sl_no": 4,
+        "title": "Datastructures & Algorithms",
+        "subtopics": [
+            {
+                "sl_no": 1,
+                "title": "Introduction to Algorithms",
+                "description": "Understanding the basic concepts of algorithms, including time complexity and space complexity.",
+                "references": [
+                    {
+                        "title": "Introduction to Algorithms",
+                        "link": "https://www.btechsmartclass.com/data_structures/introduction-to-algorithms.html"
+                    }                  
+                ],
+                "content_html": "algorithm_intro.html"
+            },
+            {
+                "sl_no": 2,
+                "title": "Introduction to Data Structures",
+                "description": "Understanding the basic concepts of data structures, including arrays, linked lists, stacks, and queues.",
+                "references": [
+                    {
+                        "title": "Introduction to Data Structures",
+                        "link": "https://www.w3schools.in/data-structures/intro"
+                    }                  
+                ],
+                "content_html": "data_structures_intro.html"
+            }            
+        ]
+      },
+    {
+        "sl_no": 5,
         "title": "Java",
         "subtopics": [
             {
@@ -274,6 +304,41 @@
                     }                    
                 ],
                 "content_html": "jdk_jvm_jre.html"
+            },
+            {
+                "sl_no": 2,
+                "title": "JVM Architecture",
+                "description": "Understanding the architecture of the Java Virtual Machine (JVM) and its components.",
+                "references": [
+                    {
+                        "title": "Differences Between JDK, JRE and JVM",
+                        "link": "https://www.geeksforgeeks.org/jvm-works-jvm-architecture/"
+                    }, {
+                        "title": "JVM Architecture in Tamil",
+                        "link": "https://youtu.be/ytp6m9vhTg8?si=UKPfdPVYCZTPkkQ0"
+                    }                    
+                ],
+                "content_html": "jvm-architecture-explained.html"
+            },
+            {
+                "sl_no": 3,
+                "title": "Java Basics",
+                "description": "Understanding the basic syntax and structure of Java programs, including variables, data types, and operators.",
+                "references": [
+                    {
+                        "title": "Java Basic Syntax",
+                        "link": "https://www.geeksforgeeks.org/java-basic-syntax/"
+                    }, 
+                    {
+                        "title": "Java Keywords",
+                        "link": "https://www.geeksforgeeks.org/java-keywords/"
+                    },                     
+                    {
+                        "title": "How Java works in Tamil",
+                        "link": "https://youtu.be/gS7azO8ybEc"
+                    }                    
+                ],
+                "content_html": "java_basics.html"
             }
             
         ],                  

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Java Basics for Beginners</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2em; }
+        h1, h2, h3 { color: #2c3e50; }
+        code { background: #f4f4f4; padding: 2px 4px; border-radius: 3px; }
+        pre { background: #f4f4f4; padding: 10px; border-radius: 5px; }
+        ul { margin-bottom: 1em; }
+    </style>
+</head>
+<body>
+    <h1>Java Basics for Beginners</h1>
+    <h2>What is Java?</h2>
+    <p>
+        Java is a high-level, object-oriented programming language. It is platform-independent, meaning Java code can run on any device that has a Java Virtual Machine (JVM).
+    </p>
+
+    <h2>Java Keywords</h2>
+    <p>
+        Keywords are reserved words in Java that have a special meaning and cannot be used as identifiers (names for variables, classes, etc.). Some important Java keywords:
+    </p>
+    <ul>
+        <li><code>class</code>: Declares a class.</li>
+        <li><code>public</code>: Access modifier, visible to all.</li>
+        <li><code>static</code>: Belongs to the class, not an instance.</li>
+        <li><code>void</code>: No return value.</li>
+        <li><code>int</code>, <code>double</code>, <code>boolean</code>: Data types.</li>
+        <li><code>if</code>, <code>else</code>, <code>for</code>, <code>while</code>: Control flow.</li>
+        <li><code>return</code>: Exits a method and optionally returns a value.</li>
+        <li><code>new</code>: Creates new objects.</li>
+        <li><code>this</code>: Refers to the current object.</li>
+    </ul>
+
+    <h2>Basic Java Program Structure</h2>
+    <pre>
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+    </pre>
+
+    <h2>Memory Management in Java</h2>
+    <ul>
+        <li>
+            <strong>Stack Memory:</strong> Stores local variables and function calls. Managed automatically.
+        </li>
+        <li>
+            <strong>Heap Memory:</strong> Stores objects created with <code>new</code>. Managed by the Garbage Collector.
+        </li>
+        <li>
+            <strong>Garbage Collection:</strong> Java automatically frees memory used by objects that are no longer referenced.
+        </li>
+    </ul>
+    <p>
+        Example:
+    </p>
+    <pre>
+String name = new String("Java"); // "name" is a reference on the stack, the String object is on the heap.
+    </pre>
+
+    <h2>Variables and Data Types</h2>
+    <ul>
+        <li><code>int</code>: Integer numbers (e.g., 5, -3)</li>
+        <li><code>double</code>: Decimal numbers (e.g., 3.14)</li>
+        <li><code>boolean</code>: true or false</li>
+        <li><code>char</code>: Single character (e.g., 'A')</li>
+        <li><code>String</code>: Sequence of characters (e.g., "Hello")</li>
+    </ul>
+
+    <h2>Control Flow</h2>
+    <pre>
+if (x > 0) {
+    System.out.println("Positive");
+} else {
+    System.out.println("Non-positive");
+}
+
+for (int i = 0; i < 5; i++) {
+    System.out.println(i);
+}
+    </pre>
+
+    <h2>Summary</h2>
+    <ul>
+        <li>Java is object-oriented and platform-independent.</li>
+        <li>Keywords have special meanings and cannot be used as names.</li>
+        <li>Memory is managed automatically, with garbage collection for unused objects.</li>
+        <li>Basic program structure includes classes and the <code>main</code> method.</li>
+    </ul>
+</body>
+</html>
