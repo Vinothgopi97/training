@@ -255,6 +255,29 @@
                 ]
             }
         ]
-    }
+    },
+    {
+        "sl_no": 4,
+        "title": "Java",
+        "subtopics": [
+            {
+                "sl_no": 1,
+                "title": "JVM, JDK, JRE",
+                "description": "Understanding the Java Virtual Machine (JVM), Java Development Kit (JDK), and Java Runtime Environment (JRE).",
+                "references": [
+                    {
+                        "title": "Differences Between JDK, JRE and JVM",
+                        "link": "https://www.geeksforgeeks.org/differences-jdk-jre-jvm/"
+                    }, {
+                        "title": "JDK, JRE, JVM in Tamil",
+                        "link": "https://youtu.be/sSLYk1tp8j4?si=gJOIpJUSFYgIaQxW"
+                    }                    
+                ],
+                "content_html": "jdk_jvm_jre.html"
+            }
+            
+        ],                  
+        "practice_assignments": ["Compile Java manually", "View bytecode", "Simulate JVM memory"]
+      }
     ]
   }

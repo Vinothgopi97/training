@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JDK, JVM, and JRE Explained</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2em; }
+        h1 { color: #2c3e50; }
+        h2 { color: #2980b9; }
+        ul { margin-top: 0; }
+        .section { margin-bottom: 2em; }
+    </style>
+</head>
+<body>
+    <h1>JDK, JVM, and JRE Explained</h1>
+
+    <div class="section">
+        <h2>JVM (Java Virtual Machine)</h2>
+        <ul>
+            <li>JVM is an abstract machine that enables your computer to run Java programs.</li>
+            <li>It converts compiled Java bytecode into machine code at runtime.</li>
+            <li>Responsible for memory management, garbage collection, and security.</li>
+            <li>Platform-dependent: each OS has its own JVM implementation.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>JRE (Java Runtime Environment)</h2>
+        <ul>
+            <li>JRE provides the libraries, Java Virtual Machine, and other components to run Java applications.</li>
+            <li>It does <b>not</b> contain tools for Java development (like compiler or debugger).</li>
+            <li>Used by end-users who want to run Java programs.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>JDK (Java Development Kit)</h2>
+        <ul>
+            <li>JDK is a full-featured software development kit for Java developers.</li>
+            <li>Includes JRE, JVM, and development tools (compiler <code>javac</code>, debugger, etc.).</li>
+            <li>Required for developing, compiling, and debugging Java applications.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Summary Table</h2>
+        <table border="1" cellpadding="6" style="border-collapse:collapse;">
+            <tr>
+                <th></th>
+                <th>JDK</th>
+                <th>JRE</th>
+                <th>JVM</th>
+            </tr>
+            <tr>
+                <td>Contains</td>
+                <td>JRE + Development Tools</td>
+                <td>JVM + Libraries</td>
+                <td>Execution Engine</td>
+            </tr>
+            <tr>
+                <td>Purpose</td>
+                <td>Develop &amp; run Java apps</td>
+                <td>Run Java apps</td>
+                <td>Execute bytecode</td>
+            </tr>
+            <tr>
+                <td>Who needs it?</td>
+                <td>Developers</td>
+                <td>End-users</td>
+                <td>Part of JRE/JDK</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
