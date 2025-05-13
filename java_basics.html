@@ -64,12 +64,39 @@ String name = new String("Java"); // "name" is a reference on the stack, the Str
 
     <h2>Variables and Data Types</h2>
     <ul>
-        <li><code>int</code>: Integer numbers (e.g., 5, -3)</li>
-        <li><code>double</code>: Decimal numbers (e.g., 3.14)</li>
-        <li><code>boolean</code>: true or false</li>
-        <li><code>char</code>: Single character (e.g., 'A')</li>
-        <li><code>String</code>: Sequence of characters (e.g., "Hello")</li>
+        <li><code>byte</code>: 8-bit integer. <strong>Range:</strong> -128 to 127</li>
+        <li><code>short</code>: 16-bit integer. <strong>Range:</strong> -32,768 to 32,767</li>
+        <li><code>int</code>: 32-bit integer numbers (e.g., 5, -3). <strong>Range:</strong> -2,147,483,648 to 2,147,483,647</li>
+        <li><code>long</code>: 64-bit integer. <strong>Range:</strong> -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807</li>
+        <li><code>float</code>: 32-bit floating-point decimal numbers. <strong>Range:</strong> approximately ±1.4e-45 to ±3.4e+38</li>
+        <li><code>double</code>: 64-bit floating-point decimal numbers (e.g., 3.14). <strong>Range:</strong> approximately ±4.9e-324 to ±1.8e+308</li>
+        <li><code>boolean</code>: true or false. <strong>Range:</strong> Only <code>true</code> or <code>false</code></li>
+        <li><code>char</code>: Single character (e.g., 'A'). <strong>Range:</strong> 0 to 65,535 (16-bit Unicode character)</li>
+        <li><code>String</code>: Sequence of characters (e.g., "Hello"). <strong>Range:</strong> Limited by memory (no fixed size)</li>
     </ul>
+
+    <h3>Why is <code>String</code> a Class and Not a Primitive Data Type?</h3>
+    <p>
+        In Java, <code>String</code> is a class, not a primitive data type, because strings are complex objects that can store sequences of characters and provide many useful methods (like <code>length()</code>, <code>substring()</code>, <code>equals()</code>, etc.). Primitive data types (such as <code>int</code>, <code>double</code>, <code>char</code>, <code>boolean</code>) are simple and store only single values, while <code>String</code> objects can represent text of any length and support various operations.
+    </p>
+
+    <h3>How are Strings Stored in Java?</h3>
+    <p>
+        Java uses a special memory area called the <strong>String pool</strong> to store string literals. When you create a string literal (e.g., <code>String s = "Hello";</code>), Java checks if the value already exists in the pool. If it does, the reference is reused; if not, a new string object is created in the pool. This improves memory efficiency and performance for string handling.
+    </p>
+    <p>
+        Example:
+    </p>
+    <pre>
+String a = "Java"; // Stored in the String pool
+String b = "Java"; // Reuses the same object from the pool
+String c = new String("Java"); // Creates a new object in the heap, not in the pool
+    </pre>
+
+    <h3>What are Primitive Data Types?</h3>
+    <p>
+        Primitive data types in Java are the most basic data types built into the language. They are not objects and store simple values directly in memory. Java has eight primitive data types: <code>byte</code>, <code>short</code>, <code>int</code>, <code>long</code>, <code>float</code>, <code>double</code>, <code>char</code>, and <code>boolean</code>. These types are efficient and fast, and they do not provide methods or additional functionality like classes do.
+    </p>
 
     <h2>Control Flow</h2>
     <pre>

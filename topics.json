@@ -339,6 +339,18 @@
                     }                    
                 ],
                 "content_html": "java_basics.html"
+            },
+            {
+                "sl_no": 4,
+                "title": "Java Keywords",
+                "description": "Understanding the keywords used in Java programming language, including access modifiers, data types, and control flow statements.",
+                "references": [
+                    {
+                        "title": "Java Keywords",
+                        "link": "https://www.geeksforgeeks.org/java-basic-syntax/"
+                    }
+                ],
+                "content_html": "java_keywords_explained.html"
             }
             
         ],                  
