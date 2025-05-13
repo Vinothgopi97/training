@@ -347,7 +347,7 @@
                 "references": [
                     {
                         "title": "Java Keywords",
-                        "link": "https://www.geeksforgeeks.org/java-basic-syntax/"
+                        "link": "https://www.geeksforgeeks.org/java-keywords/"
                     }
                 ],
                 "content_html": "java_keywords_explained.html"
