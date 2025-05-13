@@ -351,6 +351,30 @@
                     }
                 ],
                 "content_html": "java_keywords_explained.html"
+            },
+            {
+                "sl_no": 5,
+                "title": "Java Operators",
+                "description": "Understanding the different types of operators in Java, including arithmetic, relational, and logical operators.",
+                "references": [
+                    {
+                        "title": "Java Operators",
+                        "link": "https://youtu.be/IyeSMcdM3KY"
+                    }
+                ],
+                "content_html": "java_operators_explained.html"
+            },
+            {
+                "sl_no": 5,
+                "title": "Java Access Modifiers",
+                "description": "Understanding the access modifiers in Java, including public, private, protected, and default.",
+                "references": [
+                    {
+                        "title": "Java Access Modifiers",
+                        "link": "https://youtu.be/XVa1BGP1YPk"
+                    }
+                ],
+                "content_html": "java_access_modifiers_explained.html"
             }
             
         ],                  

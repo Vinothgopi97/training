@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Java Access Modifiers Explained</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2em; }
+        h1, h2 { color: #2c3e50; }
+        code { background: #f4f4f4; padding: 2px 4px; }
+        pre { background: #f4f4f4; padding: 8px; }
+        table { border-collapse: collapse; width: 100%; margin-bottom: 2em; }
+        th, td { border: 1px solid #ccc; padding: 8px; }
+        th { background: #eee; }
+    </style>
+</head>
+<body>
+    <h1>Java Access Modifiers Explained</h1>
+    <p>
+        Access modifiers in Java determine the visibility (scope) of classes, methods, and variables. There are four main access modifiers:
+    </p>
+    <table>
+        <tr>
+            <th>Modifier</th>
+            <th>Accessible within same class</th>
+            <th>Accessible within same package</th>
+            <th>Accessible in subclass (other package)</th>
+            <th>Accessible everywhere</th>
+        </tr>
+        <tr>
+            <td><b>private</b></td>
+            <td>Yes</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+        </tr>
+        <tr>
+            <td><b>default</b> (no modifier)</td>
+            <td>Yes</td>
+            <td>Yes</td>
+            <td>No</td>
+            <td>No</td>
+        </tr>
+        <tr>
+            <td><b>protected</b></td>
+            <td>Yes</td>
+            <td>Yes</td>
+            <td>Yes</td>
+            <td>No</td>
+        </tr>
+        <tr>
+            <td><b>public</b></td>
+            <td>Yes</td>
+            <td>Yes</td>
+            <td>Yes</td>
+            <td>Yes</td>
+        </tr>
+    </table>
+
+    <h2>Where Can Access Modifiers Be Used?</h2>
+    <p>
+        Access modifiers can be applied to the following elements in Java:
+    </p>
+    <table>
+        <tr>
+            <th>Element</th>
+            <th>public</th>
+            <th>protected</th>
+            <th>default<br>(no modifier)</th>
+            <th>private</th>
+        </tr>
+        <tr>
+            <td>Top-level class</td>
+            <td>✔</td>
+            <td></td>
+            <td>✔</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Inner class</td>
+            <td>✔</td>
+            <td>✔</td>
+            <td>✔</td>
+            <td>✔</td>
+        </tr>
+        <tr></tr>
+            <td>Methods</td>
+            <td>✔</td>
+            <td>✔</td>
+            <td>✔</td>
+            <td>✔</td>
+        </tr>
+        <tr>
+            <td>Variables (fields)</td>
+            <td>✔</td>
+            <td>✔</td>
+            <td>✔</td>
+            <td>✔</td>
+        </tr>
+        <tr>
+            <td>Constructors</td>
+            <td>✔</td>
+            <td>✔</td>
+            <td>✔</td>
+            <td>✔</td>
+        </tr>
+    </table>
+    <ul>
+        <li><b>Top-level classes</b> can only be <code>public</code> or default (no modifier).</li>
+        <li><b>Inner classes</b>, <b>methods</b>, <b>fields</b>, and <b>constructors</b> can use any access modifier.</li>
+    </ul>
+    <b>Examples:</b>
+    <pre>
+// Top-level class (public or default only)
+public class MyClass { ... }
+class DefaultClass { ... }
+
+// Inner class with private access
+class Outer {
+    private class Inner { ... }
+}
+
+// Method with protected access
+class Example {
+    protected void show() { ... }
+}
+
+// Field with private access
+class Person {
+    private String name;
+}
+    </pre>
+
+    <h2>1. private</h2>
+    <p>
+        The <b>private</b> modifier makes a member accessible only within its own class.
+    </p>
+    <pre>
+// Example: Private variable
+class Person {
+    private String name;
+
+    public void setName(String n) {
+        name = n;
+    }
+    public String getName() {
+        return name;
+    }
+}
+
+class Test {
+    public static void main(String[] args) {
+        Person p = new Person();
+        // p.name = "Alice"; // Error: name has private access
+        p.setName("Alice");
+        System.out.println(p.getName()); // Alice
+    }
+}
+    </pre>
+
+    <h2>2. default (no modifier)</h2>
+    <p>
+        If no access modifier is specified, it is <b>default</b> (also called package-private). The member is accessible only within classes in the same package.
+    </p>
+    <pre>
+// Example: Default access
+class Animal {
+    int age; // default access
+}
+
+class Test {
+    public static void main(String[] args) {
+        Animal a = new Animal();
+        a.age = 5; // OK if Test is in the same package as Animal
+    }
+}
+    </pre>
+
+    <h2>3. protected</h2>
+    <p></p>
+        The <b>protected</b> modifier allows access within the same package and in subclasses (even if they are in different packages).
+    </p>
+    <pre>
+// Example: Protected variable
+class Vehicle {
+    protected String type = "Car";
+}
+
+class Car extends Vehicle {
+    public void printType() {
+        System.out.println(type); // Accessible in subclass
+    }
+}
+    </pre>
+
+    <h2>4. public</h2>
+    <p>
+        The <b>public</b> modifier allows the member to be accessed from any other class.
+    </p>
+    <pre>
+// Example: Public method
+public class HelloWorld {
+    public void sayHello() {
+        System.out.println("Hello, world!");
+    }
+}
+
+class Test {
+    public static void main(String[] args) {
+        HelloWorld hw = new HelloWorld();
+        hw.sayHello(); // Accessible everywhere
+    }
+}
+    </pre>
+
+    <h2>Summary Table</h2>
+    <table>
+        <tr>
+            <th>Modifier</th>
+            <th>Class</th>
+            <th>Package</th>
+            <th>Subclass</th>
+            <th>World</th>
+        </tr>
+        <tr>
+            <td>private</td>
+            <td>✔</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>default</td>
+            <td>✔</td>
+            <td>✔</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>protected</td>
+            <td>✔</td>
+            <td>✔</td>
+            <td>✔</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>public</td>
+            <td>✔</td>
+            <td>✔</td>
+            <td>✔</td>
+            <td>✔</td>
+        </tr>
+    </table>
+
+    <hr>
+    <p><i>For more details, see the <a href="https://docs.oracle.com/javase/tutorial/java/javaOO/accesscontrol.html" target="_blank">Java documentation on access control</a>.</i></p>
+</body>
+</html>

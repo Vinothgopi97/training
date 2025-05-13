@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Java Operators Explained</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2em; }
+        h1, h2 { color: #2c3e50; }
+        code { background: #f4f4f4; padding: 2px 4px; }
+        pre { background: #f4f4f4; padding: 8px; }
+        table { border-collapse: collapse; width: 100%; margin-bottom: 2em; }
+        th, td { border: 1px solid #ccc; padding: 8px; }
+        th { background: #eee; }
+    </style>
+</head>
+<body>
+    <h1>Java Operators Explained</h1>
+    <p>Operators in Java are special symbols or keywords that are used to perform operations on operands. Java supports several types of operators:</p>
+
+    <h2>1. Arithmetic Operators</h2>
+    <table>
+        <tr><th>Operator</th><th>Description</th><th>Example</th></tr>
+        <tr><td>+</td><td>Addition</td><td><code>a + b</code></td></tr>
+        <tr><td>-</td><td>Subtraction</td><td><code>a - b</code></td></tr>
+        <tr><td>*</td><td>Multiplication</td><td><code>a * b</code></td></tr>
+        <tr><td>/</td><td>Division</td><td><code>a / b</code></td></tr>
+        <tr><td>%</td><td>Modulus (Remainder)</td><td><code>a % b</code></td></tr>
+        <tr><td>++</td><td>Increment</td><td><code>a++</code></td></tr>
+        <tr><td>--</td><td>Decrement</td><td><code>a--</code></td></tr>
+    </table>
+    <b>Real-time Example:</b>
+    <pre>
+// Calculate total price for items in a shopping cart
+int quantity = 5;
+int pricePerItem = 20;
+int total = quantity * pricePerItem; // 100
+
+// Find out how many dozens and remaining eggs
+int eggs = 29;
+int dozens = eggs / 12; // 2
+int remaining = eggs % 12; // 5
+    </pre>
+
+    <h2>2. Assignment Operators</h2>
+    <table>
+        <tr><th>Operator</th><th>Description</th><th>Example</th></tr>
+        <tr><td>=</td><td>Assigns value</td><td><code>a = 5</code></td></tr>
+        <tr><td>+=</td><td>Add and assign</td><td><code>a += 3 // a = a + 3</code></td></tr>
+        <tr><td>-=</td><td>Subtract and assign</td><td><code>a -= 2 // a = a - 2</code></td></tr>
+        <tr><td>*=</td><td>Multiply and assign</td><td><code>a *= 4 // a = a * 4</code></td></tr>
+        <tr><td>/=</td><td>Divide and assign</td><td><code>a /= 2 // a = a / 2</code></td></tr>
+        <tr><td>%=</td><td>Modulus and assign</td><td><code>a %= 3 // a = a % 3</code></td></tr>
+    </table>
+    <b>Real-time Example:</b>
+    <pre>
+// Add bonus points to a user's score
+int score = 50;
+score += 10; // score is now 60
+
+// Apply a discount of 20% on price
+double price = 200.0;
+price *= 0.8; // price is now 160.0
+    </pre>
+
+    <h2>3. Relational Operators</h2>
+    <table>
+        <tr><th>Operator</th><th>Description</th><th>Example</th></tr>
+        <tr><td>==</td><td>Equal to</td><td><code>a == b</code></td></tr>
+        <tr><td>!=</td><td>Not equal to</td><td><code>a != b</code></td></tr>
+        <tr><td>&gt;</td><td>Greater than</td><td><code>a > b</code></td></tr>
+        <tr><td>&lt;</td><td>Less than</td><td><code>a < b</code></td></tr>
+        <tr><td>&gt;=</td><td>Greater than or equal to</td><td><code>a >= b</code></td></tr>
+        <tr><td>&lt;=</td><td>Less than or equal to</td><td><code>a <= b</code></td></tr>
+    </table>
+    <b>Real-time Example:</b>
+    <pre>
+// Check if user is eligible to vote
+int age = 19;
+if (age >= 18) {
+    System.out.println("Eligible to vote");
+}
+
+// Compare two scores
+int scoreA = 85, scoreB = 90;
+if (scoreA != scoreB) {
+    System.out.println("Scores are different");
+}
+    </pre>
+
+    <h2>4. Logical Operators</h2>
+    <table>
+        <tr><th>Operator</th><th>Description</th><th>Example</th></tr>
+        <tr><td>&&</td><td>Logical AND</td><td><code>a > 5 && b < 10</code></td></tr>
+        <tr><td>||</td><td>Logical OR</td><td><code>a > 5 || b < 10</code></td></tr>
+        <tr><td>!</td><td>Logical NOT</td><td><code>!(a == b)</code></td></tr>
+    </table>
+    <b>Real-time Example:</b>
+    <pre>
+// Check if a user can access a resource
+boolean isAdmin = true;
+boolean hasPermission = false;
+if (isAdmin || hasPermission) {
+    System.out.println("Access granted");
+}
+
+// Validate input
+int age = 25;
+if (age > 18 && age < 60) {
+    System.out.println("Valid age for registration");
+}
+    </pre>
+
+    <h2>5. Bitwise Operators</h2>
+    <table>
+        <tr><th>Operator</th><th>Description</th><th>Example</th></tr>
+        <tr><td>&</td><td>Bitwise AND</td><td><code>a & b</code></td></tr>
+        <tr><td>|</td><td>Bitwise OR</td><td><code>a | b</code></td></tr>
+        <tr><td>^</td><td>Bitwise XOR</td><td><code>a ^ b</code></td></tr>
+        <tr><td>~</td><td>Bitwise NOT</td><td><code>~a</code></td></tr>
+        <tr><td>&lt;&lt;</td><td>Left shift</td><td><code>a << 2</code></td></tr>
+        <tr><td>&gt;&gt;</td><td>Right shift</td><td><code>a >> 2</code></td></tr>
+        <tr><td>&gt;&gt;&gt;</td><td>Unsigned right shift</td><td><code>a >>> 2</code></td></tr>
+    </table>
+    <b>Real-time Example:</b>
+    <pre>
+// Set and check permission flags using bitwise operators
+int READ = 1;    // 0001
+int WRITE = 2;   // 0010
+int EXECUTE = 4; // 0100
+
+int permissions = READ | WRITE; // 0011 (3)
+boolean canWrite = (permissions & WRITE) != 0; // true
+
+// Efficient multiplication/division by powers of 2
+int n = 8;
+int doubled = n << 1; // 16
+int halved = n >> 1;  // 4
+    </pre>
+
+    <h2>6. Conditional (Ternary) Operator</h2>
+    <p><code>condition ? expr1 : expr2</code> — Returns <code>expr1</code> if condition is true, else <code>expr2</code>.</p>
+    <b>Real-time Example:</b>
+    <pre>
+// Find the greater of two numbers
+int a = 10, b = 20;
+int max = (a > b) ? a : b; // max is 20
+
+// Display message based on login status
+boolean loggedIn = false;
+String message = loggedIn ? "Welcome back!" : "Please log in.";
+    </pre>
+
+    <h2>7. instanceof Operator</h2>
+    <p>Checks if an object is an instance of a particular class or interface.</p>
+    <b>Real-time Example:</b>
+    <pre>
+Object obj = "Hello";
+if (obj instanceof String) {
+    System.out.println(((String)obj).toUpperCase()); // Prints "HELLO"
+}
+    </pre>
+
+    <h2>8. Miscellaneous Operators</h2>
+    <ul>
+        <li><b>new</b>: Used to create new objects. <code>MyClass obj = new MyClass();</code></li>
+        <li><b>Dot (.)</b>: Access members of a class or object. <code>obj.method()</code></li>
+    </ul>
+    <b>Real-time Example:</b>
+    <pre>
+// Creating a new ArrayList and adding elements
+List<String> names = new ArrayList<>();
+names.add("Alice");
+names.add("Bob");
+System.out.println(names.size()); // 2
+    </pre>
+
+    <h2>Operator Precedence in Java</h2>
+    <p>Operator precedence determines the order in which operators are evaluated in expressions. Operators with higher precedence are evaluated before operators with lower precedence. Use parentheses <code>()</code> to explicitly specify evaluation order.</p>
+    <table>
+        <tr>
+            <th>Precedence Level (Highest to Lowest)</th>
+            <th>Operators</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td><code>()</code>, <code>[]</code>, <code>.</code></td>
+            <td>Parentheses, array subscript, member access</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td><code>++</code>, <code>--</code>, <code>~</code>, <code>!</code>, <code>+</code>, <code>-</code>, <code>(type)</code>, <code>new</code></td>
+            <td>Unary operators, type cast, object creation</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td><code>*</code>, <code>/</code>, <code>%</code></td>
+            <td>Multiplicative</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td><code>+</code>, <code>-</code></td>
+            <td>Additive</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td><code>&lt;&lt;</code>, <code>&gt;&gt;</code>, <code>&gt;&gt;&gt;</code></td>
+            <td>Shift</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td><code>&lt;</code>, <code>&lt;=</code>, <code>&gt;</code>, <code>&gt;=</code>, <code>instanceof</code></td>
+            <td>Relational</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td><code>==</code>, <code>!=</code></td>
+            <td>Equality</td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td><code>&</code></td>
+            <td>Bitwise AND</td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td><code>^</code></td>
+            <td>Bitwise XOR</td>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td><code>|</code></td>
+            <td>Bitwise OR</td>
+        </tr>
+        <tr>
+            <td>11</td>
+            <td><code>&&</code></td>
+            <td>Logical AND</td>
+        </tr>
+        <tr>
+            <td>12</td>
+            <td><code>||</code></td>
+            <td>Logical OR</td>
+        </tr>
+        <tr>
+            <td>13</td>
+            <td><code>?:</code></td>
+            <td>Ternary (conditional)</td>
+        </tr>
+        <tr>
+            <td>14</td>
+            <td><code>=</code>, <code>+=</code>, <code>-=</code>, <code>*=</code>, <code>/=</code>, <code>%=</code>, <code>&=</code>, <code>^=</code>, <code>|=</code>, <code>&lt;&lt;=</code>, <code>&gt;&gt;=</code>, <code>&gt;&gt;&gt;=</code></td>
+            <td>Assignment</td>
+        </tr>
+    </table>
+    <p><b>Example:</b></p>
+    <pre>
+// Calculate final bill with discount and tax
+double bill = 1000;
+double discount = 0.1;
+double tax = 0.05;
+double finalAmount = bill - bill * discount + bill * tax;
+// * and / are evaluated before + and -
+    </pre>
+
+    <hr>
+    <p><i>For more details, see the <a href="https://docs.oracle.com/javase/tutorial/java/nutsandbolts/operators.html" target="_blank">Java documentation on operators</a>.</i></p>
+</body>
+</html>
