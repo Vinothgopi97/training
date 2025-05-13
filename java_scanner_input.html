@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Taking Input in Java using Scanner</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2em; }
+        h1 { color: #2c3e50; }
+        pre { background: #f4f4f4; padding: 1em; border-radius: 5px; }
+        code { color: #c0392b; }
+    </style>
+</head>
+<body>
+    <h1>Taking Input from the User in Java using <code>Scanner</code></h1>
+    <p>
+        In Java, the <code>Scanner</code> class (from <code>java.util</code> package) is commonly used to read input from the user via the keyboard.
+    </p>
+    <h2>How to Use <code>Scanner</code></h2>
+    <ol>
+        <li>Import the <code>Scanner</code> class: <code>import java.util.Scanner;</code></li>
+        <li>Create a <code>Scanner</code> object: <code>Scanner sc = new Scanner(System.in);</code></li>
+        <li>Use methods like <code>nextInt()</code>, <code>nextDouble()</code>, <code>nextLine()</code> to read different types of input.</li>
+    </ol>
+    <h2>Sample Program: Reading an Integer</h2>
+    <pre><code>// Sample: Read an integer from the user
+import java.util.Scanner;
+
+public class InputExample {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter an integer: ");
+        int num = sc.nextInt();
+        System.out.println("You entered: " + num);
+        sc.close();
+    }
+}
+</code></pre>
+    <h2>Sample Program: Reading Multiple Types of Input</h2>
+    <pre><code>// Sample: Read a string, an integer, and a double
+import java.util.Scanner;
+
+public class MultiInputExample {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter your name: ");
+        String name = sc.nextLine();
+
+        System.out.print("Enter your age: ");
+        int age = sc.nextInt();
+
+        System.out.print("Enter your GPA: ");
+        double gpa = sc.nextDouble();
+
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+        System.out.println("GPA: " + gpa);
+        sc.close();
+    }
+}
+</code></pre>
+    <h2>Common <code>Scanner</code> Methods</h2>
+    <ul>
+        <li><code>nextInt()</code> &mdash; Reads an integer</li>
+        <li><code>nextDouble()</code> &mdash; Reads a double</li>
+        <li><code>next()</code> &mdash; Reads a single word</li>
+        <li><code>nextLine()</code> &mdash; Reads a whole line (including spaces)</li>
+    </ul>
+    <h2>Note</h2>
+    <ul>
+        <li>Always close the <code>Scanner</code> object after use: <code>sc.close();</code></li>
+        <li>If you mix <code>nextInt()</code> or <code>nextDouble()</code> with <code>nextLine()</code>, you may need to consume the leftover newline using an extra <code>sc.nextLine()</code>.</li>
+    </ul>
+    <p>
+        <b>Explanation:</b><br>
+        Methods like <code>nextInt()</code> and <code>nextDouble()</code> read only the number, not the newline character (<code>\n</code>) that is generated when you press Enter. If you call <code>nextLine()</code> immediately after, it will read this leftover newline as an empty string. To avoid this, add an extra <code>sc.nextLine()</code> after reading a number to consume the newline before reading the next line of input.
+    </p>
+</body>
+</html>

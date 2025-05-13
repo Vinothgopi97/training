@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Java Looping Statements Explained</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2em; }
+        pre { background: #f4f4f4; padding: 1em; border-radius: 5px; }
+        h2 { color: #2c3e50; }
+        ul { margin-bottom: 1em; }
+    </style>
+</head>
+<body>
+    <h1>Java Looping Statements</h1>
+    <p>Java provides several looping constructs to execute a block of code repeatedly:</p>
+    <ul>
+        <li><b>for loop</b></li>
+        <li><b>while loop</b></li>
+        <li><b>do-while loop</b></li>
+        <li><b>for-each loop</b></li>
+    </ul>
+
+    <h2>for Loop</h2>
+    <p>The <code>for</code> loop is used when the number of iterations is known.</p>
+    <pre>
+for (int i = 0; i &lt; 5; i++) {
+    System.out.println(i);
+}
+    </pre>
+
+    <h2>for-each Loop</h2>
+    <p>The <code>for-each</code> loop (enhanced for loop) is used to iterate over arrays or collections.</p>
+    <pre>
+int[] numbers = {1, 2, 3, 4, 5};
+for (int num : numbers) {
+    System.out.println(num);
+}
+    </pre>
+
+    <h2>while Loop</h2>
+    <p>The <code>while</code> loop is used when the number of iterations is not known in advance.</p>
+    <pre>
+int i = 0;
+while (i &lt; 5) {
+    System.out.println(i);
+    i++;
+}
+    </pre>
+
+    <h2>do-while Loop</h2>
+    <p>The <code>do-while</code> loop executes the block at least once before checking the condition.</p>
+    <pre>
+int i = 0;
+do {
+    System.out.println(i);
+    i++;
+} while (i &lt; 5);
+    </pre>
+
+    <h2>Loop Control Statements</h2>
+    <ul>
+        <li><b>break</b>: Exits the loop immediately.</li>
+        <li><b>continue</b>: Skips the current iteration and continues with the next.</li>
+        <li><b>return</b>: Exits the current method and optionally returns a value.</li>
+    </ul>
+    <h3>Example: break</h3>
+    <pre>
+for (int i = 0; i &lt; 10; i++) {
+    if (i == 5) {
+        break; // exits the loop when i is 5
+    }
+    System.out.println(i);
+}
+    </pre>
+    <h3>Example: continue</h3>
+    <pre>
+for (int i = 0; i &lt; 5; i++) {
+    if (i == 2) {
+        continue; // skips the rest of the loop when i is 2
+    }
+    System.out.println(i);
+}
+    </pre>
+    <h3>Example: return</h3>
+    <pre>
+public static int findFirstEven(int[] arr) {
+    for (int num : arr) {
+        if (num % 2 == 0) {
+            return num; // returns the first even number found
+        }
+    }
+    return -1; // returns -1 if no even number is found
+}
+    </pre>
+</body>
+</html>

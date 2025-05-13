@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Java Expressions & Conditional Flow Statements</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2em; }
+        pre { background: #f4f4f4; padding: 1em; border-radius: 5px; }
+        h2 { color: #2c3e50; }
+        ul { margin-bottom: 1em; }
+    </style>
+</head>
+<body>
+    <h1>Java Expressions & Conditional Flow Statements</h1>
+
+    <h2>1. Expressions in Java</h2>
+    <p>
+        An <strong>expression</strong> in Java is a combination of variables, values, operators, and method calls that evaluates to a single value.
+    </p>
+    <ul>
+        <li><strong>Arithmetic Expression:</strong> <code>int sum = a + b;</code></li>
+        <li><strong>Boolean Expression:</strong> <code>boolean isAdult = age &gt;= 18;</code></li>
+        <li><strong>Assignment Expression:</strong> <code>x = 5;</code></li>
+    </ul>
+    <p>Example:</p>
+    <pre>
+int a = 10;
+int b = 5;
+int sum = a + b; // sum is 15
+boolean isGreater = sum > 10; // isGreater is true
+    </pre>
+
+    <h2>2. Conditional Flow Statements</h2>
+    <p>
+        Conditional flow statements allow you to control the flow of your program based on conditions.
+    </p>
+
+    <h3>2.1 if Statement</h3>
+    <p>
+        Executes a block of code if a condition is true.
+    </p>
+    <pre>
+int age = 20;
+if (age >= 18) {
+    System.out.println("You are an adult.");
+}
+    </pre>
+
+    <h3>2.2 if-else Statement</h3>
+    <p>
+        Executes one block if the condition is true, another if it is false.
+    </p>
+    <pre>
+int number = 7;
+if (number % 2 == 0) {
+    System.out.println("Even number");
+} else {
+    System.out.println("Odd number");
+}
+    </pre>
+
+    <h3>2.3 else-if Ladder</h3>
+    <p>
+        Checks multiple conditions in sequence.
+    </p>
+    <pre>
+int marks = 85;
+if (marks >= 90) {
+    System.out.println("Grade A");
+} else if (marks >= 75) {
+    System.out.println("Grade B");
+} else {
+    System.out.println("Grade C");
+}
+    </pre>
+
+    <h3>2.4 switch Statement</h3>
+    <p>
+        Selects one of many code blocks to execute.
+    </p>
+    <ul>
+        <li><strong>With <code>break</code>:</strong> Each <code>case</code> ends with <code>break</code> to prevent fall-through.</li>
+        <li><strong>Without <code>break</code>:</strong> Execution continues ("falls through") to the next <code>case</code> until a <code>break</code> or end of switch.</li>
+        <li><strong>With <code>default</code>:</strong> <code>default</code> runs if no <code>case</code> matches.</li>
+        <li><strong>Without <code>default</code>:</strong> If no <code>case</code> matches and no <code>default</code>, nothing runs.</li>
+    </ul>
+    <p>Examples:</p>
+    <pre>
+// With break (recommended)
+int day = 3;
+switch (day) {
+    case 1:
+        System.out.println("Monday");
+        break;
+    case 2:
+        System.out.println("Tuesday");
+        break;
+    case 3:
+        System.out.println("Wednesday");
+        break;
+    default:
+        System.out.println("Other day");
+}
+
+// Without break (fall-through)
+int num = 2;
+switch (num) {
+    case 1:
+        System.out.println("One");
+    case 2:
+        System.out.println("Two");
+    case 3:
+        System.out.println("Three");
+    default:
+        System.out.println("Other number");
+}
+// Output when num = 2:
+// Two
+// Three
+// Other number
+
+// Without default
+int color = 4;
+switch (color) {
+    case 1:
+        System.out.println("Red");
+        break;
+    case 2:
+        System.out.println("Green");
+        break;
+    case 3:
+        System.out.println("Blue");
+        break;
+}
+// No output since color is 4 and no default is present
+
+// With default only
+int option = 10;
+switch (option) {
+    default:
+        System.out.println("No valid option selected");
+}
+    </pre>
+
+    <h2>Summary</h2>
+    <ul>
+        <li>Expressions compute values.</li>
+        <li>Conditional statements control program flow based on conditions.</li>
+    </ul>
+</body>
+</html>
