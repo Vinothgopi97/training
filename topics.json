@@ -288,7 +288,7 @@
       },
     {
         "sl_no": 5,
-        "title": "Java",
+        "title": "Java Basics",
         "subtopics": [
             {
                 "sl_no": 1,
@@ -404,8 +404,30 @@
             }
             
             
+            
         ],                  
         "practice_assignments": ["Compile Java manually", "View bytecode", "Simulate JVM memory"]
+      },
+      {
+        "sl_no": 6,
+        "title": "Java - Object Oriented Programming",
+        "subtopics": [
+            {
+                "sl_no": 1,
+                "title": "Introduction to OOP",
+                "description": "Understanding the basic concepts of Object-Oriented Programming (OOP), including classes, objects, inheritance, polymorphism, encapsulation, and abstraction.",
+                "references": [
+                    {
+                        "title": "Introduction to OOP",
+                        "link": "https://www.geeksforgeeks.org/object-oriented-programming-oops-concept-in-java/"
+                    }, {
+                        "title": "OOP in Tamil",
+                        "link": "https://youtu.be/Wu1f1Zqdxxw"
+                    }                    
+                ],
+                "content_html": "java_oop_concepts.html"
+            }
+        ]
       }
     ]
   }
