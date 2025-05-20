@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Java OOP: Class</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2em; }
+        code, pre { background: #f4f4f4; border-radius: 4px; }
+        pre { padding: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Java OOP: Class</h1>
+    <p>
+        A <b>class</b> in Java is a blueprint for creating objects. It defines properties (fields) and behaviors (methods) that the objects created from the class will have.
+    </p>
+    <pre>
+public class Car {
+    // Fields (properties)
+    String brand;
+    int year;
+
+    // Constructor
+    public Car(String brand, int year) {
+        this.brand = brand;
+        this.year = year;
+    }
+
+    // Method (behavior)
+    public void displayInfo() {
+        System.out.println("Brand: " + brand + ", Year: " + year);
+    }
+}
+    </pre>
+    <p>
+        Here, <code>Car</code> is a class with fields <code>brand</code> and <code>year</code>, a constructor, and a method <code>displayInfo()</code>.
+    </p>
+</body>
+</html>

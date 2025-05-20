@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Java OOP: Inheritance</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2em; }
+        code, pre { background: #f4f4f4; border-radius: 4px; }
+        pre { padding: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Java OOP: Inheritance</h1>
+    <p>
+        <b>Inheritance</b> allows a class to acquire properties and methods of another class. The class that inherits is called the <b>subclass</b>, and the class being inherited from is the <b>superclass</b>.
+    </p>
+    <pre>
+class Animal {
+    void eat() {
+        System.out.println("Animal eats food");
+    }
+}
+
+class Dog extends Animal {
+    void bark() {
+        System.out.println("Dog barks");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Dog d = new Dog();
+        d.eat();  // Inherited method
+        d.bark(); // Own method
+    }
+}
+// Output:
+// Animal eats food
+// Dog barks
+    </pre>
+    <p>
+        <code>Dog</code> inherits from <code>Animal</code> and can use both <code>eat()</code> and <code>bark()</code> methods.
+    </p>
+</body>
+</html>

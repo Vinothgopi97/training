@@ -426,6 +426,111 @@
                     }                    
                 ],
                 "content_html": "java_oop_concepts.html"
+            },
+            {
+                "sl_no": 2,
+                "title": "Static Keyword, Class & Instance Variables",
+                "description": "Understanding the static keyword in Java, and the difference between class variables and instance variables.",
+                "references": [
+                    {
+                        "title": "Static Keyword",
+                        "link": "https://www.geeksforgeeks.org/static-keyword-java/"
+                    }, {
+                        "title": "Static keyword in Tamil",
+                        "link": "https://youtu.be/1C2WpNxq0r0"
+                    }                    
+                ],
+                "content_html": "static_and_class_explanation.html"
+            },
+             {
+                "sl_no": 3,
+                "title": "Class",
+                "description": "Understanding the concept of classes in Java, including how to define and use them.",
+                "references": [
+                    {
+                        "title": "Static Keyword",
+                        "link": "https://www.geeksforgeeks.org/static-keyword-java/"
+                    }, {
+                        "title": "Static keyword in Tamil",
+                        "link": "https://youtu.be/1C2WpNxq0r0"
+                    }                    
+                ],
+                "content_html": "java_oop_class.html"
+            },
+             {
+                "sl_no": 4,
+                "title": "Object",
+                "description": "Understanding the concept of objects in Java, including how to create and use them.",
+                "references": [
+                    {
+                        "title": "Static Keyword",
+                        "link": "https://www.geeksforgeeks.org/static-keyword-java/"
+                    }, {
+                        "title": "Static keyword in Tamil",
+                        "link": "https://youtu.be/1C2WpNxq0r0"
+                    }                    
+                ],
+                "content_html": "java_oop_object.html"
+            },
+             {
+                "sl_no": 5,
+                "title": "Encapsulation",
+                "description": "Understanding the concept of encapsulation in Java, including how to use access modifiers to control access to class members.",
+                "references": [
+                    {
+                        "title": "Static Keyword",
+                        "link": "https://www.geeksforgeeks.org/static-keyword-java/"
+                    }, {
+                        "title": "Static keyword in Tamil",
+                        "link": "https://youtu.be/1C2WpNxq0r0"
+                    }                    
+                ],
+                "content_html": "java_oop_encapsulation.html"
+            },
+             {
+                "sl_no": 6,
+                "title": "Abstraction",
+                "description": "Understanding the concept of abstraction in Java, including how to use abstract classes and interfaces.",
+                "references": [
+                    {
+                        "title": "Static Keyword",
+                        "link": "https://www.geeksforgeeks.org/static-keyword-java/"
+                    }, {
+                        "title": "Static keyword in Tamil",
+                        "link": "https://youtu.be/1C2WpNxq0r0"
+                    }                    
+                ],
+                "content_html": "java_oop_abstraction.html"
+            },
+             {
+                "sl_no": 7,
+                "title": "Inheritance",
+                "description": "Understanding the concept of inheritance in Java, including how to create subclasses and use superclasses.",
+                "references": [
+                    {
+                        "title": "Static Keyword",
+                        "link": "https://www.geeksforgeeks.org/static-keyword-java/"
+                    }, {
+                        "title": "Static keyword in Tamil",
+                        "link": "https://youtu.be/1C2WpNxq0r0"
+                    }                    
+                ],
+                "content_html": "java_oop_inheritance.html"
+            },
+             {
+                "sl_no": 8,
+                "title": "Polimorphism",
+                "description": "Understanding the concept of polymorphism in Java, including method overloading and method overriding.",
+                "references": [
+                    {
+                        "title": "Static Keyword",
+                        "link": "https://www.geeksforgeeks.org/static-keyword-java/"
+                    }, {
+                        "title": "Static keyword in Tamil",
+                        "link": "https://youtu.be/1C2WpNxq0r0"
+                    }                    
+                ],
+                "content_html": "java_oop_polymorphism.html"
             }
         ]
       }

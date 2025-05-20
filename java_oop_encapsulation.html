@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Java OOP: Encapsulation</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2em; }
+        code, pre { background: #f4f4f4; border-radius: 4px; }
+        pre { padding: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Java OOP: Encapsulation</h1>
+    <p>
+        <b>Encapsulation</b> is the concept of wrapping data (variables) and code (methods) together as a single unit. It is achieved using access modifiers and getter/setter methods.
+    </p>
+    <pre>
+public class Person {
+    // Private field
+    private String name;
+
+    // Getter
+    public String getName() {
+        return name;
+    }
+
+    // Setter
+    public void setName(String name) {
+        this.name = name;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Person p = new Person();
+        p.setName("Alice");
+        System.out.println(p.getName()); // Output: Alice
+    }
+}
+    </pre>
+    <p>
+        Here, <code>name</code> is hidden from outside access and can only be accessed via methods.
+    </p>
+</body>
+</html>

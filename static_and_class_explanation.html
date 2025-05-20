@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Static, Class, and Instance Concepts</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2em; line-height: 1.7; }
+        h1, h2 { color: #2c3e50; }
+        code { background: #f4f4f4; padding: 2px 6px; border-radius: 3px; }
+        pre { background: #f4f4f4; padding: 10px; border-radius: 5px; }
+        ul { margin-bottom: 1em; }
+    </style>
+</head>
+<body>
+    <h1>Understanding <code>static</code>, Class, and Instance Concepts</h1>
+
+    <h2>1. <code>static</code> Keyword</h2>
+    <p>
+        The <code>static</code> keyword is used to define class-level members (variables or methods) that are shared among all instances of a class. 
+        Static members belong to the class itself, not to any specific object.
+    </p>
+    <pre>
+class MyClass {
+    static count = 0; // static variable
+
+    static showCount() { // static method
+        console.log(MyClass.count);
+    }
+}
+    </pre>
+
+    <h2>2. Class Variable</h2>
+    <p>
+        A <b>class variable</b> is a variable that is shared by all instances of a class. In many languages, it is defined using the <code>static</code> keyword.
+    </p>
+    <ul>
+        <li>Accessed using the class name (e.g., <code>MyClass.count</code>).</li>
+        <li>Changing its value affects all instances.</li>
+    </ul>
+
+    <h2>3. Class Method</h2>
+    <p>
+        A <b>class method</b> is a method that is bound to the class and not the instance. It is usually defined with the <code>static</code> keyword.
+    </p>
+    <ul>
+        <li>Called using the class name (e.g., <code>MyClass.showCount()</code>).</li>
+        <li>Cannot access instance variables directly.</li>
+    </ul>
+
+    <h2>4. Instance Variable</h2>
+    <p>
+        An <b>instance variable</b> is a variable that is unique to each object (instance) of a class.
+    </p>
+    <pre>
+class MyClass {
+    constructor(name) {
+        this.name = name; // instance variable
+    }
+}
+    </pre>
+    <ul>
+        <li>Accessed using the object (e.g., <code>obj.name</code>).</li>
+        <li>Each object has its own copy.</li>
+    </ul>
+
+    <h2>5. Instance Method</h2>
+    <p>
+        An <b>instance method</b> is a method that operates on instance variables and is called on an object.
+    </p>
+    <pre>
+class MyClass {
+    constructor(name) {
+        this.name = name;
+    }
+    greet() { // instance method
+        console.log("Hello, " + this.name);
+    }
+}
+    </pre>
+    <ul>
+        <li>Called using the object (e.g., <code>obj.greet()</code>).</li>
+        <li>Can access instance variables via <code>this</code>.</li>
+    </ul>
+
+    <h2>How Are Static and Instance Members Stored?</h2>
+    <p>
+        <b>Static variables and methods</b> are stored on the class itself. They exist only once in memory, regardless of how many objects (instances) are created from the class. You access them using the class name.
+    </p>
+    <ul>
+        <li>Memory for static members is allocated when the class is loaded.</li>
+        <li>All instances share the same static members.</li>
+        <li>Example: <code>MyClass.count</code> or <code>MyClass.showCount()</code></li>
+    </ul>
+    <p>
+        <b>Instance variables and methods</b> are stored on each object created from the class. Every object gets its own copy of instance variables and can call instance methods.
+    </p>
+    <ul>
+        <li>Memory for instance members is allocated when a new object is created.</li>
+        <li>Each object has its own instance variables (e.g., <code>obj.name</code>).</li>
+        <li>Instance methods operate on the data of the specific object.</li>
+    </ul>
+    <pre>
+class MyClass {
+    static staticVar = "I belong to the class"; // stored on MyClass
+    instanceVar = "I belong to the object";     // stored on each object
+
+    static staticMethod() { /* ... */ }         // stored on MyClass
+    instanceMethod() { /* ... */ }              // stored on prototype, called via object
+}
+let obj1 = new MyClass();
+let obj2 = new MyClass();
+    </pre>
+    <ul>
+        <li><code>MyClass.staticVar</code> and <code>MyClass.staticMethod()</code> are shared and accessed via the class.</li>
+        <li><code>obj1.instanceVar</code> and <code>obj2.instanceVar</code> are separate for each object.</li>
+        <li><code>obj1.instanceMethod()</code> and <code>obj2.instanceMethod()</code> operate on their respective objects.</li>
+    </ul>
+
+    <h2>Usage of <code>static</code> in Inner Classes</h2>
+    <p>
+        In some languages like Java, you can declare an inner class as <code>static</code>. A <b>static inner class</b> does not have access to the instance variables and methods of the outer class. It behaves like a top-level class but is scoped within the outer class.
+    </p>
+    <pre>
+// Example in Java
+class Outer {
+    static class Inner {
+        static void display() {
+            System.out.println("Static inner class method");
+        }
+    }
+}
+
+// Usage:
+Outer.Inner.display();
+    </pre>
+    <ul>
+        <li>A static inner class can have its own static members.</li>
+        <li>It can be instantiated without an instance of the outer class.</li>
+        <li>It cannot access non-static members of the outer class directly.</li>
+    </ul>
+</body>
+</html>

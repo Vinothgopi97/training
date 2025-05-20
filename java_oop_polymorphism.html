@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Java OOP: Polymorphism</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2em; }
+        code, pre { background: #f4f4f4; border-radius: 4px; }
+        pre { padding: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Java OOP: Polymorphism</h1>
+    <p>
+        <b>Polymorphism</b> means "many forms". In Java, it allows one interface to be used for different data types. The most common use is method overriding and dynamic method dispatch.
+    </p>
+    <pre>
+class Animal {
+    void sound() {
+        System.out.println("Some animal sound");
+    }
+}
+
+class Cat extends Animal {
+    void sound() {
+        System.out.println("Meow");
+    }
+}
+
+class Dog extends Animal {
+    void sound() {
+        System.out.println("Woof");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Animal a1 = new Cat();
+        Animal a2 = new Dog();
+        a1.sound(); // Output: Meow
+        a2.sound(); // Output: Woof
+    }
+}
+    </pre>
+    <p>
+        Here, the <code>sound()</code> method behaves differently based on the actual object type, even though the reference is of type <code>Animal</code>.
+    </p>
+</body>
+</html>

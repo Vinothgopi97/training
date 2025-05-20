@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Java OOP: Abstraction</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2em; }
+        code, pre { background: #f4f4f4; border-radius: 4px; }
+        pre { padding: 10px; }
+        table { width: 100%; border-collapse: collapse; margin: 1em 0; }
+        th, td { border: 1px solid #ddd; padding: 8px; }
+        th { background-color: #f2f2f2; }
+    </style>
+</head>
+<body>
+    <h1>Java OOP: Abstraction</h1>
+    <p>
+        <b>Abstraction</b> is the concept of hiding complex implementation details and showing only the necessary features of an object. In Java, abstraction is achieved using <b>abstract classes</b> and <b>interfaces</b>.
+    </p>
+
+    <h2>1. Abstract Class</h2>
+    <p>
+        An <b>abstract class</b> is a class that cannot be instantiated and may contain abstract methods (without implementation) as well as concrete methods (with implementation).
+    </p>
+    <pre>
+abstract class Shape {
+    abstract void draw(); // abstract method
+
+    void info() { // concrete method (default)
+        System.out.println("This is a shape.");
+    }
+
+    static void staticInfo() { // static method
+        System.out.println("Static method in abstract class.");
+    }
+}
+
+class Circle extends Shape {
+    void draw() {
+        System.out.println("Drawing Circle");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Shape s = new Circle();
+        s.draw();        // Output: Drawing Circle
+        s.info();        // Output: This is a shape.
+        Shape.staticInfo(); // Output: Static method in abstract class.
+    }
+}
+    </pre>
+    <p>
+        Here, <code>Shape</code> is abstract and cannot be instantiated. It has an abstract method, a default (concrete) method, and a static method. <code>Circle</code> provides the implementation for <code>draw()</code>.
+    </p>
+
+    <h2>2. Interface</h2>
+    <p>
+        An <b>interface</b> is a reference type in Java, similar to a class, that can contain only abstract methods (until Java 7), default methods, static methods, and constants. A class implements an interface to provide method definitions.
+    </p>
+    <pre>
+interface Drawable {
+    void draw();
+}
+
+class Rectangle implements Drawable {
+    public void draw() {
+        System.out.println("Drawing Rectangle");
+    }
+}
+
+public class Main2 {
+    public static void main(String[] args) {
+        Drawable d = new Rectangle();
+        d.draw(); // Output: Drawing Rectangle
+    }
+}
+    </pre>
+    <p>
+        Here, <code>Drawable</code> is an interface. <code>Rectangle</code> implements the interface and provides the method implementation.
+    </p>
+
+    <h2>Abstract Class vs Interface</h2>
+    <table border="1" cellpadding="6" style="border-collapse:collapse;">
+        <tr>
+            <th>Abstract Class</th>
+            <th>Interface</th>
+        </tr>
+        <tr>
+            <td>Can have abstract and concrete methods</td>
+            <td>All methods are abstract by default (until Java 7); from Java 8, can have default and static methods</td>
+        </tr>
+        <tr>
+            <td>Can have instance variables</td>
+            <td>Can only have static final variables (constants)</td>
+        </tr>
+        <tr>
+            <td>Supports constructors</td>
+            <td>No constructors allowed</td>
+        </tr>
+        <tr>
+            <td>Class can extend only one abstract class</td>
+            <td>Class can implement multiple interfaces</td>
+        </tr>
+        <tr>
+            <td>Use <code>extends</code> keyword</td>
+            <td>Use <code>implements</code> keyword</td>
+        </tr>
+    </table>
+</body>
+</html>
