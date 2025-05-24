@@ -448,11 +448,11 @@
                 "description": "Understanding the concept of classes in Java, including how to define and use them.",
                 "references": [
                     {
-                        "title": "Static Keyword",
-                        "link": "https://www.geeksforgeeks.org/static-keyword-java/"
+                        "title": "Class & Objects",
+                        "link": "https://www.geeksforgeeks.org/classes-objects-java/"
                     }, {
-                        "title": "Static keyword in Tamil",
-                        "link": "https://youtu.be/1C2WpNxq0r0"
+                        "title": "Class & Objects in Tamil",
+                        "link": "https://youtu.be/z_QODD8oors"
                     }                    
                 ],
                 "content_html": "java_oop_class.html"
@@ -463,12 +463,12 @@
                 "description": "Understanding the concept of objects in Java, including how to create and use them.",
                 "references": [
                     {
-                        "title": "Static Keyword",
-                        "link": "https://www.geeksforgeeks.org/static-keyword-java/"
+                        "title": "Class & Objects",
+                        "link": "https://www.geeksforgeeks.org/classes-objects-java/"
                     }, {
-                        "title": "Static keyword in Tamil",
-                        "link": "https://youtu.be/1C2WpNxq0r0"
-                    }                    
+                        "title": "Class & Objects in Tamil",
+                        "link": "https://youtu.be/z_QODD8oors"
+                    }                   
                 ],
                 "content_html": "java_oop_object.html"
             },
@@ -478,11 +478,11 @@
                 "description": "Understanding the concept of encapsulation in Java, including how to use access modifiers to control access to class members.",
                 "references": [
                     {
-                        "title": "Static Keyword",
-                        "link": "https://www.geeksforgeeks.org/static-keyword-java/"
+                        "title": "Encapsulation in Java",
+                        "link": "https://www.geeksforgeeks.org/encapsulation-in-java/"
                     }, {
-                        "title": "Static keyword in Tamil",
-                        "link": "https://youtu.be/1C2WpNxq0r0"
+                        "title": "Encapsulation in Java (Tamil)",
+                        "link": "https://youtu.be/mRLPsPPJUeE"
                     }                    
                 ],
                 "content_html": "java_oop_encapsulation.html"
@@ -493,12 +493,16 @@
                 "description": "Understanding the concept of abstraction in Java, including how to use abstract classes and interfaces.",
                 "references": [
                     {
-                        "title": "Static Keyword",
-                        "link": "https://www.geeksforgeeks.org/static-keyword-java/"
+                        "title": "Abstract & Interface in Java",
+                        "link": "https://www.geeksforgeeks.org/difference-between-abstract-class-and-interface-in-java/"
                     }, {
-                        "title": "Static keyword in Tamil",
-                        "link": "https://youtu.be/1C2WpNxq0r0"
-                    }                    
+                        "title": "Abstract Class and Abstract Methods in Java in Tamil",
+                        "link": "https://youtu.be/IGy5P9auRZs"
+                    } ,{
+                        "title": "Interface in Java in Tamil",
+                        "link": "https://youtu.be/26fNJRePfQ8"
+                    }    
+                                    
                 ],
                 "content_html": "java_oop_abstraction.html"
             },
@@ -508,11 +512,11 @@
                 "description": "Understanding the concept of inheritance in Java, including how to create subclasses and use superclasses.",
                 "references": [
                     {
-                        "title": "Static Keyword",
-                        "link": "https://www.geeksforgeeks.org/static-keyword-java/"
+                        "title": "Inheritance in Java" ,
+                        "link": "https://www.geeksforgeeks.org/inheritance-in-java/"
                     }, {
-                        "title": "Static keyword in Tamil",
-                        "link": "https://youtu.be/1C2WpNxq0r0"
+                        "title": "Inheritance in Java (Tamil)",
+                        "link": "https://youtu.be/siFdmP3Eer8"
                     }                    
                 ],
                 "content_html": "java_oop_inheritance.html"
@@ -523,11 +527,19 @@
                 "description": "Understanding the concept of polymorphism in Java, including method overloading and method overriding.",
                 "references": [
                     {
-                        "title": "Static Keyword",
-                        "link": "https://www.geeksforgeeks.org/static-keyword-java/"
+                        "title": "Polimorphism in Java",
+                        "link": "https://www.geeksforgeeks.org/polymorphism-in-java/"
                     }, {
-                        "title": "Static keyword in Tamil",
-                        "link": "https://youtu.be/1C2WpNxq0r0"
+                        "title": "Method Overloading in Java",
+                        "link": "https://www.geeksforgeeks.org/method-overloading-in-java/"
+                    },  
+                    {
+                        "title": "Method Overriding in Java",
+                        "link": "https://www.geeksforgeeks.org/overriding-in-java/"
+                    },                    
+                    {
+                        "title": "Polimorphism in Java",
+                        "link": "https://youtu.be/98BsGEV4iGQ"
                     }                    
                 ],
                 "content_html": "java_oop_polymorphism.html"
