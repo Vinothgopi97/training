@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Object Class and Its Methods in Java</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2em; }
+        h1, h2 { color: #2c3e50; }
+        pre { background: #f9f9f9; border: 1px solid #ddd; padding: 8px; }
+        ul { margin-bottom: 1em; }
+    </style>
+</head>
+<body>
+    <h1>Object Class and Its Methods in Java</h1>
+    <p>
+        The <b>Object</b> class is the root class of the Java class hierarchy. Every class in Java implicitly extends the Object class if no other superclass is specified.
+    </p>
+    <h2>Commonly Used Methods of Object Class</h2>
+    <ul>
+        <li><b>toString()</b> &mdash; Returns a string representation of the object.</li>
+        <li><b>equals(Object obj)</b> &mdash; Compares this object to another for equality.</li>
+        <li><b>hashCode()</b> &mdash; Returns a hash code value for the object.</li>
+        <li><b>getClass()</b> &mdash; Returns the runtime class of the object.</li>
+        <li><b>clone()</b> &mdash; Creates and returns a copy of the object (requires implementing <code>Cloneable</code>).</li>
+        <li><b>finalize()</b> &mdash; Called by the garbage collector before object is destroyed (rarely used).</li>
+        <li><b>wait(), notify(), notifyAll()</b> &mdash; Used for thread synchronization.</li>
+    </ul>
+
+    <h2>Examples</h2>
+    <h3>toString()</h3>
+    <pre>
+class Student {
+    String name;
+    Student(String name) { this.name = name; }
+    public String toString() {
+        return "Student name: " + name;
+    }
+}
+Student s = new Student("John");
+System.out.println(s); // Output: Student name: John
+    </pre>
+
+    <h3>equals() and hashCode()</h3>
+    <pre>
+class Student {
+    String name;
+    Student(String name) { this.name = name; }
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Student s = (Student) obj;
+        return name.equals(s.name);
+    }
+    public int hashCode() {
+        return name.hashCode();
+    }
+}
+Student s1 = new Student("John");
+Student s2 = new Student("John");
+System.out.println(s1.equals(s2)); // Output: true
+    </pre>
+
+    <h3>getClass()</h3>
+    <pre>
+Student s = new Student("John");
+System.out.println(s.getClass().getName()); // Output: Student
+    </pre>
+
+    <h3>clone()</h3>
+    <pre>
+class Student implements Cloneable {
+    String name;
+    Student(String name) { this.name = name; }
+    public Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
+}
+Student s1 = new Student("John");
+Student s2 = (Student) s1.clone();
+    </pre>
+
+    <h2>Summary</h2>
+    <ul>
+        <li>All Java classes inherit methods from <b>Object</b> class.</li>
+        <li>Overriding <code>toString()</code>, <code>equals()</code>, and <code>hashCode()</code> is common for custom classes.</li>
+    </ul>
+</body>
+</html>

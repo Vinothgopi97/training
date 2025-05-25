@@ -521,6 +521,67 @@
                 ],
                 "content_html": "java_oop_inheritance.html"
             },
+            {
+                "sl_no": 7.1,
+                "title": "Inheritance Types",
+                "description": "Understanding the concept of inheritance in Java, including how to create subclasses and use superclasses.",
+                "references": [
+                    {
+                        "title": "Inheritance in Java" ,
+                        "link": "https://www.geeksforgeeks.org/inheritance-in-java/"
+                    }, {
+                        "title": "Inheritance in Java (Tamil)",
+                        "link": "https://youtu.be/siFdmP3Eer8"
+                    }                    
+                ],
+                "content_html": "java_inheritance_types.html"
+            },
+            {
+                "sl_no": 7.2,
+                "title": "this & super keywords",
+                "description":  "Understanding the use of 'this' and 'super' keywords in Java, including how to refer to the current object and the superclass.",
+                "references": [
+                    {
+                        "title": "Inheritance in Java" ,
+                        "link": "https://www.geeksforgeeks.org/inheritance-in-java/"
+                    }, {
+                        "title": "Inheritance in Java (Tamil)",
+                        "link": "https://youtu.be/siFdmP3Eer8"
+                    }                    
+                ],
+                "content_html": "java_this_super_keywords.html"
+            },
+            {
+                "sl_no": 7.3,
+                "title": "Object class in Java",
+                "description":  "Understanding the Object class in Java, which is the root class of all classes in Java.",
+                "references": [
+                    {
+                        "title": "Inheritance in Java" ,
+                        "link": "https://www.geeksforgeeks.org/inheritance-in-java/"
+                    }, {
+                        "title": "Inheritance in Java (Tamil)",
+                        "link": "https://youtu.be/siFdmP3Eer8"
+                    }                    
+                ],
+                "content_html": "java_object_class_methods.html"
+            },
+            {
+                "sl_no": 7.4,
+                "title": "Method Overloading & Method Overriding in Java",
+                "description":  "Understanding the concepts of method overloading and method overriding in Java, including how to define multiple methods with the same name but different parameters, and how to override methods in subclasses.",
+                "references": [
+                    {
+                        "title": "Method Overloading in Java (Tamil)",
+                        "link": "https://youtu.be/Mzlddw0AOkY"
+                    },
+                    {
+                        "title": "Method Overriding in Java (Tamil)",
+                        "link": "https://youtu.be/Kanv7fmIuJw"
+                    }                                        
+                ],
+                "content_html": "java_method_overloading_overriding.html"
+            },
              {
                 "sl_no": 8,
                 "title": "Polimorphism",

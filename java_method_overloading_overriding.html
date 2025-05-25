@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Method Overloading and Method Overriding in Java</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2em; }
+        h1, h2 { color: #2c3e50; }
+        pre { background: #f9f9f9; border: 1px solid #ddd; padding: 8px; }
+        ul { margin-bottom: 1em; }
+    </style>
+</head>
+<body>
+    <h1>Method Overloading and Method Overriding in Java</h1>
+
+    <h2>Method Overloading</h2>
+    <p>
+        Method overloading means defining multiple methods with the same name in the same class, but with different parameter lists (different type, number, or order of parameters).
+    </p>
+    <ul>
+        <li>Occurs within a single class.</li>
+        <li>Return type can be different or same, but parameter list must be different.</li>
+        <li>Helps increase the readability of the program.</li>
+    </ul>
+    <b>Example:</b>
+    <pre>
+class MathUtils {
+    int add(int a, int b) {
+        return a + b;
+    }
+    double add(double a, double b) {
+        return a + b;
+    }
+    int add(int a, int b, int c) {
+        return a + b + c;
+    }
+}
+
+MathUtils m = new MathUtils();
+System.out.println(m.add(2, 3));        // Output: 5
+System.out.println(m.add(2.5, 3.5));    // Output: 6.0
+System.out.println(m.add(1, 2, 3));     // Output: 6
+    </pre>
+
+    <h2>Method Overriding</h2>
+    <p>
+        Method overriding means defining a method in a subclass that has the same name, return type, and parameters as a method in its superclass. The subclass method replaces the superclass method when called on a subclass object.
+    </p>
+    <ul>
+        <li>Occurs in two classes that have a parent-child (inheritance) relationship.</li>
+        <li>The method in the child class must have the same signature as in the parent class.</li>
+        <li>Used for runtime (dynamic) polymorphism.</li>
+        <li>The <code>@Override</code> annotation is recommended but not required.</li>
+    </ul>
+    <b>Example:</b>
+    <pre>
+class Animal {
+    void sound() {
+        System.out.println("Animal makes a sound");
+    }
+}
+class Dog extends Animal {
+    @Override
+    void sound() {
+        System.out.println("Dog barks");
+    }
+}
+
+Animal a = new Animal();
+a.sound(); // Output: Animal makes a sound
+
+Dog d = new Dog();
+d.sound(); // Output: Dog barks
+
+Animal ad = new Dog();
+ad.sound(); // Output: Dog barks (dynamic method dispatch)
+    </pre>
+
+    <h2>Summary</h2>
+    <ul>
+        <li><b>Overloading</b>: Same method name, different parameters, same class.</li>
+        <li><b>Overriding</b>: Same method name and parameters, different classes (inheritance).</li>
+    </ul>
+</body>
+</html>

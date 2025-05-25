@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>this and super Keywords in Java</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2em; }
+        h1, h2 { color: #2c3e50; }
+        pre { background: #f9f9f9; border: 1px solid #ddd; padding: 8px; }
+        .section { margin-bottom: 2em; }
+    </style>
+</head>
+<body>
+    <h1>this and super Keywords in Java</h1>
+
+    <div class="section">
+        <h2>this Keyword</h2>
+        <p>
+            <b>this</b> is a reference variable in Java that refers to the current object (the object whose method or constructor is being called).
+        </p>
+        <ul>
+            <li>Used to refer to the current object's fields and methods.</li>
+            <li>Commonly used to resolve ambiguity between instance variables and parameters with the same name.</li>
+        </ul>
+        <b>Example:</b>
+        <pre>
+class Student {
+    String name;
+    Student(String name) {
+        this.name = name; // 'this.name' refers to the instance variable
+    }
+}
+        </pre>
+        <b>Usage in method call:</b>
+        <pre>
+class Demo {
+    void show() {
+        System.out.println("Hello");
+    }
+    void display() {
+        this.show(); // calls show() of current object
+    }
+}
+        </pre>
+    </div>
+
+    <div class="section">
+        <h2>super Keyword</h2>
+        <p>
+            <b>super</b> is a reference variable in Java used to refer to the immediate parent class object.
+        </p>
+        <ul>
+            <li>Used to access parent class fields, methods, and constructors.</li>
+            <li>Commonly used when a subclass overrides methods or fields of the parent class.</li>
+        </ul>
+        <b>Example: Accessing parent class variable</b>
+        <pre>
+class Animal {
+    String name = "Animal";
+}
+class Dog extends Animal {
+    String name = "Dog";
+    void printNames() {
+        System.out.println(name);        // prints "Dog"
+        System.out.println(super.name);  // prints "Animal"
+    }
+}
+        </pre>
+        <b>Example: Calling parent class method</b>
+        <pre>
+class Animal {
+    void sound() {
+        System.out.println("Animal sound");
+    }
+}
+class Dog extends Animal {
+    void sound() {
+        System.out.println("Dog barks");
+    }
+    void printSound() {
+        super.sound(); // calls Animal's sound()
+    }
+}
+        </pre>
+        <b>Example: Calling parent class constructor</b>
+        <pre>
+class Animal {
+    Animal() {
+        System.out.println("Animal constructor");
+    }
+}
+class Dog extends Animal {
+    Dog() {
+        super(); // calls Animal's constructor
+        System.out.println("Dog constructor");
+    }
+}
+        </pre>
+    </div>
+</body>
+</html>

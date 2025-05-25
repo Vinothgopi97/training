@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Types of Inheritance & Inheritance in Java</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2em; }
+        h1, h2 { color: #2c3e50; }
+        table { border-collapse: collapse; width: 60%; margin-bottom: 2em; }
+        th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+        th { background: #f4f4f4; }
+        .possible { color: green; font-weight: bold; }
+        .not-possible { color: red; font-weight: bold; }
+        .diagram { background: #f9f9f9; border: 1px solid #ddd; padding: 8px; margin: 8px 0 16px 0; display: inline-block; }
+    </style>
+</head>
+<body>
+    <h1>Types of Inheritance</h1>
+    <p>Inheritance is a fundamental concept in Object-Oriented Programming (OOP) that allows a class (child/subclass) to inherit properties and behaviors (fields and methods) from another class (parent/superclass).</p>
+    <h2>Types of Inheritance</h2>
+    <table>
+        <tr>
+            <th>Type</th>
+            <th>Description</th>
+            <th>Supported in Java?</th>
+        </tr>
+        <tr>
+            <td>Single Inheritance</td>
+            <td>A class inherits from one superclass.</td>
+            <td class="possible">Yes</td>
+        </tr>
+        <tr>
+            <td>Multilevel Inheritance</td>
+            <td>A class inherits from a class, which in turn inherits from another class.</td>
+            <td class="possible">Yes</td>
+        </tr>
+        <tr>
+            <td>Hierarchical Inheritance</td>
+            <td>Multiple classes inherit from a single superclass.</td>
+            <td class="possible">Yes</td>
+        </tr>
+        <tr>
+            <td>Multiple Inheritance</td>
+            <td>A class inherits from more than one superclass.</td>
+            <td class="not-possible">No<sup>*</sup></td>
+        </tr>
+        <tr>
+            <td>Hybrid Inheritance</td>
+            <td>Combination of two or more types of inheritance.</td>
+            <td class="not-possible">No<sup>*</sup></td>
+        </tr>
+    </table>
+    <p><sup>*</sup>Java does not support multiple and hybrid inheritance with classes to avoid ambiguity (the "diamond problem"). However, multiple inheritance is possible in Java through <b>interfaces</b>.</p>
+    <h2>Examples & Diagrams</h2>
+    <h3>Single Inheritance</h3>
+    <div class="diagram">
+        <pre>
+   Animal
+     │
+   Dog
+        </pre>
+    </div>
+    <pre>
+class Animal { }
+class Dog extends Animal { }
+    </pre>
+
+    <h3>Multilevel Inheritance</h3>
+    <div class="diagram">
+        <pre>
+   Animal
+     │
+  Mammal
+     │
+   Dog
+        </pre>
+    </div>
+    <pre>
+class Animal { }
+class Mammal extends Animal { }
+class Dog extends Mammal { }
+    </pre>
+
+    <h3>Hierarchical Inheritance</h3>
+    <div class="diagram">
+        <pre>
+      Animal
+      /    \
+   Dog    Cat
+        </pre>
+    </div>
+    <pre>
+class Animal { }
+class Dog extends Animal { }
+class Cat extends Animal { }
+    </pre>
+
+    <h3>Multiple Inheritance (Not supported with classes in Java)</h3>
+    <div class="diagram">
+        <pre>
+   A     B
+    \   /
+      C
+        </pre>
+    </div>
+    <pre>
+// Not allowed with classes in Java
+class A { }
+class B { }
+class C extends A, B { } // Error!
+    </pre>
+    <p>But possible with interfaces:</p>
+    <pre>
+interface A { }
+interface B { }
+class C implements A, B { }
+    </pre>
+
+    <h3>Hybrid Inheritance (Not supported with classes in Java)</h3>
+    <div class="diagram">
+        <pre>
+      A
+     / \
+    B   C
+     \ /
+      D
+        </pre>
+    </div>
+    <pre>
+// Not allowed with classes in Java
+    </pre>
+
+    <h2>Summary</h2>
+    <ul>
+        <li>Java supports: <b>Single</b>, <b>Multilevel</b>, and <b>Hierarchical</b> inheritance with classes.</li>
+        <li>Java does <b>not</b> support multiple or hybrid inheritance with classes, but supports multiple inheritance via interfaces.</li>
+    </ul>
+</body>
+</html>
