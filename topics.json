@@ -604,7 +604,19 @@
                     }                    
                 ],
                 "content_html": "java_oop_polymorphism.html"
+            },
+            {
+                "sl_no": "Code Examples",
+                "title": "Java - Object Oriented Programming",
+                "description": "Explore practical examples of Object-Oriented Programming concepts in Java, including classes, objects, inheritance, and polymorphism.",
+                "references": [
+                    {
+                        "title": "https://github.com/Vinothgopi97/java_examples.git",
+                        "link": "https://github.com/Vinothgopi97/java_examples.git"
+                    }
+                ]
             }
+            
         ]
       }
     ]
