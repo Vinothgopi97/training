@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Constructors, init block, and static blocks in Java</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2em; }
+        h1, h2 { color: #2c3e50; }
+        pre { background: #f9f9f9; border: 1px solid #ddd; padding: 8px; }
+        ul { margin-bottom: 1em; }
+    </style>
+</head>
+<body>
+    <h1>Constructors, Instance Initialization Block, and Static Block in Java</h1>
+
+    <h2>1. Constructors</h2>
+    <p>
+        A <b>constructor</b> is a special method that is called when an object is created. It has the same name as the class and no return type.
+    </p>
+    <pre>
+class Example {
+    Example() {
+        System.out.println("Constructor called");
+    }
+    public static void main(String[] args) {
+        Example obj = new Example(); // Output: Constructor called
+    }
+}
+    </pre>
+
+    <h2>2. Instance Initialization Block (init block)</h2>
+    <p>
+        An <b>instance initialization block</b> is a block of code inside a class, enclosed in curly braces <code>{ }</code>, that runs every time an object is created, <b>before</b> the constructor.
+    </p>
+    <pre>
+class Example {
+    {
+        System.out.println("Instance init block");
+    }
+    Example() {
+        System.out.println("Constructor");
+    }
+    public static void main(String[] args) {
+        Example obj = new Example();
+        // Output:
+        // Instance init block
+        // Constructor
+    }
+}
+    </pre>
+
+    <h2>3. Static Block</h2>
+    <p>
+        A <b>static block</b> is a block of code inside a class, prefixed with <code>static</code>, that runs <b>once</b> when the class is loaded into memory (before main or any object is created).
+    </p>
+    <pre>
+class Example {
+    static {
+        System.out.println("Static block");
+    }
+    Example() {
+        System.out.println("Constructor");
+    }
+    public static void main(String[] args) {
+        Example obj1 = new Example();
+        Example obj2 = new Example();
+        // Output:
+        // Static block
+        // Constructor
+        // Constructor
+    }
+}
+    </pre>
+
+    <h2>Summary</h2>
+    <ul>
+        <li><b>Constructor</b>: Runs when an object is created.</li>
+        <li><b>Instance init block</b>: Runs before constructor, every time an object is created.</li>
+        <li><b>Static block</b>: Runs once when the class is loaded.</li>
+    </ul>
+</body>
+</html>

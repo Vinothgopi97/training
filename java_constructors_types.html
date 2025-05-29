@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Constructors and Types of Constructors in Java</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2em; }
+        h1, h2 { color: #2c3e50; }
+        pre { background: #f9f9f9; border: 1px solid #ddd; padding: 8px; }
+        ul { margin-bottom: 1em; }
+    </style>
+</head>
+<body>
+    <h1>Constructors in Java</h1>
+    <p>
+        A <b>constructor</b> in Java is a special method that is called when an object is created. It has the same name as the class and does not have a return type (not even void).
+    </p>
+    <ul>
+        <li>Used to initialize objects.</li>
+        <li>Called automatically when an object is created using <code>new</code>.</li>
+        <li>If no constructor is defined, Java provides a default constructor.</li>
+    </ul>
+
+    <h2>Types of Constructors</h2>
+    <ol>
+        <li><b>Default Constructor</b></li>
+        <li><b>Parameterized Constructor</b></li>
+        <li><b>Copy Constructor</b> (not built-in, but can be defined by the programmer)</li>
+    </ol>
+
+    <h3>1. Default Constructor</h3>
+    <p>
+        A constructor with no parameters. If you don't define any constructor, Java creates one for you.
+    </p>
+    <pre>
+class Student {
+    Student() {
+        System.out.println("Default constructor called");
+    }
+}
+
+Student s = new Student(); // Output: Default constructor called
+    </pre>
+
+    <h3>2. Parameterized Constructor</h3>
+    <p>
+        A constructor that takes one or more parameters to initialize the object.
+    </p>
+    <pre>
+class Student {
+    String name;
+    int age;
+    Student(String n, int a) {
+        name = n;
+        age = a;
+    }
+}
+
+Student s = new Student("John", 20);
+System.out.println(s.name); // Output: John
+System.out.println(s.age);  // Output: 20
+    </pre>
+
+    <h3>3. Copy Constructor</h3>
+    <p>
+        A constructor that creates a new object by copying the fields of another object of the same class. Java does not provide a built-in copy constructor, but you can define one.
+    </p>
+    <pre>
+class Student {
+    String name;
+    int age;
+    Student(String n, int a) {
+        name = n;
+        age = a;
+    }
+    // Copy constructor
+    Student(Student s) {
+        name = s.name;
+        age = s.age;
+    }
+}
+
+Student s1 = new Student("John", 20);
+Student s2 = new Student(s1);
+System.out.println(s2.name); // Output: John
+System.out.println(s2.age);  // Output: 20
+    </pre>
+
+    <h2>Summary</h2>
+    <ul>
+        <li>Constructors are used to initialize objects.</li>
+        <li>Types: Default, Parameterized, and Copy constructors.</li>
+        <li>Constructor overloading is possible by defining multiple constructors with different parameter lists.</li>
+    </ul>
+
+    <h2>Common Questions about Constructors</h2>
+    <h3>Q1: Can I have only a parameterized constructor without a default constructor?</h3>
+    <p>
+        Yes, you can define only a parameterized constructor in your class. However, if you do this, Java <b>does not</b> provide a default (no-argument) constructor automatically. If you try to create an object with no arguments, you will get a compilation error.
+    </p>
+    <b>Example:</b>
+    <pre>
+class Student {
+    String name;
+    Student(String n) {
+        name = n;
+    }
+}
+
+Student s1 = new Student("John"); // OK
+Student s2 = new Student(); // Error: no default constructor
+    </pre>
+    <h3>Q2: How to have both default and parameterized constructors?</h3>
+    <p>
+        You can define both constructors in your class. This is called constructor overloading.
+    </p>
+    <pre>
+class Student {
+    String name;
+    Student() {
+        name = "Unknown";
+    }
+    Student(String n) {
+        name = n;
+    }
+}
+
+Student s1 = new Student();        // name = "Unknown"
+Student s2 = new Student("John");  // name = "John"
+    </pre>
+    <h3>Q3: What happens if I define no constructor at all?</h3>
+    <p>
+        Java automatically provides a default (no-argument) constructor that does nothing extra.
+    </p>
+    <pre>
+class Student {
+    // No constructor defined
+}
+
+Student s = new Student(); // OK, default constructor is used
+    </pre>
+</body>
+</html>

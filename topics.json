@@ -605,6 +605,24 @@
                 ],
                 "content_html": "java_oop_polymorphism.html"
             },
+             {
+                "sl_no": 9,
+                "title": "Constructors, Init blocks, static blocks",
+                "description": "Understanding the concept of constructors, init blocks, and static blocks in Java, including how to initialize objects and classes.",                
+                "references": [
+                                    
+                ],
+                "content_html": "java_constructors_init_static_blocks.html"
+            },
+            {
+                "sl_no": 10,
+                "title": "Types of Constructors",
+                "description": "Understanding the different types of constructors in Java, including default constructors, parameterized constructors, and copy constructors.",                      
+                "references": [
+                                    
+                ],
+                "content_html": "java_constructors_types.html"
+            },
             {
                 "sl_no": "Code Examples",
                 "title": "Java - Object Oriented Programming",
