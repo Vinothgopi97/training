@@ -14,6 +14,43 @@
     <p>
         <b>Polymorphism</b> means "many forms". In Java, it allows one interface to be used for different data types. The most common use is method overriding and dynamic method dispatch.
     </p>
+
+    <h2>Types of Polymorphism in Java</h2>
+    <ul>
+        <li><b>Compile-time Polymorphism</b> (Static Polymorphism)</li>
+        <li><b>Runtime Polymorphism</b> (Dynamic Polymorphism)</li>
+    </ul>
+
+    <h3>Compile-time Polymorphism (Method Overloading)</h3>
+    <p>
+        Compile-time polymorphism is achieved by method overloading. The method to be executed is determined at compile time based on the method signature (number/type/order of parameters).
+    </p>
+    <pre>
+class MathUtils {
+    int add(int a, int b) {
+        return a + b;
+    }
+    double add(double a, double b) {
+        return a + b;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        MathUtils m = new MathUtils();
+        System.out.println(m.add(2, 3));      // Output: 5
+        System.out.println(m.add(2.5, 3.5));  // Output: 6.0
+    }
+}
+    </pre>
+    <p>
+        Here, the correct <code>add</code> method is chosen by the compiler based on the arguments.
+    </p>
+
+    <h3>Runtime Polymorphism (Method Overriding)</h3>
+    <p>
+        Runtime polymorphism is achieved by method overriding. The method to be executed is determined at runtime based on the actual object type, not the reference type.
+    </p>
     <pre>
 class Animal {
     void sound() {
