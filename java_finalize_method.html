@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Java finalize() Method</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2em; }
+        h1, h2 { color: #2c3e50; }
+        pre { background: #f9f9f9; border: 1px solid #ddd; padding: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Java <code>finalize()</code> Method</h1>
+    <p>
+        The <b><code>finalize()</code></b> method in Java is a protected method of the <code>Object</code> class. It is called by the garbage collector before an object is removed from memory, giving the object a chance to clean up resources (like closing files or releasing memory).
+    </p>
+    <h2>Key Points</h2>
+    <ul>
+        <li><code>finalize()</code> is called automatically by the garbage collector, not manually.</li>
+        <li>It is rarely used in modern Java (since Java 9 it is deprecated).</li>
+        <li>It is not guaranteed when or even if <code>finalize()</code> will be called.</li>
+        <li>For resource cleanup, prefer <code>try-with-resources</code> and <code>AutoCloseable</code>.</li>
+    </ul>
+
+    <h2>Syntax</h2>
+    <pre>
+protected void finalize() throws Throwable {
+    // cleanup code
+}
+    </pre>
+
+    <h2>Example</h2>
+    <pre>
+class Demo {
+    @Override
+    protected void finalize() throws Throwable {
+        System.out.println("finalize() called for Demo object");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Demo d = new Demo();
+        d = null; // Make object eligible for garbage collection
+        System.gc(); // Suggest JVM to run Garbage Collector
+        System.out.println("End of main");
+    }
+}
+    </pre>
+    <p>
+        <b>Output (may vary):</b><br>
+        <code>
+        End of main<br>
+        finalize() called for Demo object
+        </code>
+    </p>
+    <p>
+        Note: The call to <code>finalize()</code> is not guaranteed to happen immediately after <code>System.gc()</code>, or even at all.
+    </p>
+
+    <h2>Best Practice</h2>
+    <ul>
+        <li>Avoid relying on <code>finalize()</code> for releasing resources.</li>
+        <li>Use <code>try-with-resources</code> and implement <code>AutoCloseable</code> for resource management.</li>
+    </ul>
+</body>
+</html>
