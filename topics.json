@@ -391,6 +391,13 @@
                 "content_html": "java_loops_explained.html"
             },
             {
+                "sl_no": "Code Examples",
+                "title": "Java Basics",
+                "description": "Explore practical examples of Java basics, including data types, operators, and control flow statements.",
+                "content_html": "java_basics_files.html"
+            },
+            
+            {
                 "sl_no": "Extras",
                 "title": "Getting User Input at Runtime",
                 "description": "Understanding how to get user input in Java using Scanner class.",                
