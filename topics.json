@@ -76,6 +76,19 @@
                 }
             ]
         },
+        {
+        "sl_no": "updates",
+        "title": "Recent updates",
+        "subtopics": [
+            {
+                "sl_no": 1,
+                "title": "Updates",
+                "description": "This section contains the recent updates made to the course materials.",
+                "content_html": "updates_view.html",
+                "references": [                    
+                ]
+            }]
+        },
       {
         "sl_no": 1,
         "title": "Computer Basics & OS Overview",

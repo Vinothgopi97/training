@@ -11,9 +11,40 @@
     <div class="container-fluid">
         <div class="row">
             <div id="left-menu" class="col-12 col-md-3 order-2 order-md-1"></div>
-            <div id="center-content" class="col-12 col-md-9 order-1 order-md-2"></div>
+            <div id="center-content" class="col-12 col-md-7 order-1 order-md-2"></div>
+            <!-- <div id="right-updates" class="col-12 col-md-2 order-3" style="border-left:1px solid #eee; background:#fafbfc; min-height:100vh; padding-top:1em;">
+                <h5 class="text-primary">Updates</h5>
+                <div id="updates-list" style="font-size:0.95em;"></div>
+            </div> -->
         </div>
     </div>
     <script src="script.js"></script>
+    <script>
+    // Load and display updates from updates/updates.json
+    fetch('updates/updates.json')
+      .then(res => res.json())
+      .then(updates => {
+        const updatesDiv = document.getElementById('updates-list');
+        if (!Array.isArray(updates) || updates.length === 0) {
+            updatesDiv.innerHTML = "<div>No updates available.</div>";
+            return;
+        }
+        updatesDiv.innerHTML = updates.map(update => `
+            <div class="mb-3 p-2 border rounded bg-white">
+                <div><strong>Date:</strong> ${update.date} <strong>Time:</strong> ${update.time}</div>
+                <div><strong>Description:</strong>
+                    <ul style="margin-bottom:0;">
+                        ${update.updated_contents.map(item => `<li>${item}</li>`).join('')}
+                    </ul>
+                </div>
+                <div><strong>Notes:</strong> ${update.additional_notes}</div>
+            </div>
+        `).join('');
+      })
+      .catch(() => {
+        const updatesDiv = document.getElementById('updates-list');
+        updatesDiv.innerHTML = "<div style='color:red;'>Failed to load updates.</div>";
+      });
+    </script>
 </body>
 </html>
