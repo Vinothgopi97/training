@@ -1,29 +1,25 @@
+// Example demonstrating Constructor in Java
+
 class Person {
     String name;
     int age;
 
-    // Default constructor
-    Person() {
-        name = "Unknown";
-        age = 0;
-    }
-
-    // Parameterized constructor
+    // Constructor: called when an object is created
     Person(String n, int a) {
         name = n;
         age = a;
     }
 
+    // Method to display person details
     void show() {
-        System.out.println(name + " - " + age);
+        System.out.println("Name: " + name + ", Age: " + age);
+    }
+
+    public static void main(String[] args) {
+        // Creating object using constructor
+        Person p = new Person("Bob", 25);
+        p.show();
     }
 }
 
-public class ConstructorDemo {
-    public static void main(String[] args) {
-        Person p1 = new Person();
-        Person p2 = new Person("Bob", 25);
-        p1.show();
-        p2.show();
-    }
-}
+// Constructors are special methods used to initialize objects.
