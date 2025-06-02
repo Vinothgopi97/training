@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>try, catch, finally in Java</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2em; }
+        h1, h2, h3 { color: #2c3e50; }
+        pre { background: #f9f9f9; border: 1px solid #ddd; padding: 10px; }
+        ul { margin-bottom: 1em; }
+        .question { color: #1a73e8; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>try, catch, finally in Java</h1>
+    <h2>try Block</h2>
+    <p>
+        The <b>try</b> block contains code that might throw an exception. It must be followed by either <b>catch</b> or <b>finally</b>.
+    </p>
+    <h2>catch Block</h2>
+    <p>
+        The <b>catch</b> block handles the exception thrown by the try block. Multiple catch blocks can be used for different exception types.
+    </p>
+    <h2>finally Block</h2>
+    <p>
+        The <b>finally</b> block always executes after try (and catch), regardless of whether an exception was thrown or caught. It is typically used for cleanup code.
+    </p>
+    <h2>Example</h2>
+    <pre>
+public class TryCatchFinallyExample {
+    public static void main(String[] args) {
+        try {
+            int[] arr = {1, 2, 3};
+            System.out.println(arr[5]);
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Exception: " + e);
+        } finally {
+            System.out.println("This will always execute.");
+        }
+    }
+}
+    </pre>
+    <h2>Questions & Answers</h2>
+    <div class="question">Q: Is try without catch possible?</div>
+    <div>
+        Yes, but only if you use a <b>finally</b> block. Example:
+        <pre>
+try {
+    // code
+} finally {
+    // cleanup code
+}
+        </pre>
+    </div>
+    <div class="question">Q: Is catch without try possible?</div>
+    <div>
+        No, a <b>catch</b> block must always follow a <b>try</b> block.
+    </div>
+    <div class="question">Q: Is finally without try possible?</div>
+    <div>
+        No, <b>finally</b> must always be associated with a <b>try</b> block.
+    </div>
+    <div class="question">Q: Can we have multiple catch blocks?</div>
+    <div>
+        Yes, you can have multiple catch blocks to handle different exception types.
+    </div>
+    <div class="question">Q: Will finally block execute if there is a return statement in try or catch?</div>
+    <div>
+        Yes, the <b>finally</b> block will execute even if there is a return statement in try or catch.
+    </div>
+</body>
+</html>

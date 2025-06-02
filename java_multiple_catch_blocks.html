@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Multiple Catch Blocks in Java</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2em; }
+        h1, h2 { color: #2c3e50; }
+        pre { background: #f9f9f9; border: 1px solid #ddd; padding: 10px; }
+        ul { margin-bottom: 1em; }
+    </style>
+</head>
+<body>
+    <h1>Multiple Catch Blocks in Java</h1>
+    <p>
+        Java allows multiple catch blocks after a single try block to handle different types of exceptions separately.
+    </p>
+    <h2>Example</h2>
+    <pre>
+public class MultipleCatchExample {
+    public static void main(String[] args) {
+        try {
+            int[] arr = new int[3];
+            arr[5] = 10; // ArrayIndexOutOfBoundsException
+            int a = 10 / 0; // ArithmeticException
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Array index error: " + e);
+        } catch (ArithmeticException e) {
+            System.out.println("Arithmetic error: " + e);
+        } catch (Exception e) {
+            System.out.println("General exception: " + e);
+        }
+    }
+}
+    </pre>
+    <h2>Multi-catch (Java 7+)</h2>
+    <p>
+        You can catch multiple exception types in a single catch block using the pipe (<code>|</code>) symbol.
+    </p>
+    <pre>
+try {
+    // code
+} catch (IOException | SQLException ex) {
+    System.out.println("Exception: " + ex);
+}
+    </pre>
+    <ul>
+        <li>Order of catch blocks matters: catch more specific exceptions before general ones.</li>
+        <li>Only one catch block is executed per exception occurrence.</li>
+    </ul>
+</body>
+</html>

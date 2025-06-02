@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exception and Error in Java - Details</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2em; }
+        h1, h2, h3 { color: #2c3e50; }
+        pre { background: #f9f9f9; border: 1px solid #ddd; padding: 10px; }
+        ul { margin-bottom: 1em; }
+    </style>
+</head>
+<body>
+    <h1>More about Exception and Error in Java</h1>
+
+    <h2>Types of Exceptions</h2>
+    <ul>
+        <li><b>Checked Exceptions</b>: Checked at compile time. Must be handled or declared using <code>throws</code>.<br>
+            <i>Examples:</i> IOException, SQLException, ClassNotFoundException
+        </li>
+        <li><b>Unchecked Exceptions</b>: Checked at runtime. Subclasses of <code>RuntimeException</code>.<br>
+            <i>Examples:</i> NullPointerException, ArithmeticException, ArrayIndexOutOfBoundsException
+        </li>
+    </ul>
+
+    <h3>Checked Exception Example</h3>
+    <pre>
+import java.io.*;
+
+public class CheckedExceptionExample {
+    public static void main(String[] args) {
+        try {
+            FileReader fr = new FileReader("file.txt"); // May throw FileNotFoundException
+        } catch (FileNotFoundException e) {
+            System.out.println("File not found: " + e);
+        }
+    }
+}
+    </pre>
+
+    <h3>Unchecked Exception Example</h3>
+    <pre>
+public class UncheckedExceptionExample {
+    public static void main(String[] args) {
+        String s = null;
+        System.out.println(s.length()); // NullPointerException
+    }
+}
+    </pre>
+
+    <h2>Types of Errors</h2>
+    <ul>
+        <li><b>VirtualMachineError</b>: Indicates that the JVM is broken or has run out of resources.<br>
+            <i>Examples:</i> OutOfMemoryError, StackOverflowError
+        </li>
+        <li><b>LinkageError</b>: Indicates a class has some dependency issues.<br>
+            <i>Examples:</i> NoClassDefFoundError
+        </li>
+    </ul>
+
+    <h3>OutOfMemoryError Example</h3>
+    <pre>
+import java.util.*;
+
+public class OutOfMemoryErrorExample {
+    public static void main(String[] args) {
+        List<int[]> list = new ArrayList<>();
+        while (true) {
+            list.add(new int[1000000]); // Eventually throws OutOfMemoryError
+        }
+    }
+}
+    </pre>
+
+    <h2>Best Practices</h2>
+    <ul>
+        <li>Handle only those exceptions you can recover from.</li>
+        <li>Do not catch <code>Error</code> unless you have a very specific reason.</li>
+        <li>Use specific exception types in catch blocks, not generic <code>Exception</code>.</li>
+        <li>Always clean up resources in <code>finally</code> blocks or use try-with-resources.</li>
+    </ul>
+
+    <h2>References</h2>
+    <ul>
+        <li><a href="https://www.geeksforgeeks.org/exceptions-in-java/" target="_blank">Exceptions in Java - GeeksforGeeks</a></li>
+        <li><a href="https://docs.oracle.com/javase/tutorial/essential/exceptions/" target="_blank">Java Exceptions Tutorial (Oracle)</a></li>
+    </ul>
+</body>
+</html>

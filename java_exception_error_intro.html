@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exception and Error in Java</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2em; }
+        h1, h2 { color: #2c3e50; }
+        pre { background: #f9f9f9; border: 1px solid #ddd; padding: 10px; }
+        ul { margin-bottom: 1em; }
+    </style>
+</head>
+<body>
+    <h1>Exception and Error in Java</h1>
+    <p>
+        In Java, <b>Exception</b> and <b>Error</b> are two types of <b>Throwable</b> objects that indicate abnormal conditions during program execution.
+    </p>
+
+    <h2>Throwable Hierarchy</h2>
+    <pre>
+java.lang.Object
+   └── java.lang.Throwable
+         ├── java.lang.Exception
+         └── java.lang.Error
+    </pre>
+
+    <h2>What is an Exception?</h2>
+    <ul>
+        <li>An <b>Exception</b> is a condition that occurs during the execution of a program and disrupts the normal flow of instructions.</li>
+        <li>Exceptions are typically caused by user errors, programming errors, or resource issues (e.g., file not found, invalid input).</li>
+        <li>Exceptions can be caught and handled in code using <code>try-catch</code> blocks.</li>
+    </ul>
+
+    <h2>What is an Error?</h2>
+    <ul>
+        <li>An <b>Error</b> indicates serious problems that a reasonable application should not try to catch.</li>
+        <li>Errors are typically caused by the environment in which the application is running (e.g., <code>OutOfMemoryError</code>, <code>StackOverflowError</code>).</li>
+        <li>Errors are not meant to be handled by application code.</li>
+    </ul>
+
+    <h2>Example: Exception</h2>
+    <pre>
+public class ExceptionExample {
+    public static void main(String[] args) {
+        try {
+            int a = 10 / 0; // ArithmeticException
+        } catch (ArithmeticException e) {
+            System.out.println("Exception caught: " + e);
+        }
+    }
+}
+// Output: Exception caught: java.lang.ArithmeticException: / by zero
+    </pre>
+
+    <h2>Example: Error</h2>
+    <pre>
+public class ErrorExample {
+    public static void main(String[] args) {
+        // This will cause StackOverflowError
+        recursiveMethod();
+    }
+    static void recursiveMethod() {
+        recursiveMethod();
+    }
+}
+// Output: Exception in thread "main" java.lang.StackOverflowError
+    </pre>
+
+    <h2>Summary Table</h2>
+    <table border="1" cellpadding="6" style="border-collapse:collapse;">
+        <tr>
+            <th>Aspect</th>
+            <th>Exception</th>
+            <th>Error</th>
+        </tr>
+        <tr>
+            <td>Recoverable?</td>
+            <td>Usually recoverable (can be handled in code)</td>
+            <td>Usually not recoverable (should not be handled)</td>
+        </tr>
+        <tr>
+            <td>Examples</td>
+            <td>NullPointerException, IOException, ArithmeticException</td>
+            <td>OutOfMemoryError, StackOverflowError, VirtualMachineError</td>
+        </tr>
+        <tr>
+            <td>Handling</td>
+            <td>Use try-catch-finally</td>
+            <td>Generally not handled</td>
+        </tr>
+    </table>
+</body>
+</html>

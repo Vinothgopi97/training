@@ -687,7 +687,53 @@
                                   
                 ],
                 "content_html": "java_string_class.html"
+            },
+            {
+                "sl_no": 7.2,
+                "title": "Introduction to Exception and Error in Java",
+                "description": "Understanding the difference between exceptions and errors in Java, and how to handle them using try-catch blocks.",
+                "references": [
+                                  
+                ],
+                "content_html": "java_exception_error_intro.html"
+            },
+            {
+                "sl_no": 7.3,
+                "title": "Exception and Error in Java",
+                "description": "Understanding the difference between exceptions and errors in Java, and how to handle them using try-catch blocks.",
+                "references": [
+                                  
+                ],
+                "content_html": "java_exception_error_details.html"
+            },
+            {
+                "sl_no": 7.4,
+                "title": "Exception Handling in Java - Overview",
+                "description": "An overview of exception handling in Java, including the try-catch-finally blocks and the throw statement.",
+                "references": [
+                                  
+                ],
+                "content_html": "java_exception_handling_overview.html"
+            },
+            {
+                "sl_no": 7.5,
+                "title": "Exception Handling in Java - Try-Catch-Finally",
+                "description": "Understanding the try-catch-finally blocks in Java for handling exceptions.",                
+                "references": [
+                                  
+                ],
+                "content_html": "java_try_catch_finally.html"
+            },
+            {
+                "sl_no": 7.6,
+                "title": "Exception Handling in Java - multiple catch blocks",
+                "description": "Understanding how to handle multiple exceptions using multiple catch blocks in Java.",                
+                "references": [
+                                  
+                ],
+                "content_html": "java_multiple_catch_blocks.html"
             }
+           
            
             
         ],                  

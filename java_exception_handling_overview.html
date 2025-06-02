@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exception Handling in Java</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2em; }
+        h1, h2 { color: #2c3e50; }
+        pre { background: #f9f9f9; border: 1px solid #ddd; padding: 10px; }
+        ul { margin-bottom: 1em; }
+    </style>
+</head>
+<body>
+    <h1>Exception Handling in Java</h1>
+    <p>
+        Exception handling in Java is a mechanism to handle runtime errors, so the normal flow of the application can be maintained. It uses <code>try</code>, <code>catch</code>, <code>finally</code>, <code>throw</code>, and <code>throws</code> keywords.
+    </p>
+    <h2>Why Exception Handling?</h2>
+    <ul>
+        <li>To avoid abnormal termination of the program.</li>
+        <li>To provide meaningful error messages to users.</li>
+        <li>To separate error handling code from regular code.</li>
+    </ul>
+    <h2>Basic Syntax</h2>
+    <pre>
+try {
+    // Code that may throw an exception
+} catch (ExceptionType e) {
+    // Code to handle the exception
+} finally {
+    // Code that will always execute
+}
+    </pre>
+    <h2>Example</h2>
+    <pre>
+public class ExceptionDemo {
+    public static void main(String[] args) {
+        try {
+            int a = 10 / 0;
+        } catch (ArithmeticException e) {
+            System.out.println("Caught exception: " + e);
+        } finally {
+            System.out.println("Finally block executed");
+        }
+    }
+}
+    </pre>
+    <h2>Key Points</h2>
+    <ul>
+        <li>Multiple catch blocks can be used to handle different exception types.</li>
+        <li>The <code>finally</code> block always executes, even if an exception is not caught.</li>
+        <li>Uncaught exceptions cause program termination after finally block.</li>
+    </ul>
+</body>
+</html>
