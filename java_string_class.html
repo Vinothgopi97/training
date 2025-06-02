@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Java String Class</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2em; }
+        h1, h2 { color: #2c3e50; }
+        pre { background: #f9f9f9; border: 1px solid #ddd; padding: 10px; }
+        ul { margin-bottom: 1em; }
+    </style>
+</head>
+<body>
+    <h1>Java <code>String</code> Class</h1>
+    <p>
+        The <b><code>String</code></b> class in Java is used to represent a sequence of characters. Strings are widely used in Java programming for storing and manipulating text.
+    </p>
+
+    <h2>Key Points</h2>
+    <ul>
+        <li><code>String</code> is a class in <code>java.lang</code> package.</li>
+        <li>Strings in Java are <b>immutable</b> (once created, their values cannot be changed).</li>
+        <li>String literals are stored in a special memory area called the <b>String Constant Pool</b>.</li>
+        <li>Commonly created using string literals or the <code>new</code> keyword.</li>
+    </ul>
+
+    <h2>Creating Strings</h2>
+    <pre>
+String s1 = "Hello";              // Using string literal
+String s2 = new String("World");  // Using new keyword
+    </pre>
+
+    <h2>Immutability of Strings</h2>
+    <p>
+        When you modify a string, a new object is created. The original string remains unchanged.
+    </p>
+    <pre>
+String s = "Java";
+s.concat(" Programming");
+System.out.println(s); // Output: Java
+
+String s2 = s.concat(" Programming");
+System.out.println(s2); // Output: Java Programming
+    </pre>
+
+    <h2>Common String Methods</h2>
+    <ul>
+        <li><code>length()</code> - Returns the length of the string.</li>
+        <li><code>charAt(int index)</code> - Returns the character at the specified index.</li>
+        <li><code>substring(int beginIndex, int endIndex)</code> - Returns a substring.</li>
+        <li><code>toLowerCase()</code>, <code>toUpperCase()</code> - Converts case.</li>
+        <li><code>trim()</code> - Removes leading and trailing spaces.</li>
+        <li><code>equals()</code>, <code>equalsIgnoreCase()</code> - Compares strings.</li>
+        <li><code>compareTo()</code> - Lexicographically compares two strings.</li>
+        <li><code>replace()</code> - Replaces characters or substrings.</li>
+        <li><code>split()</code> - Splits the string based on a regex.</li>
+    </ul>
+
+    <h2>Example</h2>
+    <pre>
+public class StringExample {
+    public static void main(String[] args) {
+        String str = "  Hello Java!  ";
+        System.out.println("Original: '" + str + "'");
+        System.out.println("Trimmed: '" + str.trim() + "'");
+        System.out.println("Uppercase: " + str.toUpperCase());
+        System.out.println("Substring: " + str.substring(2, 7));
+        System.out.println("Length: " + str.length());
+        System.out.println("Char at 4: " + str.charAt(4));
+        System.out.println("Replace: " + str.replace("Java", "World"));
+        System.out.println("Equals 'Hello Java!': " + str.trim().equals("Hello Java!"));
+    }
+}
+    </pre>
+
+    <h2>String Comparison</h2>
+    <pre>
+String a = "Java";
+String b = "Java";
+String c = new String("Java");
+
+System.out.println(a == b);        // true (same reference in pool)
+System.out.println(a == c);        // false (different objects)
+System.out.println(a.equals(c));   // true (same value)
+    </pre>
+
+    <h2>Why Strings are Immutable?</h2>
+    <ul>
+        <li>Security: Used in sensitive operations like file paths, network connections.</li>
+        <li>Thread safety: Immutable objects are inherently thread-safe.</li>
+        <li>String pool: Allows sharing of string literals for memory efficiency.</li>
+    </ul>
+
+    <h2>Useful Links</h2>
+    <ul>
+        <li><a href="https://www.geeksforgeeks.org/string-class-in-java/" target="_blank">String Class in Java - GeeksforGeeks</a></li>
+        <li><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html" target="_blank">Java String API Documentation</a></li>
+    </ul>
+</body>
+</html>
