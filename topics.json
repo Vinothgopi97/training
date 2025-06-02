@@ -684,10 +684,7 @@
                 "title": "String class in Java",
                 "description": "Understanding the String class in Java, which is used to represent a sequence of characters.",
                 "references": [
-                    {
-                        "title": "Differences Between JDK, JRE and JVM",
-                        "link": "https://www.geeksforgeeks.org/differences-jdk-jre-jvm/"
-                    }                   
+                                  
                 ],
                 "content_html": "java_string_class.html"
             }
