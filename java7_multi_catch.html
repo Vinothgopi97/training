@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Java 7: Multi-catch Block</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2em; }
+        h1, h2 { color: #2c3e50; }
+        pre { background: #f9f9f9; border: 1px solid #ddd; padding: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Java 7: Multi-catch Block</h1>
+    <p>
+        Java 7 introduced the <b>multi-catch</b> block, allowing a single catch block to handle multiple exception types using the <code>|</code> (pipe) symbol.
+    </p>
+    <h2>Example</h2>
+    <pre>
+import java.io.*;
+
+public class MultiCatchExample {
+    public static void main(String[] args) {
+        try {
+            if (args.length == 0)
+                throw new IOException("No args");
+            int a = 10 / 0;
+        } catch (IOException | ArithmeticException ex) {
+            System.out.println("Caught: " + ex);
+        }
+    }
+}
+    </pre>
+    <ul>
+        <li>Reduces code duplication when handling multiple exceptions similarly.</li>
+        <li>Exception variable <code>ex</code> is implicitly final in multi-catch.</li>
+    </ul>
+</body>
+</html>

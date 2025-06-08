@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thread Lifecycle in Java</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2em; }
+        h1, h2 { color: #2c3e50; }
+        ul { margin-bottom: 1em; }
+        pre { background: #f9f9f9; border: 1px solid #ddd; padding: 10px; }
+        .state { font-weight: bold; color: #1a73e8; }
+    </style>
+</head>
+<body>
+    <h1>Thread Lifecycle in Java</h1>
+    <p>
+        A thread in Java goes through several states in its lifecycle, from creation to termination. Understanding these states helps in writing robust multithreaded programs.
+    </p>
+    <h2>Thread States</h2>
+    <ul>
+        <li><span class="state">New</span>: Thread is created but not yet started.</li>
+        <li><span class="state">Runnable</span>: Thread is ready to run and waiting for CPU scheduling.</li>
+        <li><span class="state">Running</span>: Thread is currently executing.</li>
+        <li><span class="state">Blocked</span>: Thread is blocked and waiting for a monitor lock.</li>
+        <li><span class="state">Waiting</span>: Thread is waiting indefinitely for another thread to perform a particular action.</li>
+        <li><span class="state">Timed Waiting</span>: Thread is waiting for another thread to perform an action within a specified waiting time.</li>
+        <li><span class="state">Terminated</span>: Thread has finished execution.</li>
+    </ul>
+    <h2>Thread Lifecycle Diagram</h2>
+    <img src="assets/thread_lifecycle.png" alt="Thread Lifecycle Diagram" style="max-width:100%;border:1px solid #ccc;">
+    <h2>Example Code</h2>
+    <pre>
+class MyThread extends Thread {
+    public void run() {
+        System.out.println("Thread is running...");
+        try {
+            Thread.sleep(1000); // Timed Waiting
+        } catch (InterruptedException e) {
+            System.out.println("Interrupted");
+        }
+    }
+    public static void main(String[] args) throws Exception {
+        MyThread t = new MyThread(); // New
+        System.out.println("State after creation: " + t.getState());
+        t.start(); // Runnable
+        System.out.println("State after start: " + t.getState());
+        Thread.sleep(100); // Give time for thread to enter sleep
+        System.out.println("State during sleep: " + t.getState());
+        t.join(); // Wait for thread to finish
+        System.out.println("State after termination: " + t.getState());
+    }
+}
+    </pre>
+    <h2>Summary Table</h2>
+    <table border="1" cellpadding="6" style="border-collapse:collapse;">
+        <tr>
+            <th>State</th>
+            <th>Description</th>
+            <th>How to Enter</th>
+        </tr>
+        <tr>
+            <td>New</td>
+            <td>Thread is created but not started</td>
+            <td>new Thread()</td>
+        </tr>
+        <tr>
+            <td>Runnable</td>
+            <td>Thread is ready to run</td>
+            <td>start()</td>
+        </tr>
+        <tr>
+            <td>Running</td>
+            <td>Thread is executing</td>
+            <td>Scheduled by JVM</td>
+        </tr>
+        <tr>
+            <td>Blocked</td>
+            <td>Waiting for monitor lock</td>
+            <td>synchronized block/method</td>
+        </tr>
+        <tr>
+            <td>Waiting</td>
+            <td>Waiting indefinitely</td>
+            <td>wait(), join(), park()</td>
+        </tr>
+        <tr>
+            <td>Timed Waiting</td>
+            <td>Waiting for specified time</td>
+            <td>sleep(ms), wait(ms), join(ms), parkNanos()</td>
+        </tr>
+        <tr>
+            <td>Terminated</td>
+            <td>Thread has finished</td>
+            <td>run() method completes</td>
+        </tr>
+    </table>
+    <h2>References</h2>
+    <ul>
+        <li><a href="https://docs.oracle.com/javase/tutorial/essential/concurrency/lifecycle.html" target="_blank">Java Thread Lifecycle (Oracle Docs)</a></li>
+        <li><a href="https://www.geeksforgeeks.org/thread-life-cycle-in-java/" target="_blank">Thread Life Cycle in Java - GeeksforGeeks</a></li>
+    </ul>
+</body>
+</html>

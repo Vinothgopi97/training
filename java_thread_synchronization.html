@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Synchronization in Java Threads</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2em; }
+        h1, h2 { color: #2c3e50; }
+        pre { background: #f9f9f9; border: 1px solid #ddd; padding: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Synchronization in Java Threads</h1>
+    <p>
+        <b>Synchronization</b> is a mechanism to control the access of multiple threads to shared resources. It prevents data inconsistency and race conditions.
+    </p>
+    <h2>Why Synchronization?</h2>
+    <ul>
+        <li>To avoid data corruption when multiple threads modify shared data.</li>
+        <li>To ensure only one thread accesses a critical section at a time.</li>
+    </ul>
+    <h2>Example: Without Synchronization</h2>
+    <pre>
+class Counter {
+    int count = 0;
+    void increment() { count++; }
+}
+public class NoSyncDemo {
+    public static void main(String[] args) throws Exception {
+        Counter c = new Counter();
+        Thread t1 = new Thread(() -> { for(int i=0;i&lt;1000;i++) c.increment(); });
+        Thread t2 = new Thread(() -> { for(int i=0;i&lt;1000;i++) c.increment(); });
+        t1.start(); t2.start();
+        t1.join(); t2.join();
+        System.out.println("Count: " + c.count); // May not be 2000!
+    }
+}
+    </pre>
+    <h2>Example: With Synchronization</h2>
+    <pre>
+class Counter {
+    int count = 0;
+    synchronized void increment() { count++; }
+}
+    </pre>
+    <p>
+        Now, only one thread can execute <code>increment()</code> at a time, ensuring correct results.
+    </p>
+</body>
+</html>

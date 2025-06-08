@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Java 7: NIO.2 Filesystem API</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2em; }
+        h1, h2 { color: #2c3e50; }
+        pre { background: #f9f9f9; border: 1px solid #ddd; padding: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Java 7: NIO.2 Filesystem API</h1>
+    <p>
+        Java 7 introduced the NIO.2 (New I/O) filesystem API in the <code>java.nio.file</code> package, providing a more flexible and comprehensive way to work with files and directories.
+    </p>
+    <h2>Key Features</h2>
+    <ul>
+        <li>Path, Files, and FileSystem classes</li>
+        <li>File operations: create, delete, copy, move, read, write</li>
+        <li>Directory traversal with <code>DirectoryStream</code> and <code>Files.walk()</code></li>
+        <li>File attributes and symbolic links</li>
+    </ul>
+    <h2>Example</h2>
+    <pre>
+import java.nio.file.*;
+
+public class NIO2Example {
+    public static void main(String[] args) throws Exception {
+        Path path = Paths.get("example.txt");
+        Files.write(path, "Hello NIO.2".getBytes());
+        String content = new String(Files.readAllBytes(path));
+        System.out.println(content);
+        Files.delete(path);
+    }
+}
+    </pre>
+</body>
+</html>

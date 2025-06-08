@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Creating Multiple Threads in Java</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2em; }
+        h1, h2 { color: #2c3e50; }
+        pre { background: #f9f9f9; border: 1px solid #ddd; padding: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Creating Multiple Threads in Java</h1>
+    <p>
+        You can create and start multiple threads in Java by creating multiple <code>Thread</code> objects and calling <code>start()</code> on each.
+    </p>
+    <h2>Example: Multiple Threads</h2>
+    <pre>
+class Worker extends Thread {
+    private String name;
+    Worker(String name) { this.name = name; }
+    public void run() {
+        for (int i = 1; i &lt;= 3; i++) {
+            System.out.println(name + " - Count: " + i);
+        }
+    }
+    public static void main(String[] args) {
+        Worker t1 = new Worker("Thread-1");
+        Worker t2 = new Worker("Thread-2");
+        Worker t3 = new Worker("Thread-3");
+        t1.start();
+        t2.start();
+        t3.start();
+    }
+}
+    </pre>
+    <h2>Output</h2>
+    <p>
+        The output order may vary because threads run concurrently.
+    </p>
+</body>
+</html>

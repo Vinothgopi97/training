@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Runnable vs Callable in Java</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2em; }
+        h1, h2 { color: #2c3e50; }
+        table { border-collapse: collapse; margin-bottom: 2em; }
+        th, td { border: 1px solid #ccc; padding: 8px 12px; }
+        th { background: #f0f0f0; }
+        pre { background: #f9f9f9; border: 1px solid #ddd; padding: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Runnable vs Callable in Java</h1>
+    <table>
+        <tr>
+            <th>Feature</th>
+            <th>Runnable</th>
+            <th>Callable</th>
+        </tr>
+        <tr>
+            <td>Package</td>
+            <td>java.lang</td>
+            <td>java.util.concurrent</td>
+        </tr>
+        <tr>
+            <td>Method</td>
+            <td>void run()</td>
+            <td>V call() throws Exception</td>
+        </tr>
+        <tr>
+            <td>Return Value</td>
+            <td>No</td>
+            <td>Yes</td>
+        </tr>
+        <tr>
+            <td>Throws Checked Exception</td>
+            <td>No</td>
+            <td>Yes</td>
+        </tr>
+        <tr>
+            <td>Used With</td>
+            <td>Thread, ExecutorService</td>
+            <td>ExecutorService, Future</td>
+        </tr>
+    </table>
+    <h2>Example: Runnable</h2>
+    <pre>
+class MyRunnable implements Runnable {
+    public void run() {
+        System.out.println("Runnable running");
+    }
+}
+    </pre>
+    <h2>Example: Callable</h2>
+    <pre>
+import java.util.concurrent.*;
+
+class MyCallable implements Callable&lt;String&gt; {
+    public String call() {
+        return "Callable result";
+    }
+}
+    </pre>
+    <p>
+        <b>Summary:</b> Use <b>Runnable</b> for simple tasks that do not return a result. Use <b>Callable</b> when you need a result or need to throw checked exceptions from your task.
+    </p>
+</body>
+</html>

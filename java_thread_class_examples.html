@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thread Class in Java - Examples</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2em; }
+        h1, h2 { color: #2c3e50; }
+        pre { background: #f9f9f9; border: 1px solid #ddd; padding: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Thread Class in Java</h1>
+    <p>
+        The <b>Thread</b> class in Java is used to create and manage threads. There are two main ways to create a thread:
+    </p>
+    <ol>
+        <li>By extending the <code>Thread</code> class</li>
+        <li>By implementing the <code>Runnable</code> interface</li>
+    </ol>
+    <h2>Example 1: Extending Thread Class</h2>
+    <pre>
+class MyThread extends Thread {
+    public void run() {
+        System.out.println("Thread running: " + Thread.currentThread().getName());
+    }
+    public static void main(String[] args) {
+        MyThread t1 = new MyThread();
+        t1.start();
+    }
+}
+    </pre>
+    <h2>Example 2: Implementing Runnable Interface</h2>
+    <pre>
+class MyRunnable implements Runnable {
+    public void run() {
+        System.out.println("Runnable running: " + Thread.currentThread().getName());
+    }
+    public static void main(String[] args) {
+        Thread t1 = new Thread(new MyRunnable());
+        t1.start();
+    }
+}
+    </pre>
+    <h2>Example 3: Anonymous Runnable</h2>
+    <pre>
+public class AnonymousRunnable {
+    public static void main(String[] args) {
+        Thread t = new Thread(() -> {
+            System.out.println("Lambda thread: " + Thread.currentThread().getName());
+        });
+        t.start();
+    }
+}
+    </pre>
+</body>
+</html>

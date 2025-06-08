@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Java 7: Fork/Join Framework</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2em; }
+        h1, h2 { color: #2c3e50; }
+        pre { background: #f9f9f9; border: 1px solid #ddd; padding: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Java 7: Fork/Join Framework</h1>
+    <p>
+        The <b>Fork/Join framework</b> in Java 7 (in <code>java.util.concurrent</code>) is designed for parallelism and efficient use of multi-core processors. It helps break tasks into smaller subtasks, process them in parallel, and combine the results.
+    </p>
+    <h2>Key Classes</h2>
+    <ul>
+        <li><code>ForkJoinPool</code></li>
+        <li><code>RecursiveTask&lt;V&gt;</code> (returns a result)</li>
+        <li><code>RecursiveAction</code> (no result)</li>
+    </ul>
+    <h2>Example</h2>
+    <pre>
+import java.util.concurrent.*;
+
+class SumTask extends RecursiveTask&lt;Integer&gt; {
+    int[] arr;
+    int start, end;
+
+    SumTask(int[] arr, int start, int end) {
+        this.arr = arr; this.start = start; this.end = end;
+    }
+
+    protected Integer compute() {
+        if (end - start &lt;= 2) {
+            int sum = 0;
+            for (int i = start; i &lt; end; i++) sum += arr[i];
+            return sum;
+        } else {
+            int mid = (start + end) / 2;
+            SumTask left = new SumTask(arr, start, mid);
+            SumTask right = new SumTask(arr, mid, end);
+            left.fork();
+            int rightResult = right.compute();
+            int leftResult = left.join();
+            return leftResult + rightResult;
+        }
+    }
+}
+
+public class ForkJoinExample {
+    public static void main(String[] args) {
+        int[] arr = {1,2,3,4,5,6,7,8};
+        ForkJoinPool pool = new ForkJoinPool();
+        int sum = pool.invoke(new SumTask(arr, 0, arr.length));
+        System.out.println("Sum: " + sum);
+    }
+}
+    </pre>
+</body>
+</html>

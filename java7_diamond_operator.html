@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Java 7: Diamond Operator</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2em; }
+        h1, h2 { color: #2c3e50; }
+        pre { background: #f9f9f9; border: 1px solid #ddd; padding: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Java 7: Diamond Operator (&lt;&gt;)</h1>
+    <p>
+        The <b>diamond operator</b> (<code>&lt;&gt;</code>) was introduced in Java 7 to simplify the use of generics. It allows the compiler to infer the type parameters from the context, reducing code verbosity.
+    </p>
+    <h2>Before Java 7</h2>
+    <pre>
+List&lt;String&gt; list = new ArrayList&lt;String&gt;();
+    </pre>
+    <h2>With Diamond Operator (Java 7+)</h2>
+    <pre>
+List&lt;String&gt; list = new ArrayList&lt;&gt;();
+    </pre>
+    <ul>
+        <li>The type on the right side is inferred from the left side.</li>
+        <li>Makes code cleaner and easier to read.</li>
+    </ul>
+    <h2>Example</h2>
+    <pre>
+import java.util.*;
+
+public class DiamondOperatorExample {
+    public static void main(String[] args) {
+        Map&lt;String, Integer&gt; map = new HashMap&lt;&gt;();
+        map.put("A", 1);
+        map.put("B", 2);
+        System.out.println(map);
+    }
+}
+    </pre>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Java 7: NIO.2 Overview</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2em; }
+        h1, h2 { color: #2c3e50; }
+        pre { background: #f9f9f9; border: 1px solid #ddd; padding: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Java 7: NIO.2 Overview</h1>
+    <p>
+        Java 7 introduced NIO.2, a major update to the New I/O API, providing advanced file and filesystem operations, asynchronous I/O, and improved scalability.
+    </p>
+    <h2>Main Features</h2>
+    <ul>
+        <li>Path and Files classes for file operations</li>
+        <li>File attribute views (basic, POSIX, ACL, etc.)</li>
+        <li>Symbolic and hard links</li>
+        <li>Directory traversal and file tree walking</li>
+        <li>Asynchronous file I/O with <code>AsynchronousFileChannel</code></li>
+    </ul>
+    <h2>Example: Directory Traversal</h2>
+    <pre>
+import java.nio.file.*;
+
+public class WalkFileTreeExample {
+    public static void main(String[] args) throws Exception {
+        Path start = Paths.get(".");
+        Files.walk(start, 1)
+            .filter(Files::isRegularFile)
+            .forEach(System.out::println);
+    }
+}
+    </pre>
+</body>
+</html>

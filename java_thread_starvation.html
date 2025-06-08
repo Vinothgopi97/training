@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thread Starvation in Java</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2em; }
+        h1, h2 { color: #2c3e50; }
+        ul { margin-bottom: 1em; }
+    </style>
+</head>
+<body>
+    <h1>Thread Starvation in Java</h1>
+    <p>
+        <b>Thread starvation</b> occurs when a thread is unable to gain regular access to the resources it needs for execution, because other threads are constantly acquiring those resources.
+    </p>
+    <h2>Causes of Starvation</h2>
+    <ul>
+        <li>High-priority threads monopolizing CPU time.</li>
+        <li>Improper use of synchronization or locks.</li>
+        <li>Threads waiting indefinitely for resources.</li>
+    </ul>
+    <h2>Example Scenario</h2>
+    <ul>
+        <li>If a low-priority thread is waiting for a lock held by a high-priority thread that never releases it, the low-priority thread may starve.</li>
+    </ul>
+    <h2>How to Avoid Starvation?</h2>
+    <ul>
+        <li>Use fair locking mechanisms (e.g., <code>ReentrantLock</code> with fairness).</li>
+        <li>Avoid holding locks for long periods.</li>
+        <li>Design thread scheduling carefully.</li>
+    </ul>
+</body>
+</html>

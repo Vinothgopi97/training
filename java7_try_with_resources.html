@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Java 7: Try-with-Resources</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2em; }
+        h1, h2 { color: #2c3e50; }
+        pre { background: #f9f9f9; border: 1px solid #ddd; padding: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Java 7: Try-with-Resources</h1>
+    <p>
+        The <b>try-with-resources</b> statement in Java 7 simplifies resource management by automatically closing resources (like files, streams) when they are no longer needed.
+    </p>
+    <h2>Example</h2>
+    <pre>
+import java.io.*;
+
+public class TryWithResourcesExample {
+    public static void main(String[] args) {
+        try (BufferedReader br = new BufferedReader(new FileReader("test.txt"))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                System.out.println(line);
+            }
+        } catch (IOException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
+}
+    </pre>
+    <ul>
+        <li>No need to explicitly close the resource; it is closed automatically.</li>
+        <li>Resources must implement <code>AutoCloseable</code> interface.</li>
+    </ul>
+</body>
+</html>

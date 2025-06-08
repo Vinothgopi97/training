@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Java String & Exception Handling Assignment</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2em; }
+        h1 { color: #2c3e50; }
+        ol { margin-bottom: 2em; }
+        li { margin-bottom: 1em; }
+    </style>
+</head>
+<body>
+    <h1>Assignment: Java String Class & Exception Handling</h1>
+    <ol>
+        <li>Write a Java program to compare two strings using both <code>==</code> and <code>equals()</code> and explain the output.<br>
+            <b>Example:</b> Compare <code>"Java"</code> and <code>new String("Java")</code>.
+        </li>
+        <li>Write a Java program to demonstrate the concept of the String Constant Pool in Java.<br>
+            <b>Example:</b> Create two string literals with the same value and compare their references.
+        </li>
+        <li>Write a Java program to reverse a string without using the built-in <code>reverse()</code> method.<br>
+            <b>Example:</b> Input: <code>"hello"</code> → Output: <code>"olleh"</code>
+        </li>
+        <li>Write a Java program to show the output of the following code:<br>
+            <pre>
+String s1 = "hello";
+String s2 = new String("hello");
+System.out.println(s1 == s2);
+System.out.println(s1.equals(s2));
+            </pre>
+            <b>Example:</b> Run the code and explain the output.
+        </li>
+        <li>Write a Java program to convert a string to uppercase and remove leading/trailing spaces.<br>
+            <b>Example:</b> Input: <code>"  java programming  "</code> → Output: <code>"JAVA PROGRAMMING"</code>
+        </li>
+        <li>Write a Java method to count the number of vowels in a given string.<br>
+            <b>Example:</b> Input: <code>"Education"</code> → Output: <code>5</code>
+        </li>
+        <li>Write a Java program to demonstrate string immutability.<br>
+            <b>Example:</b> Show that concatenating to a string does not change the original string.
+        </li>
+        <li>Write a Java program to split a string into an array of words.<br>
+            <b>Example:</b> Input: <code>"Java is fun"</code> → Output: <code>["Java", "is", "fun"]</code>
+        </li>
+        <li>Write a Java program to create a custom exception and show how to throw and catch it.<br>
+            <b>Example:</b> Throw <code>InvalidAgeException</code> if age is less than 18.
+        </li>
+        <li>Write a Java program to demonstrate the difference between <code>throw</code> and <code>throws</code> keywords.<br>
+            <b>Example:</b> Create a method that throws an exception using both keywords.
+        </li>
+        <li>Write a Java program to show that a <code>try</code> block can exist without a <code>catch</code> block (using <code>finally</code>).<br>
+            <b>Example:</b> Use <code>try-finally</code> to print a message.
+        </li>
+        <li>Write a Java program to demonstrate the use of the <code>finally</code> block and show that it executes even if there is a return statement in the <code>try</code> block.<br>
+            <b>Example:</b> Return from <code>try</code> and print a message in <code>finally</code>.
+        </li>
+        <li>Write a Java program to read a string from the user and throw a custom exception if the string is empty.<br>
+            <b>Example:</b> If input is <code>""</code>, throw <code>EmptyStringException</code>.
+        </li>
+        <li>Write a Java program to handle multiple exceptions in a single <code>catch</code> block (multi-catch).<br>
+            <b>Example:</b> Handle <code>ArithmeticException</code> and <code>ArrayIndexOutOfBoundsException</code> together.
+        </li>
+        <li>Write a Java program where an exception is thrown in a method but not caught there, and is handled in the calling method.<br>
+            <b>Example:</b> Method <code>foo()</code> throws an exception, <code>main()</code> catches it.
+        </li>
+    </ol>
+</body>
+</html>

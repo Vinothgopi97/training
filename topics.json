@@ -711,7 +711,11 @@
                 "title": "Exception Handling in Java - Overview",
                 "description": "An overview of exception handling in Java, including the try-catch-finally blocks and the throw statement.",
                 "references": [
-                                  
+                     {
+                        "title": "Exception handling in Java (Tamil)",
+                        "link": "https://youtu.be/cklET8UVxQI"
+                    }          
+                    
                 ],
                 "content_html": "java_exception_handling_overview.html"
             },
@@ -732,12 +736,309 @@
                                   
                 ],
                 "content_html": "java_multiple_catch_blocks.html"
+            },
+            {
+                "sl_no": 7.7,
+                "title": "Custom Exception Handling in Java",
+                "description": "Understanding how to create and throw custom exceptions in Java.",
+                "references": [
+                                  
+                ],
+                "content_html": "java_custom_exception_throw_throws.html"
+            },{
+                "sl_no": "Assignment",
+                "title": "String and Exception Handling in Java",
+                "description": "Complete the following tasks:.",
+                "references": [
+                                  
+                ],
+                "content_html": "java_string_exception_questions.html"
             }
-           
-           
             
         ],                  
         "practice_assignments": ["Compile Java manually", "View bytecode", "Simulate JVM memory"]
+      },
+      {
+        "sl_no": 8,
+        "title": "Threads in Java",
+        "subtopics": [
+            {
+                "sl_no": 8.1,
+                "title": "Introduction to Threads",
+                "description": "Understanding the concept of threads in Java, including how to create and manage threads.",
+                "references": [
+                    {
+                        "title": "Introduction to Threads in Java",
+                        "link": "https://www.geeksforgeeks.org/java-threads/"
+                    }, {
+                        "title": "Threads in Java (Tamil)",
+                        "link": "https://youtu.be/5CCcEXzYM3Q"
+                    }                    
+                ],
+                "content_html": "java_threads_intro.html"
+            },
+            {
+                "sl_no": 8.2,
+                "title": "Thread Lifecycle",
+                "description": "Understanding the lifecycle of a thread in Java, including states like new, runnable, blocked, waiting, timed waiting, and terminated.",
+                "references": [
+                    {
+                        "title": "Thread Lifecycle in Java",
+                        "link": "https://www.geeksforgeeks.org/lifecycle-and-states-of-a-thread-in-java/"
+                    }, {
+                        "title": "Thread Lifecycle in Java",
+                        "link": "https://youtube.com/shorts/wxRKebyCG8Q?si=t5oB9LvgsJSO4lGG"
+                    }                    
+                ],
+                "content_html": "java_thread_lifecycle.html"
+            },
+            {
+                "sl_no": 8.3,
+                "title": "Thread class",
+                "description": "Understanding how to create threads in Java using the Thread class and Runnable interface.",
+                "references": [
+                    {
+                        "title":"Creating Threads in Java",
+                        "link":"https://www.geeksforgeeks.org/creating-threads-in-java/"
+                    }, {
+                        "title":"Creating Threads in Java (Tamil)",
+                        "link":"https://youtu.be/2b0g3k4a9dY"
+                    }                    
+                ],
+                "content_html": "java_thread_class_examples.html"
+            },{
+                "sl_no": 8.4,
+                "title": "Multiple Threads",
+                "description": "Understanding how to create and manage multiple threads in Java, including thread synchronization and communication.",
+                "references": [
+                    {
+                        "title": "Multiple Threads in Java",
+                        "link": "https://www.geeksforgeeks.org/multithreading-in-java/"
+                    }, {
+                        "title": "Multiple Threads in Java (Tamil)",
+                        "link": "https://youtu.be/2b0g3k4a9dY"
+                    }
+                ],
+                "content_html": "java_multiple_threads.html"
+            },
+              {
+                "sl_no": 8.5,
+                "title": "Thread Starvation",
+                "description": "Understanding the concept of thread starvation in Java, which occurs when a thread is perpetually denied access to resources it needs to proceed.",
+                
+                "references": [
+                    {
+                        "title": "Thread Starvation in Java",
+                        "link": "https://www.geeksforgeeks.org/thread-starvation-in-java/"
+                    }, {
+                        "title": "Thread Starvation in Java (Tamil)",
+                        "link": "https://youtu.be/2b0g3k4a9dY"
+                    }
+                ],
+                "content_html": "java_thread_starvation.html"
+            },
+            {
+                "sl_no": 8.6,
+                "title": "Thread Synchronization",
+                "description": "Understanding the concept of thread synchronization in Java, including how to use synchronized methods",
+                "references": [
+                    {
+                        "title": "Thread Synchronization in Java",
+                        "link": "https://www.geeksforgeeks.org/synchronization-in-java/"
+                    }, {
+                        "title": "Thread Synchronization in Java (Tamil)",
+                        "link": "https://youtu.be/2b0g3k4a9dY"
+                    }                    
+                ],
+                 "content_html": "java_thread_synchronization.html"
+
+            },
+            {
+                "sl_no": 8.7,
+                "title": "Advantages and Disadvantages of Threads",
+                "description": "Understanding the advantages and disadvantages of using threads in Java, including improved performance and complexity.",
+                
+                "references": [
+                    {
+                        "title": "Advantages and Disadvantages of Threads in Java",
+                        "link": "https://www.geeksforgeeks.org/advantages-and-disadvantages-of-threads-in-java/"
+                    }, {
+                        "title": "Advantages and Disadvantages of Threads in Java (Tamil)",
+                        "link": "https://youtu.be/2b0g3k4a9dY"
+                    }
+                ],
+                 "content_html": "java_thread_advantages_disadvantages.html"
+
+            }
+            ,
+            {
+                "sl_no": 8.8,
+                "title": "Runnable Interface",
+                "description": "Understanding the Runnable interface in Java, which is used to define a task that can be executed by a thread.",                
+                
+                "references": [
+                    {
+                        "title": "Runnable Interface in Java",
+                        "link": "https://www.geeksforgeeks.org/runnable-interface-in-java/"
+                    }, {
+                        "title": "Runnable Interface in Java (Tamil)",
+                        "link": "https://youtu.be/r4n6_tv4Qsw?si=gSFAX8oVy7tC9J9D"
+                    }
+                ],
+                 "content_html": "java_runnable_interface.html"
+
+            },
+            {
+                "sl_no": 8.9,
+                "title": "Callable Interface",
+                "description": "Understanding the Callable interface in Java, which is similar to Runnable but can return a result and throw checked exceptions.",                
+                
+                "references": [
+                    {
+                        "title": "Callable Interface in Java",
+                        "link": "https://www.geeksforgeeks.org/callable-interface-in-java/"
+                    }, {
+                        "title": "Callable Interface in Java (Tamil)",
+                        "link": "https://youtu.be/2b0g3k4a9dY"
+                    }
+                ],
+                 "content_html": "java_callable_interface.html"
+
+            },
+            {
+                "sl_no": 8.9,
+                "title": "Runnable vs Callable Interface",
+                "description": "Understanding the differences between Runnable and Callable interfaces in Java, including their use cases and capabilities.",
+                
+                "references": [
+                    {
+                        "title": "Runnable vs Callable Interface in Java",
+                        "link": "https://www.geeksforgeeks.org/runnable-vs-callable-interface-in-java/"
+                    }, {
+                        "title": "Runnable vs Callable Interface in Java (Tamil)",
+                        "link": "https://youtu.be/2b0g3k4a9dY"
+                    }
+                ],
+                 "content_html": "java_runnable_vs_callable.html"
+
+            }
+                
+        ]
+     },
+      {
+        "sl_no": 9,
+        "title": "Java 7",
+        "subtopics": [
+            {
+                "sl_no": 8.1,
+                "title": "Java 7 - Introduction",
+                "description": "An introduction to Java 7, including its new features and enhancements over previous versions.",                
+                "references": [
+                                  
+                ],
+                "content_html": "java7_introduction.html"
+            },
+            {
+                "sl_no": 8.2,
+                "title": "Try with Resources in Java 7",
+                "description": "Understanding the try-with-resources statement in Java 7, which simplifies resource management by automatically closing resources when they are no longer needed.",
+                "references": [
+                                  
+                ],
+                "content_html": "java7_try_with_resources.html"
+            },
+            {
+                "sl_no": 8.3,
+                "title": "Strings in Switch in Java 7",
+                "description": "Understanding the ability to use strings in switch statements in Java 7, which allows for more readable and maintainable code.",                
+                "references": [
+                                  
+                ],
+                "content_html": "java7_switch_string.html"
+            },
+            {
+                "sl_no": 8.4,
+                "title": "Binary Literals in Java 7",
+                "description": "Understanding the use of binary literals in Java 7, which allows for more concise representation of binary values using the '0b' prefix.",
+                "references": [
+                                  
+                ],
+                "content_html": "java7_binary_literals.html"
+            },
+            {
+                "sl_no": 8.5,
+                "title": "Underscores in Numeric Literals in Java 7",
+                "description": "Understanding the use of underscores in numeric literals in Java 7, which improves readability of large numbers by allowing underscores to be used as visual separators.",
+                "references": [
+                                  
+                ],
+                "content_html": "java7_underscores_numeric_literals.html"
+            },
+            {
+                "sl_no": 8.6,
+                "title": "Multi catch block in Java 7",
+                "description": "Understanding the multi-catch block feature in Java 7, which allows multiple exceptions to be caught in a single catch block, reducing code duplication and improving readability.",
+                "references": [
+                                  
+                ],
+                "content_html": "java7_multi_catch.html"
+            },
+            {
+                "sl_no": 8.7,
+                "title": "Diamond Operator in Java 7",
+                "description": "Understanding the diamond operator in Java 7, which simplifies the use of generics by allowing the compiler to infer the type parameters.",
+                "references": [
+                                  
+                ],
+                "content_html": "java7_diamond_operator.html"
+            },
+            
+            {
+                "sl_no": 8.8,
+                "title": "Type inference in Java 7",
+                "description": "Understanding type inference in Java 7, which allows the compiler to infer the type of a variable based on its context, reducing the need for explicit type declarations.",
+                "references": [
+                                  
+                ],
+                "content_html": "java7_type_inference.html"
+            },
+            {
+                "sl_no": "8.9.1",
+                "title": "NIO.2 Overview in Java 7",
+                "description": "Understanding the NIO.2 (New Input/Output) package in Java 7, which provides improved file I/O capabilities and support for symbolic links.",
+                "references": [
+                                  
+                ],
+                "content_html": "java7_nio2_overview.html"
+            },            
+            {
+                "sl_no": "8.9.1",
+                "title": "NIO.2 Filesystem in Java 7",
+                "description": "Understanding the NIO.2 Filesystem API in Java 7, which provides a more flexible and powerful way to work with files and directories.",
+                "references": [
+                                  
+                ],
+                "content_html": "java7_nio2_filesystem.html"
+            },
+            {
+                "sl_no": 8.10,
+                "title": "Fork/Join Framework in Java 7",
+                "description": "Understanding the Fork/Join framework in Java 7, which provides a way to parallelize tasks and improve performance on multi-core processors.",
+                "references": [
+                                  
+                ],
+                "content_html": "java7_fork_join_framework.html"
+            },
+            {
+                "sl_no": "Assignment",
+                "title": "Java 7 Concepts",
+                "description": "Complete the following tasks:.",
+                "references": [
+                                  
+                ],
+                "content_html": "java7_assignment.html"
+            }
+        ]
       }
     ]
   }

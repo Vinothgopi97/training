@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Runnable Interface in Java</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2em; }
+        h1, h2 { color: #2c3e50; }
+        pre { background: #f9f9f9; border: 1px solid #ddd; padding: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Runnable Interface in Java</h1>
+    <p>
+        The <b>Runnable</b> interface is used to define a task that can be executed by a thread. It contains a single method: <code>public void run()</code>.
+    </p>
+    <h2>How to Use Runnable</h2>
+    <ol>
+        <li>Implement the <code>Runnable</code> interface.</li>
+        <li>Override the <code>run()</code> method with the code to execute.</li>
+        <li>Create a <code>Thread</code> object, passing the <code>Runnable</code> instance.</li>
+        <li>Call <code>start()</code> on the <code>Thread</code> object.</li>
+    </ol>
+    <h2>Example</h2>
+    <pre>
+class MyRunnable implements Runnable {
+    public void run() {
+        System.out.println("Runnable running: " + Thread.currentThread().getName());
+    }
+    public static void main(String[] args) {
+        Thread t1 = new Thread(new MyRunnable());
+        t1.start();
+    }
+}
+    </pre>
+    <h2>Advantages</h2>
+    <ul>
+        <li>Allows your class to extend another class (since Java supports only single inheritance).</li>
+        <li>Can be reused by multiple threads.</li>
+    </ul>
+</body>
+</html>

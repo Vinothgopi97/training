@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Custom Exception, throw, throws in Java</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2em; }
+        h1, h2 { color: #2c3e50; }
+        pre { background: #f9f9f9; border: 1px solid #ddd; padding: 10px; }
+        ul { margin-bottom: 1em; }
+    </style>
+</head>
+<body>
+    <h1>Custom Exception, <code>throw</code>, <code>throws</code> in Java</h1>
+    <h2>Custom Exception</h2>
+    <p>
+        In Java, you can create your own exception classes by extending the <code>Exception</code> class (for checked exceptions) or <code>RuntimeException</code> (for unchecked exceptions).
+    </p>
+    <pre>
+class InvalidAgeException extends Exception {
+    public InvalidAgeException(String message) {
+        super(message);
+    }
+}
+    </pre>
+    <h2>throw Keyword</h2>
+    <p>
+        The <code>throw</code> keyword is used to explicitly throw an exception (either predefined or custom).
+    </p>
+    <pre>
+public class ThrowExample {
+    static void checkAge(int age) throws InvalidAgeException {
+        if (age < 18) {
+            throw new InvalidAgeException("Age must be 18 or above");
+        }
+        System.out.println("Eligible to vote");
+    }
+
+    public static void main(String[] args) {
+        try {
+            checkAge(15);
+        } catch (InvalidAgeException e) {
+            System.out.println("Exception caught: " + e.getMessage());
+        }
+    }
+}
+    </pre>
+    <h2>throws Keyword</h2>
+    <p>
+        The <code>throws</code> keyword is used in method signatures to declare that a method may throw one or more exceptions.
+    </p>
+    <pre>
+void myMethod() throws IOException, SQLException {
+    // code that may throw IOException or SQLException
+}
+    </pre>
+
+    <h2>Exception Rethrowing (Exception Bounce)</h2>
+    <p>
+        Sometimes, you may want to catch an exception in one method and rethrow it to be handled by another method. This is called <b>exception rethrowing</b> or <b>exception bounce</b>.
+    </p>
+    <pre>
+public class RethrowExample {
+    static void methodA() throws InvalidAgeException {
+        try {
+            methodB();
+        } catch (InvalidAgeException e) {
+            System.out.println("Caught in methodA, rethrowing...");
+            throw e; // rethrowing the exception
+        }
+    }
+
+    static void methodB() throws InvalidAgeException {
+        throw new InvalidAgeException("Exception from methodB");
+    }
+
+    public static void main(String[] args) {
+        try {
+            methodA();
+        } catch (InvalidAgeException e) {
+            System.out.println("Handled in main: " + e.getMessage());
+        }
+    }
+}
+    </pre>
+    <ul>
+        <li>Here, <code>methodB</code> throws an exception, <code>methodA</code> catches and rethrows it, and <code>main</code> finally handles it.</li>
+        <li>This is useful for logging or adding context before passing the exception up the call stack.</li>
+    </ul>
+
+    <h2>Summary</h2>
+    <ul>
+        <li><b>Custom Exception:</b> Create by extending <code>Exception</code> or <code>RuntimeException</code>.</li>
+        <li><b>throw:</b> Used to throw an exception explicitly.</li>
+        <li><b>throws:</b> Used in method signature to declare possible exceptions.</li>
+        <li><b>Exception rethrowing:</b> Catch and throw the same exception to another method for handling.</li>
+    </ul>
+</body>
+</html>

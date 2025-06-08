@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Java 7: Improved Type Inference for Generics</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2em; }
+        h1, h2 { color: #2c3e50; }
+        pre { background: #f9f9f9; border: 1px solid #ddd; padding: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Java 7: Improved Type Inference for Generic Instance Creation</h1>
+    <p>
+        Java 7 enhanced the compiler's ability to infer generic types, especially when using the diamond operator <code>&lt;&gt;</code> in method calls and nested generics.
+    </p>
+    <h2>Example: Nested Generics</h2>
+    <pre>
+Map&lt;String, List&lt;Integer&gt;&gt; map = new HashMap&lt;&gt;();
+    </pre>
+    <h2>Example: Method Calls</h2>
+    <pre>
+public static &lt;T&gt; List&lt;T&gt; emptyList() {
+    return new ArrayList&lt;&gt;();
+}
+    </pre>
+    <ul>
+        <li>The compiler can infer the type parameters, reducing the need for explicit type declarations.</li>
+        <li>This makes code involving generics more concise and readable.</li>
+    </ul>
+</body>
+</html>

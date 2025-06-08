@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Java 7: String in Switch Statement</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2em; }
+        h1, h2 { color: #2c3e50; }
+        pre { background: #f9f9f9; border: 1px solid #ddd; padding: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Java 7: String in Switch Statement</h1>
+    <p>
+        Java 7 introduced the ability to use <b>String</b> objects in <code>switch</code> statements, making code more readable and concise.
+    </p>
+    <h2>Example</h2>
+    <pre>
+public class SwitchStringExample {
+    public static void main(String[] args) {
+        String day = "MONDAY";
+        switch (day) {
+            case "MONDAY":
+                System.out.println("Start of the week");
+                break;
+            case "FRIDAY":
+                System.out.println("End of the week");
+                break;
+            default:
+                System.out.println("Midweek");
+        }
+    }
+}
+    </pre>
+    <ul>
+        <li>Before Java 7, only <code>int</code>, <code>char</code>, <code>enum</code> types were allowed in switch.</li>
+        <li>Now, <code>String</code> can be used directly.</li>
+    </ul>
+</body>
+</html>
