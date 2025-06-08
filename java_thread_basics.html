@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Java Thread Basics</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2em; }
+        h2 { color: #2c3e50; }
+        code, pre { background: #f4f4f4; padding: 2px 6px; border-radius: 3px; }
+        pre { padding: 10px; }
+        ul { margin-bottom: 1em; }
+    </style>
+</head>
+<body>
+    <h1>Java Thread Basics</h1>
+
+    <h2>Main Thread in Java</h2>
+    <p>
+        When a Java application starts, one thread begins running immediately: the <b>main thread</b>. It is created by the JVM and executes the code inside the <code>main()</code> method.
+    </p>
+    <pre>
+public class MainThreadDemo {
+    public static void main(String[] args) {
+        System.out.println("Current thread: " + Thread.currentThread().getName());
+    }
+}
+    </pre>
+
+    <h2>Getting Current Thread Details</h2>
+    <p>
+        You can get the current thread using <code>Thread.currentThread()</code>. This object provides details like name, priority, and thread group.
+    </p>
+    <pre>
+Thread t = Thread.currentThread();
+System.out.println("Name: " + t.getName());
+System.out.println("Priority: " + t.getPriority());
+System.out.println("Thread Group: " + t.getThreadGroup());
+    </pre>
+
+    <h2>Naming a Thread</h2>
+    <p>
+        Threads can be named for easier identification. You can set a thread's name using the constructor or <code>setName()</code> method.
+    </p>
+    <pre>
+Thread t1 = new Thread();
+t1.setName("Worker-1");
+System.out.println(t1.getName());
+    </pre>
+
+    <h2>Thread Priority</h2>
+    <p>
+        Each thread has a priority (1 to 10). Higher-priority threads are scheduled before lower-priority ones (but scheduling is OS-dependent).
+    </p>
+    <pre>
+Thread t = new Thread();
+t.setPriority(Thread.MAX_PRIORITY); // 10
+System.out.println(t.getPriority());
+    </pre>
+
+    <h2>Thread Methods in Java</h2>
+    <ul>
+        <li><code>start()</code>: Starts the thread and calls its <code>run()</code> method in a new call stack.</li>
+        <li><code>run()</code>: Contains the code to be executed by the thread. Called by <code>start()</code>.</li>
+        <li><code>sleep(long millis)</code>: Pauses the thread for the specified milliseconds. Throws <code>InterruptedException</code>.</li>
+        <li><code>join()</code>: Causes the current thread to wait until another thread finishes execution. Useful for sequencing threads.</li>
+        <li><code>isAlive()</code>: Returns <code>true</code> if the thread is still running.</li>
+        <li><code>setName(String)</code>, <code>getName()</code>: Set or get the thread's name.</li>
+        <li><code>setPriority(int)</code>, <code>getPriority()</code>: Set or get the thread's priority.</li>
+        <li><code>setDaemon(boolean)</code>, <code>isDaemon()</code>: Set or check if the thread is a daemon thread.</li>
+        <li><code>wait()</code>, <code>notify()</code>, <code>notifyAll()</code>: Used for inter-thread communication (must be called from synchronized context).</li>
+    </ul>
+
+    <h3>Detailed Explanation of Important Methods</h3>
+
+    <h4>join()</h4>
+    <p>
+        The <code>join()</code> method allows one thread to wait for the completion of another. For example, if thread A calls <code>threadB.join()</code>, thread A will pause execution until thread B finishes.
+    </p>
+    <pre>
+Thread t1 = new Thread(() -> {
+    for (int i = 0; i < 5; i++) {
+        System.out.println("T1: " + i);
+    }
+});
+t1.start();
+t1.join(); // Main thread waits for t1 to finish
+System.out.println("T1 finished, main thread resumes.");
+    </pre>
+    <p>
+        <b>Use case:</b> Ensuring that a thread completes before proceeding, such as waiting for a background calculation to finish before using its result.
+    </p>
+
+    <h4>notify() and notifyAll()</h4>
+    <p>
+        <code>notify()</code> and <code>notifyAll()</code> are used for inter-thread communication. They are called on objects (not threads) and must be used within a synchronized context.
+    </p>
+    <ul>
+        <li><code>notify()</code>: Wakes up a single thread waiting on the object's monitor.</li>
+        <li><code>notifyAll()</code>: Wakes up all threads waiting on the object's monitor.</li>
+    </ul>
+    <pre>
+class SharedResource {
+    synchronized void produce() throws InterruptedException {
+        System.out.println("Producing...");
+        wait(); // Releases lock and waits to be notified
+        System.out.println("Resumed after notify");
+    }
+    synchronized void consume() {
+        System.out.println("Consuming...");
+        notify(); // Wakes up one waiting thread
+    }
+}
+    </pre>
+    <p>
+        <b>notify()</b> is used when only one waiting thread needs to proceed, while <b>notifyAll()</b> is used when all waiting threads should be awakened (e.g., in a producer-consumer scenario).
+    </p>
+    <pre>
+synchronized(obj) {
+    obj.notifyAll(); // Wakes up all threads waiting on obj
+}
+    </pre>
+    <p>
+        <b>Note:</b> <code>wait()</code>, <code>notify()</code>, and <code>notifyAll()</code> must be called from synchronized blocks or methods, otherwise a <code>IllegalMonitorStateException</code> is thrown.
+    </p>
+
+    <h4>Other Common Thread Methods</h4>
+    <ul>
+        <li><code>yield()</code>: Hints to the scheduler that the current thread is willing to yield its current use of a processor.</li>
+        <li><code>interrupt()</code>: Interrupts the thread, setting its interrupt flag.</li>
+        <li><code>checkAccess()</code>: Determines if the currently running thread has permission to modify the thread.</li>
+    </ul>
+
+    <h2>Daemon Thread</h2>
+    <p>
+        A <b>daemon thread</b> is a background service thread that runs in the JVM, typically performing tasks such as garbage collection, background monitoring, or other housekeeping tasks. Daemon threads are different from user threads:
+    </p>
+    <ul>
+        <li>
+            <b>User threads</b> keep the JVM running. The JVM will not exit as long as at least one user thread is alive.
+        </li>
+        <li>
+            <b>Daemon threads</b> do <b>not</b> prevent the JVM from exiting. When all user threads finish, the JVM will terminate, and any remaining daemon threads are abruptly stopped (they do not complete their execution).
+        </li>
+    </ul>
+    <p>
+        You can make a thread a daemon by calling <code>setDaemon(true)</code> <b>before</b> starting the thread. Once started, you cannot change its daemon status.
+    </p>
+    <pre>
+Thread t = new Thread(() -> {
+    while (true) {
+        System.out.println("Daemon thread running...");
+        try { Thread.sleep(1000); } catch (InterruptedException e) { }
+    }
+});
+t.setDaemon(true); // Must be set before start()
+t.start();
+System.out.println("Is daemon: " + t.isDaemon());
+    </pre>
+    <p>
+        <b>Example:</b> The Java garbage collector runs as a daemon thread. If your application only has daemon threads left, the JVM will exit, and those threads will be stopped immediately.
+    </p>
+    <p>
+        <b>Important points:</b>
+        <ul>
+            <li>Call <code>setDaemon(true)</code> before <code>start()</code>.</li>
+            <li>Daemon threads are best for background tasks that do not require program completion.</li>
+            <li>Do not use daemon threads for tasks that must complete or save data, as they may be killed at any time when the JVM exits.</li>
+        </ul>
+    </p>
+
+    <h2>Thread Safety in Java</h2>
+    <p>
+        <b>Thread safety</b> means that shared data is protected from concurrent access issues. Use synchronization, locks, or thread-safe classes to ensure thread safety.
+    </p>
+    <ul>
+        <li>Use <code>synchronized</code> methods or blocks.</li>
+        <li>Use classes from <code>java.util.concurrent</code> package.</li>
+        <li>Example of synchronized method:</li>
+    </ul>
+    <pre>
+public synchronized void increment() {
+    count++;
+}
+    </pre>
+    <p>
+        For more advanced control, use <code>ReentrantLock</code> or other concurrency utilities.
+    </p>
+</body>
+</html>

@@ -799,14 +799,25 @@
                 "references": [
                     {
                         "title":"Creating Threads in Java",
-                        "link":"https://www.geeksforgeeks.org/creating-threads-in-java/"
-                    }, {
-                        "title":"Creating Threads in Java (Tamil)",
-                        "link":"https://youtu.be/2b0g3k4a9dY"
+                        "link":"https://www.geeksforgeeks.org/java-lang-thread-class-java/"
                     }                    
                 ],
                 "content_html": "java_thread_class_examples.html"
-            },{
+            },
+            {
+                "sl_no": "8.3.1",
+                "title": "Thread baiscs",
+                "description": "Understanding the basic concepts of threads in Java, including how to create and manage threads.",
+                "references": [
+                    {
+                        "title": "Daemon Threads in Java",
+                        "link": "https://www.geeksforgeeks.org/daemon-thread-java/"
+                    } 
+                    
+                ],
+                "content_html": "java_thread_basics.html"
+            },
+            {
                 "sl_no": 8.4,
                 "title": "Multiple Threads",
                 "description": "Understanding how to create and manage multiple threads in Java, including thread synchronization and communication.",
@@ -814,9 +825,6 @@
                     {
                         "title": "Multiple Threads in Java",
                         "link": "https://www.geeksforgeeks.org/multithreading-in-java/"
-                    }, {
-                        "title": "Multiple Threads in Java (Tamil)",
-                        "link": "https://youtu.be/2b0g3k4a9dY"
                     }
                 ],
                 "content_html": "java_multiple_threads.html"
