@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Java Threads Assignment Questions</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background: #f8f9fa; margin: 2em; }
+        .question-list { background: #fff; border-radius: 8px; padding: 2em; box-shadow: 0 2px 8px #eee; }
+        h2 { color: #2c3e50; }
+        li { margin-bottom: 1.2em; }
+        .example { color: #555; font-size: 0.95em; margin-top: 0.3em; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="mb-4">Java Threads - Simple Assignment Questions</h2>
+        <div class="question-list">
+            <ol>
+                <li>
+                    Create a thread by extending the <code>Thread</code> class and print "Hello from thread!" five times.
+                    <div class="example">Example: <br>
+                        <code>
+                        class MyThread extends Thread {<br>
+                        &nbsp;&nbsp;public void run() {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;for(int i=0;i&lt;5;i++) System.out.println("Hello from thread!");<br>
+                        &nbsp;&nbsp;}<br>
+                        }
+                        </code>
+                    </div>
+                </li>
+                <li>
+                    Create a thread using the <code>Runnable</code> interface and print numbers from 1 to 5.
+                    <div class="example">Example: <br>
+                        <code>
+                        class MyRunnable implements Runnable {<br>
+                        &nbsp;&nbsp;public void run() {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;for(int i=1;i&lt;=5;i++) System.out.println(i);<br>
+                        &nbsp;&nbsp;}<br>
+                        }
+                        </code>
+                    </div>
+                </li>
+                <li>
+                    Start two threads: one prints "A" and the other prints "B" ten times each.
+                    <div class="example">Example: <br>
+                        <code>
+                        // Thread 1 prints "A", Thread 2 prints "B"
+                        </code>
+                    </div>
+                </li>
+                <li>
+                    Write a program where the main thread waits for another thread to finish using <code>join()</code>.
+                    <div class="example">Example: <br>
+                        <code>
+                        t.join(); // main waits for t to finish
+                        </code>
+                    </div>
+                </li>
+                <li>
+                    Demonstrate thread sleep: make a thread print "Tick" every second for 5 seconds.
+                    <div class="example">Example: <br>
+                        <code>
+                        Thread.sleep(1000); // sleep for 1 second
+                        </code>
+                    </div>
+                </li>
+                <li>
+                    Show how to interrupt a thread and handle <code>InterruptedException</code>.
+                    <div class="example">Example: <br>
+                        <code>
+                        if(Thread.interrupted()) break;
+                        </code>
+                    </div>
+                </li>
+                <li>
+                    Create a shared counter variable and increment it from two threads. Use <code>synchronized</code> to avoid errors.
+                    <div class="example">Example: <br>
+                        <code>
+                        synchronized void increment() { counter++; }
+                        </code>
+                    </div>
+                </li>
+                <li>
+                    Demonstrate thread priority by setting different priorities for two threads.
+                    <div class="example">Example: <br>
+                        <code>
+                        t1.setPriority(Thread.MAX_PRIORITY);
+                        </code>
+                    </div>
+                </li>
+                <li>
+                    Print the current thread's name using <code>Thread.currentThread().getName()</code>.
+                    <div class="example">Example: <br>
+                        <code>
+                        System.out.println(Thread.currentThread().getName());
+                        </code>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </div>
+</body>
+</html>
+                        </code>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </div>
+</body>
+</html>

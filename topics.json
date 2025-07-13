@@ -929,7 +929,19 @@
                 ],
                  "content_html": "java_runnable_vs_callable.html"
 
+            },
+            {
+                "sl_no": 8.10,
+                "title": "Assignments",
+                "description": "Complete the following tasks:.",
+                
+                "references": [
+                   
+                ],
+                 "content_html": "java_threads_assignment.html"
+
             }
+            
                 
         ]
      },
@@ -938,7 +950,7 @@
         "title": "Java 7",
         "subtopics": [
             {
-                "sl_no": 8.1,
+                "sl_no": 9.1,
                 "title": "Java 7 - Introduction",
                 "description": "An introduction to Java 7, including its new features and enhancements over previous versions.",                
                 "references": [
@@ -947,7 +959,7 @@
                 "content_html": "java7_introduction.html"
             },
             {
-                "sl_no": 8.2,
+                "sl_no": 9.2,
                 "title": "Try with Resources in Java 7",
                 "description": "Understanding the try-with-resources statement in Java 7, which simplifies resource management by automatically closing resources when they are no longer needed.",
                 "references": [
@@ -956,7 +968,7 @@
                 "content_html": "java7_try_with_resources.html"
             },
             {
-                "sl_no": 8.3,
+                "sl_no": 9.3,
                 "title": "Strings in Switch in Java 7",
                 "description": "Understanding the ability to use strings in switch statements in Java 7, which allows for more readable and maintainable code.",                
                 "references": [
@@ -965,7 +977,7 @@
                 "content_html": "java7_switch_string.html"
             },
             {
-                "sl_no": 8.4,
+                "sl_no": 9.4,
                 "title": "Binary Literals in Java 7",
                 "description": "Understanding the use of binary literals in Java 7, which allows for more concise representation of binary values using the '0b' prefix.",
                 "references": [
@@ -974,7 +986,7 @@
                 "content_html": "java7_binary_literals.html"
             },
             {
-                "sl_no": 8.5,
+                "sl_no": 9.5,
                 "title": "Underscores in Numeric Literals in Java 7",
                 "description": "Understanding the use of underscores in numeric literals in Java 7, which improves readability of large numbers by allowing underscores to be used as visual separators.",
                 "references": [
@@ -983,7 +995,7 @@
                 "content_html": "java7_underscores_numeric_literals.html"
             },
             {
-                "sl_no": 8.6,
+                "sl_no": 9.6,
                 "title": "Multi catch block in Java 7",
                 "description": "Understanding the multi-catch block feature in Java 7, which allows multiple exceptions to be caught in a single catch block, reducing code duplication and improving readability.",
                 "references": [
@@ -992,7 +1004,7 @@
                 "content_html": "java7_multi_catch.html"
             },
             {
-                "sl_no": 8.7,
+                "sl_no": 9.7,
                 "title": "Diamond Operator in Java 7",
                 "description": "Understanding the diamond operator in Java 7, which simplifies the use of generics by allowing the compiler to infer the type parameters.",
                 "references": [
@@ -1002,7 +1014,7 @@
             },
             
             {
-                "sl_no": 8.8,
+                "sl_no": 9.8,
                 "title": "Type inference in Java 7",
                 "description": "Understanding type inference in Java 7, which allows the compiler to infer the type of a variable based on its context, reducing the need for explicit type declarations.",
                 "references": [
@@ -1011,7 +1023,7 @@
                 "content_html": "java7_type_inference.html"
             },
             {
-                "sl_no": "8.9.1",
+                "sl_no": "9.9.1",
                 "title": "NIO.2 Overview in Java 7",
                 "description": "Understanding the NIO.2 (New Input/Output) package in Java 7, which provides improved file I/O capabilities and support for symbolic links.",
                 "references": [
@@ -1020,7 +1032,7 @@
                 "content_html": "java7_nio2_overview.html"
             },            
             {
-                "sl_no": "8.9.1",
+                "sl_no": "9.9.1",
                 "title": "NIO.2 Filesystem in Java 7",
                 "description": "Understanding the NIO.2 Filesystem API in Java 7, which provides a more flexible and powerful way to work with files and directories.",
                 "references": [
@@ -1029,7 +1041,7 @@
                 "content_html": "java7_nio2_filesystem.html"
             },
             {
-                "sl_no": 8.10,
+                "sl_no": 9.10,
                 "title": "Fork/Join Framework in Java 7",
                 "description": "Understanding the Fork/Join framework in Java 7, which provides a way to parallelize tasks and improve performance on multi-core processors.",
                 "references": [
@@ -1045,6 +1057,93 @@
                                   
                 ],
                 "content_html": "java7_assignment.html"
+            }
+        ]
+      },
+      {
+        "sl_no": 10,
+        "title": "Java 8",
+        "subtopics": [
+            {
+                "sl_no": 10.1,
+                "title": "Java 8 - Introduction",
+                "description": "An introduction to Java 8, including its new features and enhancements over previous versions.",       
+                "references": [
+                                  
+                ],
+                "content_html": "java8_concepts_list.html"
+            },
+            {
+                "sl_no": 10.2,
+                "title": "Default and Static Methods in Interfaces",
+                "description": "Understanding the introduction of default and static methods in interfaces in Java 8, which allows interfaces to have method implementations.",
+                "references": [
+                                  
+                ],
+                "content_html": "java8_default_static_methods.html1"
+            },
+            {
+                "sl_no": 10.3,
+                "title": "Functional Interfaces",
+                "description": "Understanding functional interfaces in Java 8, which are interfaces with a single abstract method and can be used with lambda expressions.", 
+                "references": [
+                                
+                ],
+                "content_html": "java8_functional_interfaces.html"
+            },
+            {
+                "sl_no": 10.4,
+                "title": "Method References",
+                "description": "Understanding method references in Java 8, which provide a way to refer to methods without invoking them, making code more concise and readable.",
+                "references": [
+                                  
+                ],
+                "content_html": "java8_method_references.html"
+            },
+            {
+                "sl_no": 10.5,
+                "title": "Nashorn Javascript",
+                "description": "Understanding the Nashorn JavaScript engine in Java 8, which allows Java applications to execute JavaScript code and interact with Java objects.",
+                "references": [
+                                  
+                ],
+                "content_html": "java8_nashorn_javascript.html"
+            },
+            {
+                "sl_no": 10.6,
+                "title": "Date Time API",
+                "description": "Understanding the new Date Time API introduced in Java 8, which provides a more comprehensive and flexible way to handle date and time operations compared to the previous Date and Calendar classes.",
+                "references": [
+                                  
+                ],
+                "content_html": "java8_new_date_time_api.html"
+            },
+            {
+                "sl_no": 10.7,
+                "title": "Optional Class",
+                "description": "Understanding the Optional class in Java 8, which provides a way to represent optional values and avoid null pointer exceptions by encapsulating the presence or absence of a value.",
+                "references": [
+                                  
+                ],
+                "content_html": "java8_optional_class.html"
+            },
+            {
+                "sl_no": 10.8,
+                "title": "Stream APIs",
+                "description": "Understanding the Stream API in Java 8, which provides a functional approach to processing sequences of elements, allowing for operations like filtering, mapping, and reducing collections in a more concise and readable manner.",
+                "references": [
+                                  
+                ],
+                "content_html": "java8_stream_api.html"
+            },
+            {
+                "sl_no": 10.9,
+                "title": "Parrallel Streams",
+                "description": "Understanding parallel streams in Java 8, which allow for parallel processing of collections and improve performance by utilizing multiple CPU cores.",
+                "references": [
+                                  
+                ],
+                "content_html": "java8_parallel_streams.html"
             }
         ]
       }
