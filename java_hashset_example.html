@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Java HashSet Example</title>
+</head>
+<body>
+    <h1>HashSet Example</h1>
+    <p>
+        <b>HashSet</b> is a collection that contains no duplicate elements and has no guaranteed order.
+    </p>
+    <pre>
+import java.util.HashSet;
+
+HashSet&lt;String&gt; set = new HashSet&lt;&gt;();
+set.add("Apple");
+set.add("Banana");
+set.add("Apple"); // Duplicate ignored
+System.out.println(set); // [Apple, Banana]
+    </pre>
+    <ul>
+        <li>Allows null values</li>
+        <li>Not synchronized</li>
+    </ul>
+</body>
+</html>

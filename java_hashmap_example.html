@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Java HashMap Example</title>
+</head>
+<body>
+    <h1>HashMap Example</h1>
+    <p>
+        <b>HashMap</b> stores key-value pairs with no guaranteed order.
+    </p>
+    <pre>
+import java.util.HashMap;
+
+HashMap&lt;String, Integer&gt; map = new HashMap&lt;&gt;();
+map.put("One", 1);
+map.put("Two", 2);
+System.out.println(map); // {One=1, Two=2}
+    </pre>
+    <ul>
+        <li>Allows one null key and multiple null values</li>
+        <li>Not synchronized</li>
+    </ul>
+</body>
+</html>

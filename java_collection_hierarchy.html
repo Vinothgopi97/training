@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Java Collection Hierarchy</title>
+</head>
+<body>
+    <h1>Java Collection Hierarchy</h1>
+    <p>
+        The diagram below shows the main interfaces and classes in the Java Collections Framework:
+    </p>
+    <pre>
+                Iterable
+                   |
+               Collection
+          _________|_________
+         |         |         |
+       List       Set      Queue
+      /   \     /    \       |
+ArrayList HashSet PriorityQueue
+LinkedList TreeSet  Deque
+Vector    LinkedHashSet
+Stack
+         Map
+        /   \
+   HashMap  TreeMap
+   LinkedHashMap
+    </pre>
+    <p>
+        <b>Note:</b> Map is not a true child of Collection, but is part of the framework.
+    </p>
+</body>
+</html>

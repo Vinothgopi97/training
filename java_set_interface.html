@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Java Set Interface</title>
+</head>
+<body>
+    <h1>Set Interface in Java</h1>
+    <p>
+        The <b>Set</b> interface extends Collection and represents a collection that does not allow duplicate elements.
+    </p>
+    <pre>
+Set&lt;String&gt; set = new HashSet&lt;&gt;();
+set.add("A");
+set.add("B");
+set.add("A"); // Duplicate, will not be added
+System.out.println(set); // [A, B]
+    </pre>
+    <ul>
+        <li>Common implementations: HashSet, LinkedHashSet, TreeSet</li>
+        <li>No guaranteed order (except LinkedHashSet and TreeSet)</li>
+    </ul>
+</body>
+</html>

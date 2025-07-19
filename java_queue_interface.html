@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Java Queue Interface</title>
+</head>
+<body>
+    <h1>Queue Interface in Java</h1>
+    <p>
+        The <b>Queue</b> interface represents a collection designed for holding elements prior to processing, typically in FIFO (first-in, first-out) order.
+    </p>
+    <pre>
+Queue&lt;Integer&gt; queue = new LinkedList&lt;&gt;();
+queue.add(1);
+queue.add(2);
+System.out.println(queue.remove()); // 1
+    </pre>
+    <ul>
+        <li>Common implementations: LinkedList, PriorityQueue</li>
+        <li>Methods: add, remove, peek, poll</li>
+    </ul>
+</body>
+</html>

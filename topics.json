@@ -1146,6 +1146,78 @@
                 "content_html": "java8_parallel_streams.html"
             }
         ]
-      }
+      },
+      {
+        "sl_no": 11,
+        "title": "Java Collections",
+        "subtopics": [
+            {
+                "sl_no": 11.1,
+                "title": "Java Collections - Introduction",
+                "description": "An introduction to Java Collections, including the Collection framework and its core interfaces such as List, Set, and Map.",
+                "references": [
+                          {
+                        "title": "Java Collections",
+                        "link": "https://www.geeksforgeeks.org/java/collections-in-java-2/"
+                    }  
+                ],
+                "content_html": "java_collections_overview.html"
+            },
+            {
+                "sl_no": 11.2,
+                "title": "Java Collections - Hierarchy",
+                "description": "Understanding the hierarchy of Java Collections, including the relationships between different collection types such as List, Set, and Map.",
+                "references": [
+                                  
+                ],
+                "content_html": "java_collection_hierarchy.html"
+            },
+            {
+                "sl_no": 11.3,
+                "title": "List Interface",
+                "description": "Understanding the List interface in Java Collections, which represents an ordered collection of elements that can contain duplicates and allows positional access to elements.",
+                "references": [
+                                  
+                ],
+                "content_html": "java_list_interface.html"
+            },
+            {
+                "sl_no": 11.4,
+                "title": "ArrayList in Java",
+                "description":  "Understanding the ArrayList class in Java, which is a resizable array implementation of the List interface, providing dynamic array capabilities and efficient random access to elements.",
+                "references": [
+                                  
+                ],
+                "content_html": "java_arraylist_example.html"
+            },
+            {
+                "sl_no": 11.5,
+                "title": "LinkedList in Java",
+                "description": "Understanding the LinkedList class in Java, which is a doubly-linked list implementation of the List interface, providing efficient insertion and deletion operations at both ends of the list.",
+                "references": [
+                                  
+                ],
+                "content_html": "java_linkedlist_example.html"
+            },
+            {
+                "sl_no": 11.6,
+                "title": "Vector in Java",
+                "description": "Understanding the Vector class in Java, which is a growable array implementation of the List interface, providing synchronized access to elements and dynamic resizing capabilities.",
+                "references": [
+                                  
+                ],
+                "content_html": "java_vector_example.html"
+            },
+            {
+                "sl_no": 11.7,
+                "title": "Stack in Java",
+                "description": "Understanding the Stack class in Java, which is a last-in-first-out (LIFO) data structure that extends the Vector class and provides methods for pushing and popping elements.",
+                "references": [
+                                  
+                ],
+                "content_html": "java_stack_example.html"
+            }
+        ]
+    }
     ]
   }

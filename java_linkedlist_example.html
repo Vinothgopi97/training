@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Java LinkedList Example</title>
+</head>
+<body>
+    <h1>LinkedList Example</h1>
+    <p>
+        <b>LinkedList</b> implements List and Deque interfaces, providing a doubly-linked list.
+    </p>
+    <pre>
+import java.util.LinkedList;
+
+LinkedList&lt;String&gt; names = new LinkedList&lt;&gt;();
+names.add("Alice");
+names.add("Bob");
+names.addFirst("Zara");
+System.out.println(names); // [Zara, Alice, Bob]
+    </pre>
+    <ul>
+        <li>Efficient insertions/deletions at both ends</li>
+        <li>Can be used as a queue, stack, or list</li>
+    </ul>
+</body>
+</html>

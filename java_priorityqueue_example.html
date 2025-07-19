@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Java PriorityQueue Example</title>
+</head>
+<body>
+    <h1>PriorityQueue Example</h1>
+    <p>
+        <b>PriorityQueue</b> orders elements according to their natural ordering or by a Comparator.
+    </p>
+    <pre>
+import java.util.PriorityQueue;
+
+PriorityQueue&lt;Integer&gt; pq = new PriorityQueue&lt;&gt;();
+pq.add(10);
+pq.add(5);
+pq.add(20);
+System.out.println(pq.poll()); // 5 (smallest element)
+    </pre>
+    <ul>
+        <li>Does not allow null elements</li>
+        <li>Not thread-safe</li>
+    </ul>
+</body>
+</html>

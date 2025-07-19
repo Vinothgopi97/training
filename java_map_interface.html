@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Java Map Interface</title>
+</head>
+<body>
+    <h1>Map Interface in Java</h1>
+    <p>
+        The <b>Map</b> interface represents a collection of key-value pairs. Each key maps to exactly one value.
+    </p>
+    <pre>
+Map&lt;String, Integer&gt; map = new HashMap&lt;&gt;();
+map.put("A", 1);
+map.put("B", 2);
+System.out.println(map.get("A")); // 1
+    </pre>
+    <ul>
+        <li>Common implementations: HashMap, LinkedHashMap, TreeMap</li>
+        <li>Keys are unique, values can be duplicated</li>
+    </ul>
+</body>
+</html>

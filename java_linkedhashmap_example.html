@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Java LinkedHashMap Example</title>
+</head>
+<body>
+    <h1>LinkedHashMap Example</h1>
+    <p>
+        <b>LinkedHashMap</b> maintains insertion order of key-value pairs.
+    </p>
+    <pre>
+import java.util.LinkedHashMap;
+
+LinkedHashMap&lt;String, Integer&gt; map = new LinkedHashMap&lt;&gt;();
+map.put("A", 10);
+map.put("B", 20);
+System.out.println(map); // {A=10, B=20}
+    </pre>
+    <ul>
+        <li>Maintains insertion order</li>
+        <li>Allows one null key</li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Java Stack Example</title>
+</head>
+<body>
+    <h1>Stack Example</h1>
+    <p>
+        <b>Stack</b> is a subclass of Vector that implements a standard last-in, first-out stack.
+    </p>
+    <pre>
+import java.util.Stack;
+
+Stack&lt;String&gt; stack = new Stack&lt;&gt;();
+stack.push("A");
+stack.push("B");
+System.out.println(stack.pop()); // B
+    </pre>
+    <ul>
+        <li>Legacy class, prefer Deque for new code</li>
+        <li>Methods: push, pop, peek, empty</li>
+    </ul>
+</body>
+</html>

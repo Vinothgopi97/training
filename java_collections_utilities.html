@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Java Collections Utility Methods</title>
+</head>
+<body>
+    <h1>Collections Utility Methods</h1>
+    <p>
+        The <b>Collections</b> class provides static methods for sorting, searching, reversing, and synchronizing collections.
+    </p>
+    <pre>
+import java.util.*;
+
+List&lt;Integer&gt; list = Arrays.asList(3, 1, 2);
+Collections.sort(list); // [1, 2, 3]
+Collections.reverse(list); // [3, 2, 1]
+Collections.shuffle(list); // Random order
+    </pre>
+    <ul>
+        <li><code>sort()</code>: Sorts a list</li>
+        <li><code>reverse()</code>: Reverses a list</li>
+        <li><code>shuffle()</code>: Randomizes order</li>
+        <li><code>binarySearch()</code>: Searches a sorted list</li>
+        <li><code>synchronizedList()</code>: Returns a thread-safe list</li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thread-safe Collections in Java</title>
+</head>
+<body>
+    <h1>Thread-safe Collections</h1>
+    <p>
+        Java provides several ways to create thread-safe collections:
+    </p>
+    <ul>
+        <li>Legacy synchronized classes: <b>Vector</b>, <b>Hashtable</b></li>
+        <li>Collections utility methods: <code>Collections.synchronizedList()</code>, etc.</li>
+        <li>Concurrent collections: <b>ConcurrentHashMap</b>, <b>CopyOnWriteArrayList</b>, <b>BlockingQueue</b></li>
+    </ul>
+    <pre>
+import java.util.concurrent.*;
+
+ConcurrentHashMap&lt;String, Integer&gt; cmap = new ConcurrentHashMap&lt;&gt;();
+cmap.put("A", 1);
+    </pre>
+    <p>
+        Prefer concurrent collections for high-concurrency scenarios.
+    </p>
+</body>
+</html>
