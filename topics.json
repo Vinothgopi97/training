@@ -1186,7 +1186,11 @@
                 "title": "ArrayList in Java",
                 "description":  "Understanding the ArrayList class in Java, which is a resizable array implementation of the List interface, providing dynamic array capabilities and efficient random access to elements.",
                 "references": [
-                                  
+                    {
+                        "title": "ArrayList Vs LinkedList in Java",
+                        "link": "https://www.baeldung.com/java-arraylist-linkedlist"
+                    }  
+                     
                 ],
                 "content_html": "java_arraylist_example.html"
             },
