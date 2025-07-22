@@ -1221,6 +1221,115 @@
                 ],
                 "content_html": "java_stack_example.html"
             }
+            ,
+            {
+                "sl_no": 11.8,
+                "title": "Set in Java",
+                "description": "Understanding the Set interface in Java Collections, which represents a collection of unique elements that does not allow duplicates and provides operations for adding, removing, and checking the presence of elements.",
+                "references": [
+                                  
+                ],
+                "content_html": "java_set_interface.html"
+            },
+            {
+                "sl_no": 11.9,
+                "title": "HashSet in Java",
+                "description": "Understanding the HashSet class in Java, which is an implementation of the Set interface that uses a hash table to store elements, providing constant-time performance for basic operations like add, remove, and contains.",
+                "references": [
+                                  
+                ],
+                "content_html": "java_hashset_example.html"
+            },
+            {
+                "sl_no": 11.10,
+                "title": "LinkedHashSet in Java",
+                "description": "Understanding the LinkedHashSet class in Java, which is an implementation of the Set interface that maintains a linked list of the elements in the set, preserving the insertion order while providing constant-time performance for basic operations.",
+                "references": [
+                                  
+                ],
+                "content_html": "java_linkedhashset_example.html"
+            },
+            {
+                "sl_no": 11.11,
+                "title": "TreeSet in Java",
+                "description": "Understanding the TreeSet class in Java, which is an implementation of the Set interface that uses a red-black tree to store elements in sorted order, providing logarithmic time performance for basic operations like add, remove, and contains.",
+                "references": [
+                                  
+                ],
+                "content_html": "java_treeset_example.html"
+            },
+            {
+                "sl_no": 11.12,
+                "title": "Queue in Java",
+                "description": "Understanding the Queue interface in Java Collections, which represents a collection of elements that follows the first-in-first-out (FIFO) principle, allowing for efficient insertion and removal of elements at both ends.",
+                "references": [
+                                  
+                ],
+                "content_html": "java_queue_interface.html"
+            },
+            {
+                "sl_no": 11.13,
+                "title": "PriorityQueue in Java",
+                "description": "Understanding the PriorityQueue class in Java, which is an implementation of the Queue interface that orders elements based on their natural ordering or a specified comparator, allowing for efficient retrieval of the highest or lowest priority element.",
+                "references": [
+                                  
+                ],
+                "content_html": "java_priorityqueue_example.html"
+            },
+            {
+                "sl_no": 11.14,
+                "title": "Deque in Java",
+                "description": "Understanding the Deque interface in Java Collections, which represents a double-ended queue that allows for efficient insertion and removal of elements at both ends, supporting both stack and queue operations.",
+                "references": [
+                                  
+                ],
+                "content_html": "java_deque_interface.html"
+            },
+            {
+                "sl_no": 11.15,
+                "title": "Map in Java",
+                "description": "Understanding the Map interface in Java Collections, which represents a collection of key-value pairs where each key is unique and maps to a specific value, allowing for efficient retrieval and manipulation of data based on keys.",
+                "references": [
+                                  
+                ],
+                "content_html": "java_map_interface.html"
+            },
+            {
+                "sl_no": 11.16,
+                "title": "HashMap in Java",
+                "description": "Understanding the PriorityQueue class in Java, which is an implementation of the Queue interface that orders elements based on their natural ordering or a specified comparator, allowing for efficient retrieval of the highest or lowest priority element.",
+                "references": [
+                                  
+                ],
+                "content_html": "java_hashmap_example.html"
+            },
+            {
+                "sl_no": 11.17,
+                "title": "LinkedHashMap in Java",
+                "description": "Understanding the Deque interface in Java Collections, which represents a double-ended queue that allows for efficient insertion and removal of elements at both ends, supporting both stack and queue operations.",
+                "references": [
+                                  
+                ],
+                "content_html": "java_linkedhashmap_example.html"
+            },
+            {
+                "sl_no": 11.18,
+                "title": "TreeMap in Java",
+                "description": "Understanding the TreeMap class in Java, which is an implementation of the Map interface that uses a red-black tree to store key-value pairs in sorted order based on the keys, providing logarithmic time performance for basic operations like put, get, and remove.",
+                "references": [
+                                  
+                ],
+                "content_html": "java_treemap_example.html"
+            },
+            {
+                "sl_no": 11.19,
+                "title": "Collection Utilities in Java",
+                "description": "Understanding the utility classes in Java Collections, such as Collections and Arrays, which provide static methods for common operations like sorting, searching, and manipulating collections and arrays.",
+                "references": [
+                                  
+                ],
+                "content_html": "java_collections_utilities.html"
+            }
         ]
     }
     ]
