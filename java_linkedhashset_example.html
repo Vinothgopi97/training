@@ -5,22 +5,39 @@
     <title>Java LinkedHashSet Example</title>
 </head>
 <body>
-    <h1>LinkedHashSet Example</h1>
+    <h1>LinkedHashSet in Java</h1>
     <p>
-        <b>LinkedHashSet</b> maintains insertion order while preventing duplicates.
+        <b>LinkedHashSet</b> is a Set implementation that maintains insertion order using a linked list.
     </p>
+    <ul>
+        <li>Maintains insertion order</li>
+        <li>Allows one null value</li>
+        <li>Not synchronized</li>
+    </ul>
+    <h2>Example</h2>
     <pre>
-import java.util.LinkedHashSet;
+import java.util.*;
 
 LinkedHashSet&lt;Integer&gt; set = new LinkedHashSet&lt;&gt;();
 set.add(3);
 set.add(1);
 set.add(2);
 System.out.println(set); // [3, 1, 2]
+set.remove(1);
+System.out.println(set); // [3, 2]
     </pre>
+    <p>
+        <b>Tip:</b> Use LinkedHashSet when you need uniqueness and order.
+    </p>
+    <h2>Common LinkedHashSet Methods</h2>
     <ul>
-        <li>Maintains insertion order</li>
-        <li>Allows null values</li>
+        <li><code>add(E e)</code>: Adds element if not present.</li>
+        <li><code>remove(Object o)</code>: Removes specified element.</li>
+        <li><code>contains(Object o)</code>: Checks if element exists.</li>
+        <li><code>size()</code>: Number of elements.</li>
+        <li><code>clear()</code>: Removes all elements.</li>
+        <li><code>isEmpty()</code>: Checks if set is empty.</li>
+        <li><code>iterator()</code>: Returns an iterator over the elements.</li>
     </ul>
 </body>
 </html>

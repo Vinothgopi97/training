@@ -5,22 +5,43 @@
     <title>Java LinkedList Example</title>
 </head>
 <body>
-    <h1>LinkedList Example</h1>
+    <h1>LinkedList in Java</h1>
     <p>
-        <b>LinkedList</b> implements List and Deque interfaces, providing a doubly-linked list.
+        <b>LinkedList</b> implements both List and Deque interfaces. It is a doubly-linked list, allowing fast insertions and deletions at both ends.
     </p>
+    <ul>
+        <li>Allows duplicates and nulls</li>
+        <li>Maintains insertion order</li>
+        <li>Can be used as a queue, stack, or list</li>
+        <li>Slower random access than ArrayList</li>
+    </ul>
+    <h2>Example</h2>
     <pre>
-import java.util.LinkedList;
+import java.util.*;
 
 LinkedList&lt;String&gt; names = new LinkedList&lt;&gt;();
 names.add("Alice");
 names.add("Bob");
 names.addFirst("Zara");
-System.out.println(names); // [Zara, Alice, Bob]
+names.addLast("Charlie");
+System.out.println(names); // [Zara, Alice, Bob, Charlie]
+names.removeFirst();
+System.out.println(names); // [Alice, Bob, Charlie]
     </pre>
+    <p>
+        <b>Tip:</b> Use LinkedList when you need frequent insertions/removals at the beginning or end.
+    </p>
+    <h2>Common LinkedList Methods</h2>
     <ul>
-        <li>Efficient insertions/deletions at both ends</li>
-        <li>Can be used as a queue, stack, or list</li>
+        <li><code>addFirst(E e)</code>: Inserts element at the beginning.</li>
+        <li><code>addLast(E e)</code>: Appends element at the end.</li>
+        <li><code>removeFirst()</code>: Removes and returns first element.</li>
+        <li><code>removeLast()</code>: Removes and returns last element.</li>
+        <li><code>getFirst()</code>: Returns first element.</li>
+        <li><code>getLast()</code>: Returns last element.</li>
+        <li><code>offer(E e)</code>: Adds element at the end (queue style).</li>
+        <li><code>poll()</code>: Retrieves and removes head of the list.</li>
+        <li><code>peek()</code>: Retrieves head without removing.</li>
     </ul>
 </body>
 </html>

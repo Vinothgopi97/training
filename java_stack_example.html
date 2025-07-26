@@ -5,21 +5,35 @@
     <title>Java Stack Example</title>
 </head>
 <body>
-    <h1>Stack Example</h1>
+    <h1>Stack in Java</h1>
     <p>
-        <b>Stack</b> is a subclass of Vector that implements a standard last-in, first-out stack.
+        <b>Stack</b> is a subclass of Vector that implements a standard last-in, first-out (LIFO) stack.
     </p>
-    <pre>
-import java.util.Stack;
-
-Stack&lt;String&gt; stack = new Stack&lt;&gt;();
-stack.push("A");
-stack.push("B");
-System.out.println(stack.pop()); // B
-    </pre>
     <ul>
         <li>Legacy class, prefer Deque for new code</li>
         <li>Methods: push, pop, peek, empty</li>
     </ul>
+    <h2>Common Stack Methods</h2>
+    <ul>
+        <li><code>push(E item)</code>: Pushes item onto stack.</li>
+        <li><code>pop()</code>: Removes and returns top item.</li>
+        <li><code>peek()</code>: Returns top item without removing.</li>
+        <li><code>empty()</code>: Checks if stack is empty.</li>
+        <li><code>search(Object o)</code>: Returns 1-based position from top, or -1 if not found.</li>
+    </ul>
+    <h2>Example</h2>
+    <pre>
+import java.util.*;
+
+Stack&lt;String&gt; stack = new Stack&lt;&gt;();
+stack.push("A");
+stack.push("B");
+System.out.println(stack.peek()); // B
+System.out.println(stack.pop());  // B
+System.out.println(stack);        // [A]
+    </pre>
+    <p>
+        <b>Tip:</b> For stack operations, prefer <code>ArrayDeque</code> for better performance.
+    </p>
 </body>
 </html>

@@ -9,15 +9,35 @@
     <p>
         The <b>Queue</b> interface represents a collection designed for holding elements prior to processing, typically in FIFO (first-in, first-out) order.
     </p>
+    <ul>
+        <li>Common implementations: LinkedList, PriorityQueue, ArrayDeque</li>
+        <li>Methods: add, remove, peek, poll, offer</li>
+    </ul>
+    <h2>Common Queue Methods</h2>
+    <ul>
+        <li><code>add(E e)</code>: Inserts element, throws exception if full.</li>
+        <li><code>offer(E e)</code>: Inserts element, returns false if full.</li>
+        <li><code>remove()</code>: Retrieves and removes head, throws exception if empty.</li>
+        <li><code>poll()</code>: Retrieves and removes head, returns null if empty.</li>
+        <li><code>element()</code>: Retrieves head, throws exception if empty.</li>
+        <li><code>peek()</code>: Retrieves head, returns null if empty.</li>
+        <li><code>size()</code>: Number of elements.</li>
+        <li><code>isEmpty()</code>: Checks if queue is empty.</li>
+    </ul>
+    <h2>Example</h2>
     <pre>
+import java.util.*;
+
 Queue&lt;Integer&gt; queue = new LinkedList&lt;&gt;();
 queue.add(1);
 queue.add(2);
+queue.offer(3);
+System.out.println(queue); // [1, 2, 3]
 System.out.println(queue.remove()); // 1
+System.out.println(queue.peek());   // 2
     </pre>
-    <ul>
-        <li>Common implementations: LinkedList, PriorityQueue</li>
-        <li>Methods: add, remove, peek, poll</li>
-    </ul>
+    <p>
+        <b>Tip:</b> Use Queue for task scheduling, order processing, etc.
+    </p>
 </body>
 </html>

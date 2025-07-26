@@ -5,22 +5,41 @@
     <title>Java PriorityQueue Example</title>
 </head>
 <body>
-    <h1>PriorityQueue Example</h1>
+    <h1>PriorityQueue in Java</h1>
     <p>
-        <b>PriorityQueue</b> orders elements according to their natural ordering or by a Comparator.
+        <b>PriorityQueue</b> is a queue that orders elements according to their natural ordering or by a Comparator.
     </p>
+    <ul>
+        <li>Does not allow null elements</li>
+        <li>Not thread-safe</li>
+        <li>Elements are ordered, not necessarily FIFO</li>
+    </ul>
+    <h2>Example</h2>
     <pre>
-import java.util.PriorityQueue;
+import java.util.*;
 
 PriorityQueue&lt;Integer&gt; pq = new PriorityQueue&lt;&gt;();
 pq.add(10);
 pq.add(5);
 pq.add(20);
+System.out.println(pq); // [5, 10, 20] (order may vary)
 System.out.println(pq.poll()); // 5 (smallest element)
+System.out.println(pq); // [10, 20]
     </pre>
+    <h2>Common PriorityQueue Methods</h2>
     <ul>
-        <li>Does not allow null elements</li>
-        <li>Not thread-safe</li>
+        <li><code>add(E e)</code>: Inserts element.</li>
+        <li><code>offer(E e)</code>: Inserts element, returns false if full.</li>
+        <li><code>poll()</code>: Retrieves and removes head (smallest/largest), returns null if empty.</li>
+        <li><code>peek()</code>: Retrieves head without removing, returns null if empty.</li>
+        <li><code>remove(Object o)</code>: Removes specified element.</li>
+        <li><code>size()</code>: Number of elements.</li>
+        <li><code>clear()</code>: Removes all elements.</li>
+        <li><code>isEmpty()</code>: Checks if queue is empty.</li>
+        <li><code>iterator()</code>: Returns an iterator over the elements.</li>
     </ul>
+    <p>
+        <b>Tip:</b> Use PriorityQueue for scheduling tasks by priority.
+    </p>
 </body>
 </html>

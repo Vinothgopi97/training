@@ -7,8 +7,17 @@
 <body>
     <h1>Collections Utility Methods</h1>
     <p>
-        The <b>Collections</b> class provides static methods for sorting, searching, reversing, and synchronizing collections.
+        The <b>Collections</b> class provides static methods for sorting, searching, reversing, shuffling, and synchronizing collections.
     </p>
+    <ul>
+        <li><code>sort()</code>: Sorts a list</li>
+        <li><code>reverse()</code>: Reverses a list</li>
+        <li><code>shuffle()</code>: Randomizes order</li>
+        <li><code>binarySearch()</code>: Searches a sorted list</li>
+        <li><code>synchronizedList()</code>: Returns a thread-safe list</li>
+        <li><code>unmodifiableList()</code>: Returns a read-only list</li>
+    </ul>
+    <h2>Example</h2>
     <pre>
 import java.util.*;
 
@@ -16,13 +25,11 @@ List&lt;Integer&gt; list = Arrays.asList(3, 1, 2);
 Collections.sort(list); // [1, 2, 3]
 Collections.reverse(list); // [3, 2, 1]
 Collections.shuffle(list); // Random order
+int idx = Collections.binarySearch(list, 2); // index of 2 (if sorted)
+List&lt;Integer&gt; syncList = Collections.synchronizedList(new ArrayList&lt;&gt;());
     </pre>
-    <ul>
-        <li><code>sort()</code>: Sorts a list</li>
-        <li><code>reverse()</code>: Reverses a list</li>
-        <li><code>shuffle()</code>: Randomizes order</li>
-        <li><code>binarySearch()</code>: Searches a sorted list</li>
-        <li><code>synchronizedList()</code>: Returns a thread-safe list</li>
-    </ul>
+    <p>
+        <b>Tip:</b> Use Collections utility methods for common collection operations.
+    </p>
 </body>
 </html>

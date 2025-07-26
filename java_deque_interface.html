@@ -7,17 +7,41 @@
 <body>
     <h1>Deque Interface in Java</h1>
     <p>
-        The <b>Deque</b> (double-ended queue) interface allows elements to be added or removed from both ends.
+        The <b>Deque</b> (double-ended queue) interface allows elements to be added or removed from both ends. It can be used as a stack (LIFO) or queue (FIFO).
     </p>
-    <pre>
-Deque&lt;String&gt; deque = new LinkedList&lt;&gt;();
-deque.addFirst("A");
-deque.addLast("B");
-System.out.println(deque); // [A, B]
-    </pre>
     <ul>
         <li>Common implementations: LinkedList, ArrayDeque</li>
-        <li>Can be used as stack or queue</li>
+        <li>Methods: addFirst, addLast, removeFirst, removeLast, peekFirst, peekLast</li>
     </ul>
+    <h2>Common Deque Methods</h2>
+    <ul>
+        <li><code>addFirst(E e)</code>: Inserts element at front.</li>
+        <li><code>addLast(E e)</code>: Inserts element at end.</li>
+        <li><code>removeFirst()</code>: Removes and returns first element.</li>
+        <li><code>removeLast()</code>: Removes and returns last element.</li>
+        <li><code>peekFirst()</code>: Retrieves first element without removing.</li>
+        <li><code>peekLast()</code>: Retrieves last element without removing.</li>
+        <li><code>offerFirst(E e)</code>: Inserts at front, returns false if full.</li>
+        <li><code>offerLast(E e)</code>: Inserts at end, returns false if full.</li>
+        <li><code>pollFirst()</code>: Retrieves and removes first element, or null if empty.</li>
+        <li><code>pollLast()</code>: Retrieves and removes last element, or null if empty.</li>
+        <li><code>size()</code>: Number of elements.</li>
+        <li><code>isEmpty()</code>: Checks if deque is empty.</li>
+    </ul>
+    <h2>Example</h2>
+    <pre>
+import java.util.*;
+
+Deque&lt;String&gt; deque = new ArrayDeque&lt;&gt;();
+deque.addFirst("A");
+deque.addLast("B");
+deque.addFirst("C");
+System.out.println(deque); // [C, A, B]
+System.out.println(deque.removeLast()); // B
+System.out.println(deque); // [C, A]
+    </pre>
+    <p>
+        <b>Tip:</b> Use Deque for both stack and queue operations.
+    </p>
 </body>
 </html>

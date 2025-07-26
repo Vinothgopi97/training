@@ -7,27 +7,34 @@
 <body>
     <h1>Java Collection Hierarchy</h1>
     <p>
-        The diagram below shows the main interfaces and classes in the Java Collections Framework:
+        The Java Collections Framework is organized as a hierarchy of interfaces and classes. The main root interface is <b>Collection</b> (except for <b>Map</b>).
     </p>
     <pre>
-                Iterable
-                   |
-               Collection
-          _________|_________
-         |         |         |
-       List       Set      Queue
-      /   \     /    \       |
+        Iterable
+           |
+       Collection
+      /    |     \
+   List   Set   Queue
+    |      |      |
 ArrayList HashSet PriorityQueue
-LinkedList TreeSet  Deque
-Vector    LinkedHashSet
+LinkedList TreeSet ArrayDeque
+Vector   LinkedHashSet
 Stack
-         Map
-        /   \
-   HashMap  TreeMap
-   LinkedHashMap
+
+Map (separate hierarchy)
+ |
+HashMap
+LinkedHashMap
+TreeMap
     </pre>
+    <ul>
+        <li><b>List:</b> Ordered, allows duplicates (e.g., ArrayList, LinkedList, Vector, Stack)</li>
+        <li><b>Set:</b> Unordered, no duplicates (e.g., HashSet, LinkedHashSet, TreeSet)</li>
+        <li><b>Queue/Deque:</b> FIFO/LIFO, double-ended (e.g., LinkedList, PriorityQueue, ArrayDeque)</li>
+        <li><b>Map:</b> Key-value pairs, unique keys (e.g., HashMap, LinkedHashMap, TreeMap)</li>
+    </ul>
     <p>
-        <b>Note:</b> Map is not a true child of Collection, but is part of the framework.
+        <b>Note:</b> Map is not a child of Collection, but is part of the framework.
     </p>
 </body>
 </html>

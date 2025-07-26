@@ -5,21 +5,43 @@
     <title>Java LinkedHashMap Example</title>
 </head>
 <body>
-    <h1>LinkedHashMap Example</h1>
+    <h1>LinkedHashMap in Java</h1>
     <p>
-        <b>LinkedHashMap</b> maintains insertion order of key-value pairs.
+        <b>LinkedHashMap</b> is a Map implementation that maintains insertion order of key-value pairs.
     </p>
+    <ul>
+        <li>Maintains insertion order</li>
+        <li>Allows one null key and multiple null values</li>
+        <li>Not synchronized</li>
+    </ul>
+    <h2>Example</h2>
     <pre>
-import java.util.LinkedHashMap;
+import java.util.*;
 
 LinkedHashMap&lt;String, Integer&gt; map = new LinkedHashMap&lt;&gt;();
 map.put("A", 10);
 map.put("B", 20);
-System.out.println(map); // {A=10, B=20}
+map.put("C", 30);
+System.out.println(map); // {A=10, B=20, C=30}
+map.remove("B");
+System.out.println(map); // {A=10, C=30}
     </pre>
+    <h2>Common LinkedHashMap Methods</h2>
     <ul>
-        <li>Maintains insertion order</li>
-        <li>Allows one null key</li>
+        <li><code>put(K key, V value)</code>: Adds or updates key-value pair.</li>
+        <li><code>get(Object key)</code>: Gets value for key.</li>
+        <li><code>remove(Object key)</code>: Removes mapping for key.</li>
+        <li><code>containsKey(Object key)</code>: Checks if key exists.</li>
+        <li><code>containsValue(Object value)</code>: Checks if value exists.</li>
+        <li><code>size()</code>: Number of entries.</li>
+        <li><code>clear()</code>: Removes all entries.</li>
+        <li><code>isEmpty()</code>: Checks if map is empty.</li>
+        <li><code>keySet()</code>: Set of keys.</li>
+        <li><code>values()</code>: Collection of values.</li>
+        <li><code>entrySet()</code>: Set of key-value pairs.</li>
     </ul>
+    <p>
+        <b>Tip:</b> Use LinkedHashMap when you need predictable iteration order.
+    </p>
 </body>
 </html>

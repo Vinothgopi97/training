@@ -7,18 +7,41 @@
 <body>
     <h1>List Interface in Java</h1>
     <p>
-        The <b>List</b> interface extends Collection and represents an ordered collection (sequence) that may contain duplicate elements. Elements can be accessed by their integer index.
+        The <b>List</b> interface represents an ordered collection (sequence) that can contain duplicate elements. Elements can be accessed by their integer index (position in the list).
     </p>
+    <ul>
+        <li>Allows duplicates and null values</li>
+        <li>Maintains insertion order</li>
+        <li>Common implementations: ArrayList, LinkedList, Vector, Stack</li>
+    </ul>
+    <h2>Example</h2>
     <pre>
+import java.util.*;
+
 List&lt;String&gt; list = new ArrayList&lt;&gt;();
 list.add("A");
 list.add("B");
+list.add("A"); // duplicate allowed
 System.out.println(list.get(0)); // Output: A
+System.out.println(list); // [A, B, A]
     </pre>
+    <p>
+        <b>Use cases:</b> Maintaining a list of items where order matters and duplicates are allowed, such as a shopping cart.
+    </p>
+    <h2>Common List Methods</h2>
     <ul>
-        <li>Common implementations: ArrayList, LinkedList, Vector, Stack</li>
-        <li>Allows duplicates and null values</li>
-        <li>Maintains insertion order</li>
+        <li><code>add(E e)</code>: Appends the specified element to the end of the list.</li>
+        <li><code>add(int index, E element)</code>: Inserts the element at the specified position.</li>
+        <li><code>get(int index)</code>: Returns the element at the specified position.</li>
+        <li><code>set(int index, E element)</code>: Replaces the element at the specified position.</li>
+        <li><code>remove(int index)</code>: Removes the element at the specified position.</li>
+        <li><code>remove(Object o)</code>: Removes the first occurrence of the specified element.</li>
+        <li><code>size()</code>: Returns the number of elements in the list.</li>
+        <li><code>contains(Object o)</code>: Returns true if the list contains the specified element.</li>
+        <li><code>indexOf(Object o)</code>: Returns the index of the first occurrence of the element.</li>
+        <li><code>clear()</code>: Removes all elements from the list.</li>
+        <li><code>isEmpty()</code>: Returns true if the list contains no elements.</li>
+        <li><code>iterator()</code>: Returns an iterator over the elements.</li>
     </ul>
 </body>
 </html>

@@ -5,22 +5,43 @@
     <title>Java TreeSet Example</title>
 </head>
 <body>
-    <h1>TreeSet Example</h1>
+    <h1>TreeSet in Java</h1>
     <p>
-        <b>TreeSet</b> stores elements in a sorted (natural order) and unique way.
+        <b>TreeSet</b> is a NavigableSet implementation based on a TreeMap. It stores elements in sorted (natural or custom) order.
     </p>
+    <ul>
+        <li>Does not allow null elements</li>
+        <li>Implements SortedSet and NavigableSet</li>
+        <li>Logarithmic time for basic operations</li>
+    </ul>
+    <h2>Example</h2>
     <pre>
-import java.util.TreeSet;
+import java.util.*;
 
 TreeSet&lt;String&gt; set = new TreeSet&lt;&gt;();
 set.add("Banana");
 set.add("Apple");
 set.add("Mango");
 System.out.println(set); // [Apple, Banana, Mango]
+System.out.println(set.first()); // Apple
+System.out.println(set.last());  // Mango
     </pre>
+    <h2>Common TreeSet Methods</h2>
     <ul>
-        <li>Does not allow null elements</li>
-        <li>Implements SortedSet</li>
+        <li><code>add(E e)</code>: Adds element if not present.</li>
+        <li><code>remove(Object o)</code>: Removes specified element.</li>
+        <li><code>contains(Object o)</code>: Checks if element exists.</li>
+        <li><code>first()</code>: Returns the lowest element.</li>
+        <li><code>last()</code>: Returns the highest element.</li>
+        <li><code>higher(E e)</code>: Returns least element greater than given element.</li>
+        <li><code>lower(E e)</code>: Returns greatest element less than given element.</li>
+        <li><code>size()</code>: Number of elements.</li>
+        <li><code>clear()</code>: Removes all elements.</li>
+        <li><code>isEmpty()</code>: Checks if set is empty.</li>
+        <li><code>iterator()</code>: Returns an iterator over the elements.</li>
     </ul>
+    <p>
+        <b>Tip:</b> Use TreeSet when you need sorted unique elements.
+    </p>
 </body>
 </html>

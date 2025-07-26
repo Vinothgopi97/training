@@ -5,21 +5,43 @@
     <title>Java HashMap Example</title>
 </head>
 <body>
-    <h1>HashMap Example</h1>
+    <h1>HashMap in Java</h1>
     <p>
-        <b>HashMap</b> stores key-value pairs with no guaranteed order.
+        <b>HashMap</b> is an implementation of the Map interface that stores key-value pairs with no guaranteed order.
     </p>
+    <ul>
+        <li>Allows one null key and multiple null values</li>
+        <li>Not synchronized</li>
+        <li>Fast put, get, remove operations</li>
+    </ul>
+    <h2>Example</h2>
     <pre>
-import java.util.HashMap;
+import java.util.*;
 
 HashMap&lt;String, Integer&gt; map = new HashMap&lt;&gt;();
 map.put("One", 1);
 map.put("Two", 2);
-System.out.println(map); // {One=1, Two=2}
+map.put(null, 3);
+System.out.println(map); // {null=3, One=1, Two=2}
+map.remove("Two");
+System.out.println(map); // {null=3, One=1}
     </pre>
+    <h2>Common HashMap Methods</h2>
     <ul>
-        <li>Allows one null key and multiple null values</li>
-        <li>Not synchronized</li>
+        <li><code>put(K key, V value)</code>: Adds or updates key-value pair.</li>
+        <li><code>get(Object key)</code>: Gets value for key.</li>
+        <li><code>remove(Object key)</code>: Removes mapping for key.</li>
+        <li><code>containsKey(Object key)</code>: Checks if key exists.</li>
+        <li><code>containsValue(Object value)</code>: Checks if value exists.</li>
+        <li><code>size()</code>: Number of entries.</li>
+        <li><code>clear()</code>: Removes all entries.</li>
+        <li><code>isEmpty()</code>: Checks if map is empty.</li>
+        <li><code>keySet()</code>: Set of keys.</li>
+        <li><code>values()</code>: Collection of values.</li>
+        <li><code>entrySet()</code>: Set of key-value pairs.</li>
     </ul>
+    <p>
+        <b>Tip:</b> Use HashMap for fast, unordered key-value storage.
+    </p>
 </body>
 </html>

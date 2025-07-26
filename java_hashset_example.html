@@ -5,22 +5,39 @@
     <title>Java HashSet Example</title>
 </head>
 <body>
-    <h1>HashSet Example</h1>
+    <h1>HashSet in Java</h1>
     <p>
-        <b>HashSet</b> is a collection that contains no duplicate elements and has no guaranteed order.
+        <b>HashSet</b> is an implementation of the Set interface that uses a hash table for storage. It does not guarantee any order of elements.
     </p>
+    <ul>
+        <li>Allows one null value</li>
+        <li>Not synchronized</li>
+        <li>Fast add, remove, contains operations</li>
+    </ul>
+    <h2>Example</h2>
     <pre>
-import java.util.HashSet;
+import java.util.*;
 
 HashSet&lt;String&gt; set = new HashSet&lt;&gt;();
 set.add("Apple");
 set.add("Banana");
 set.add("Apple"); // Duplicate ignored
 System.out.println(set); // [Apple, Banana]
+set.remove("Banana");
+System.out.println(set); // [Apple]
     </pre>
+    <p>
+        <b>Tip:</b> Use HashSet for fast lookups and uniqueness.
+    </p>
+    <h2>Common HashSet Methods</h2>
     <ul>
-        <li>Allows null values</li>
-        <li>Not synchronized</li>
+        <li><code>add(E e)</code>: Adds element if not present.</li>
+        <li><code>remove(Object o)</code>: Removes specified element.</li>
+        <li><code>contains(Object o)</code>: Checks if element exists.</li>
+        <li><code>size()</code>: Number of elements.</li>
+        <li><code>clear()</code>: Removes all elements.</li>
+        <li><code>isEmpty()</code>: Checks if set is empty.</li>
+        <li><code>iterator()</code>: Returns an iterator over the elements.</li>
     </ul>
 </body>
 </html>

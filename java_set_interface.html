@@ -7,18 +7,37 @@
 <body>
     <h1>Set Interface in Java</h1>
     <p>
-        The <b>Set</b> interface extends Collection and represents a collection that does not allow duplicate elements.
+        The <b>Set</b> interface represents a collection that does not allow duplicate elements. It models the mathematical set abstraction.
     </p>
+    <ul>
+        <li>No duplicates allowed</li>
+        <li>May allow one null element (depends on implementation)</li>
+        <li>Common implementations: HashSet, LinkedHashSet, TreeSet</li>
+    </ul>
+    <h2>Example</h2>
     <pre>
+import java.util.*;
+
 Set&lt;String&gt; set = new HashSet&lt;&gt;();
 set.add("A");
 set.add("B");
 set.add("A"); // Duplicate, will not be added
 System.out.println(set); // [A, B]
+System.out.println(set.contains("B")); // true
     </pre>
+    <p>
+        <b>Tip:</b> Use Set when you want to store unique elements only.
+    </p>
+    <h2>Common Set Methods</h2>
     <ul>
-        <li>Common implementations: HashSet, LinkedHashSet, TreeSet</li>
-        <li>No guaranteed order (except LinkedHashSet and TreeSet)</li>
+        <li><code>add(E e)</code>: Adds element if not present.</li>
+        <li><code>addAll(Collection&lt;? extends E&gt; c)</code>: Adds all elements from another collection.</li>
+        <li><code>remove(Object o)</code>: Removes specified element.</li>
+        <li><code>contains(Object o)</code>: Checks if element exists.</li>
+        <li><code>size()</code>: Number of elements.</li>
+        <li><code>clear()</code>: Removes all elements.</li>
+        <li><code>isEmpty()</code>: Checks if set is empty.</li>
+        <li><code>iterator()</code>: Returns an iterator over the elements.</li>
     </ul>
 </body>
 </html>

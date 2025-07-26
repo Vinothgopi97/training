@@ -7,16 +7,34 @@
 <body>
     <h1>Java Collections Framework Overview</h1>
     <p>
-        The Java Collections Framework provides a set of interfaces and classes to store and manipulate groups of data as a single unit. It includes Lists, Sets, Queues, Maps, and utility classes for sorting and searching.
+        The Java Collections Framework is a unified architecture for representing and manipulating collections. It provides interfaces, implementations, and algorithms to store, retrieve, and process groups of objects efficiently.
     </p>
     <ul>
-        <li>Unified architecture for representing and manipulating collections</li>
-        <li>Reduces programming effort</li>
-        <li>Increases program speed and quality</li>
-        <li>Allows interoperability among unrelated APIs</li>
+        <li><b>Interfaces:</b> Define abstract data types (e.g., List, Set, Map, Queue, Deque).</li>
+        <li><b>Implementations:</b> Concrete classes (e.g., ArrayList, HashSet, HashMap, LinkedList, TreeSet, TreeMap).</li>
+        <li><b>Algorithms:</b> Static methods for sorting, searching, shuffling, etc. (in <code>Collections</code> class).</li>
     </ul>
     <p>
-        Main interfaces: <b>Collection</b>, <b>List</b>, <b>Set</b>, <b>Queue</b>, <b>Map</b>
+        <b>Why use Collections?</b>
+        <ul>
+            <li>Reduce programming effort and code complexity</li>
+            <li>Increase performance and code quality</li>
+            <li>Interoperability among unrelated APIs</li>
+        </ul>
     </p>
+    <h2>Simple Example</h2>
+    <pre>
+import java.util.*;
+
+public class CollectionDemo {
+    public static void main(String[] args) {
+        List&lt;String&gt; names = new ArrayList&lt;&gt;();
+        names.add("Alice");
+        names.add("Bob");
+        names.add("Charlie");
+        System.out.println(names); // [Alice, Bob, Charlie]
+    }
+}
+    </pre>
 </body>
 </html>
