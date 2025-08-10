@@ -18,10 +18,189 @@
             <p>
                 Java 8 introduced a new date and time API in the <code>java.time</code> package. It is immutable, thread-safe, and much easier to use than the old <code>Date</code> and <code>Calendar</code> classes.
             </p>
-            <p><strong>Example:</strong></p>
+            <p><strong>Basic Example:</strong></p>
             <pre><code>
 LocalDate today = LocalDate.now();
 System.out.println(today);
+            </code></pre>
+            <h4>More Examples</h4>
+            <pre><code>
+// LocalDate and LocalTime
+LocalDate date = LocalDate.of(2024, 6, 1);
+LocalTime time = LocalTime.of(14, 30, 0);
+System.out.println(date);
+System.out.println(time);
+
+// LocalDateTime
+LocalDateTime dateTime = LocalDateTime.of(date, time);
+System.out.println(dateTime);
+
+// Formatting and Parsing
+DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
+String formatted = dateTime.format(formatter);
+System.out.println(formatted);
+
+LocalDate parsedDate = LocalDate.parse("01-06-2024", DateTimeFormatter.ofPattern("dd-MM-yyyy"));
+System.out.println(parsedDate);
+
+// Period and Duration
+Period period = Period.between(LocalDate.of(2024, 1, 1), LocalDate.of(2024, 6, 1));
+System.out.println("Months between: " + period.getMonths());
+
+Duration duration = Duration.between(LocalTime.of(10, 0), LocalTime.of(14, 30));
+System.out.println("Hours between: " + duration.toHours());
+
+// ZonedDateTime
+ZonedDateTime zonedDateTime = ZonedDateTime.now(ZoneId.of("Asia/Kolkata"));
+System.out.println(zonedDateTime);
+
+// Getting current time in different zones
+ZonedDateTime nyTime = ZonedDateTime.now(ZoneId.of("America/New_York"));
+ZonedDateTime tokyoTime = ZonedDateTime.now(ZoneId.of("Asia/Tokyo"));
+System.out.println("New York: " + nyTime);
+System.out.println("Tokyo: " + tokyoTime);
+
+// List all available zone IDs
+Set&lt;String&gt; zones = ZoneId.getAvailableZoneIds();
+System.out.println("Total zones: " + zones.size());
+
+// Check for leap year
+boolean isLeap = today.isLeapYear();
+System.out.println("Is leap year: " + isLeap);
+
+// Get day of week, month, year
+int year = today.getYear();
+Month month = today.getMonth();
+DayOfWeek dayOfWeek = today.getDayOfWeek();
+System.out.println("Year: " + year + ", Month: " + month + ", DayOfWeek: " + dayOfWeek);
+
+// Truncate time to minutes
+LocalTime truncated = time.truncatedTo(java.time.temporal.ChronoUnit.MINUTES);
+System.out.println("Truncated time: " + truncated);
+
+// Adding/subtracting using ChronoUnit
+LocalDate plusTenDays = today.plus(10, java.time.temporal.ChronoUnit.DAYS);
+LocalDate minusTwoYears = today.minus(2, java.time.temporal.ChronoUnit.YEARS);
+System.out.println("Plus 10 days: " + plusTenDays);
+System.out.println("Minus 2 years: " + minusTwoYears);
+
+// Parsing ISO date/time strings
+LocalDate isoDate = LocalDate.parse("2024-06-01");
+LocalDateTime isoDateTime = LocalDateTime.parse("2024-06-01T14:30:00");
+System.out.println("ISO Date: " + isoDate);
+System.out.println("ISO DateTime: " + isoDateTime);
+
+// Custom TemporalAdjuster: Next Friday
+LocalDate nextFriday = today.with(java.time.temporal.TemporalAdjusters.next(java.time.DayOfWeek.FRIDAY));
+System.out.println("Next Friday: " + nextFriday);
+
+// Find number of days in current month
+int daysInMonth = today.lengthOfMonth();
+System.out.println("Days in month: " + daysInMonth);
+
+// Convert LocalDate to start of day Instant
+Instant startOfDay = today.atStartOfDay(ZoneId.systemDefault()).toInstant();
+System.out.println("Start of day Instant: " + startOfDay);
+
+// Adding and subtracting dates
+LocalDate nextWeek = today.plusWeeks(1);
+LocalDate previousMonth = today.minusMonths(1);
+System.out.println(nextWeek);
+System.out.println(previousMonth);
+
+// Comparing dates
+boolean isBefore = date.isBefore(LocalDate.of(2024, 12, 31));
+boolean isAfter = date.isAfter(LocalDate.of(2024, 1, 1));
+System.out.println("Is before: " + isBefore);
+System.out.println("Is after: " + isAfter);
+
+// Instant and Duration
+Instant now = Instant.now();
+Instant later = now.plusSeconds(3600);
+Duration diff = Duration.between(now, later);
+System.out.println("Seconds between: " + diff.getSeconds());
+
+// Adjusting dates
+LocalDate firstDayOfMonth = today.withDayOfMonth(1);
+LocalDate lastDayOfMonth = today.withDayOfMonth(today.lengthOfMonth());
+System.out.println(firstDayOfMonth);
+System.out.println(lastDayOfMonth);
+
+// TemporalAdjusters
+LocalDate nextMonday = today.with(java.time.temporal.TemporalAdjusters.next(java.time.DayOfWeek.MONDAY));
+System.out.println("Next Monday: " + nextMonday);
+
+// Using Clock
+Clock clock = Clock.systemUTC();
+LocalDate utcDate = LocalDate.now(clock);
+System.out.println("UTC Date: " + utcDate);
+
+// MonthDay and YearMonth
+MonthDay birthday = MonthDay.of(6, 1);
+YearMonth currentMonth = YearMonth.now();
+System.out.println("Birthday: " + birthday);
+System.out.println("Current Year-Month: " + currentMonth);
+
+// Convert legacy Date to Instant
+Date legacyDate = new Date();
+Instant instant = legacyDate.toInstant();
+System.out.println("Legacy Date to Instant: " + instant);
+
+// Convert Instant to LocalDateTime
+LocalDateTime fromInstant = LocalDateTime.ofInstant(instant, ZoneId.systemDefault());
+System.out.println("Instant to LocalDateTime: " + fromInstant);
+
+// Get the last day of the year
+LocalDate lastDayOfYear = today.with(java.time.temporal.TemporalAdjusters.lastDayOfYear());
+System.out.println("Last day of year: " + lastDayOfYear);
+
+// Get the first Monday of the month
+LocalDate firstMonday = today.with(java.time.temporal.TemporalAdjusters.firstInMonth(java.time.DayOfWeek.MONDAY));
+System.out.println("First Monday of month: " + firstMonday);
+
+// Calculate age from birthdate
+LocalDate birthDate = LocalDate.of(1990, 6, 1);
+Period age = Period.between(birthDate, today);
+System.out.println("Age: " + age.getYears() + " years");
+
+// Convert LocalDateTime to ZonedDateTime
+ZonedDateTime zonedFromLocal = dateTime.atZone(ZoneId.of("Europe/London"));
+System.out.println("Zoned from LocalDateTime: " + zonedFromLocal);
+
+// Convert ZonedDateTime to Instant
+Instant instantFromZoned = zonedFromLocal.toInstant();
+System.out.println("Instant from ZonedDateTime: " + instantFromZoned);
+
+// Find next or same Sunday
+LocalDate nextOrSameSunday = today.with(java.time.temporal.TemporalAdjusters.nextOrSame(java.time.DayOfWeek.SUNDAY));
+System.out.println("Next or same Sunday: " + nextOrSameSunday);
+
+// Get week of year
+int weekOfYear = today.get(java.time.temporal.IsoFields.WEEK_OF_WEEK_BASED_YEAR);
+System.out.println("Week of year: " + weekOfYear);
+
+// Get day of year
+int dayOfYear = today.getDayOfYear();
+System.out.println("Day of year: " + dayOfYear);
+
+// Add/subtract hours and minutes to LocalTime
+LocalTime plusHours = time.plusHours(2);
+LocalTime minusMinutes = time.minusMinutes(15);
+System.out.println("Plus 2 hours: " + plusHours);
+System.out.println("Minus 15 minutes: " + minusMinutes);
+
+// Check if a MonthDay is today
+MonthDay todayMonthDay = MonthDay.from(today);
+boolean isBirthday = todayMonthDay.equals(birthday);
+System.out.println("Is today birthday? " + isBirthday);
+
+// Convert YearMonth to LocalDate (first day of month)
+LocalDate firstDayOfCurrentMonth = currentMonth.atDay(1);
+System.out.println("First day of current month: " + firstDayOfCurrentMonth);
+
+// Get the number of days in a YearMonth
+int daysInYearMonth = currentMonth.lengthOfMonth();
+System.out.println("Days in current YearMonth: " + daysInYearMonth);
             </code></pre>
         </div>
     </div>

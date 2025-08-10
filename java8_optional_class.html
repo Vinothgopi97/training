@@ -18,10 +18,43 @@
             <p>
                 The <code>Optional</code> class is a container object which may or may not contain a value. It helps avoid null pointer exceptions and provides methods to deal with optional values.
             </p>
-            <p><strong>Example:</strong></p>
+            <p><strong>Basic Example:</strong></p>
             <pre><code>
 Optional&lt;String&gt; name = Optional.ofNullable(null);
 System.out.println(name.orElse("Default Name"));
+            </code></pre>
+            <h4>More Examples</h4>
+            <pre><code>
+// Creating Optional
+Optional&lt;String&gt; opt1 = Optional.of("Hello");
+Optional&lt;String&gt; opt2 = Optional.empty();
+
+// isPresent and ifPresent
+if (opt1.isPresent()) {
+    System.out.println(opt1.get());
+}
+opt1.ifPresent(val -> System.out.println("Value: " + val));
+
+// orElse and orElseGet
+String result = opt2.orElse("Fallback");
+String result2 = opt2.orElseGet(() -> "Generated Fallback");
+
+// orElseThrow
+// Throws exception if value is absent
+// opt2.orElseThrow(() -> new RuntimeException("No value present"));
+
+// filter
+Optional&lt;String&gt; filtered = opt1.filter(s -> s.startsWith("H"));
+
+// map
+Optional&lt;Integer&gt; length = opt1.map(String::length);
+
+// flatMap
+Optional&lt;String&gt; upper = opt1.flatMap(s -> Optional.of(s.toUpperCase()));
+
+System.out.println(filtered.orElse("No match"));
+System.out.println(length.orElse(-1));
+System.out.println(upper.orElse(""));
             </code></pre>
         </div>
     </div>

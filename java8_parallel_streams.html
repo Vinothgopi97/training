@@ -18,11 +18,45 @@
             <p>
                 Parallel streams allow operations on collections to be executed in parallel, leveraging multi-core processors for better performance.
             </p>
-            <p><strong>Example:</strong></p>
+            <p><strong>Basic Example:</strong></p>
             <pre><code>
 List&lt;Integer&gt; numbers = Arrays.asList(1,2,3,4,5);
 numbers.parallelStream().forEach(System.out::println);
             </code></pre>
+            <h4>More Examples</h4>
+            <pre><code>
+// Parallel filtering and mapping
+List&lt;String&gt; names = Arrays.asList("Alice", "Bob", "Charlie", "David");
+List&lt;String&gt; result = names.parallelStream()
+    .filter(s -> s.length() &gt; 3)
+    .map(String::toUpperCase)
+    .collect(Collectors.toList());
+
+// Parallel sum using reduce
+int sum = numbers.parallelStream().reduce(0, Integer::sum);
+
+// Comparing sequential and parallel performance
+long start = System.currentTimeMillis();
+numbers.stream().forEach(n -> {
+    try { Thread.sleep(100); } catch (Exception e) {}
+});
+long sequentialTime = System.currentTimeMillis() - start;
+
+start = System.currentTimeMillis();
+numbers.parallelStream().forEach(n -> {
+    try { Thread.sleep(100); } catch (Exception e) {}
+});
+long parallelTime = System.currentTimeMillis() - start;
+
+System.out.println("Sequential: " + sequentialTime);
+System.out.println("Parallel: " + parallelTime);
+
+// Preserving order with forEachOrdered
+numbers.parallelStream().forEachOrdered(System.out::println);
+            </code></pre>
+            <p>
+                <strong>Note:</strong> Parallel streams are best for CPU-intensive tasks and large collections. For small collections, overhead may outweigh benefits.
+            </p>
         </div>
     </div>
 </body>

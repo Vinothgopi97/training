@@ -18,11 +18,46 @@
             <p>
                 Method references provide a way to refer to methods of existing classes or objects using a compact syntax. They are often used with lambda expressions and functional interfaces.
             </p>
-            <p><strong>Example:</strong></p>
+            <p><strong>Basic Example:</strong></p>
             <pre><code>
 List&lt;String&gt; names = Arrays.asList("A", "B", "C");
 names.forEach(System.out::println);
             </code></pre>
+            <h4>More Examples</h4>
+            <pre><code>
+// Reference to a static method
+Function&lt;String, Integer&gt; strLength = String::length;
+System.out.println(strLength.apply("Hello"));
+
+// Reference to an instance method of a particular object
+String prefix = "Hello, ";
+Function&lt;String, String&gt; addPrefix = prefix::concat;
+System.out.println(addPrefix.apply("World"));
+
+// Reference to an instance method of an arbitrary object of a particular type
+List&lt;String&gt; words = Arrays.asList("java", "stream", "method");
+words.stream().map(String::toUpperCase).forEach(System.out::println);
+
+// Reference to a constructor
+Supplier&lt;ArrayList&lt;String&gt;&gt; listSupplier = ArrayList::new;
+ArrayList&lt;String&gt; newList = listSupplier.get();
+
+// Reference to array constructor
+Function&lt;Integer, String[]&gt; arrayCreator = String[]::new;
+String[] arr = arrayCreator.apply(5);
+System.out.println("Array length: " + arr.length);
+
+// Sorting with method reference
+List&lt;String&gt; fruits = Arrays.asList("Banana", "Apple", "Mango");
+fruits.sort(String::compareToIgnoreCase);
+System.out.println(fruits);
+            </code></pre>
+            <ul>
+                <li><strong>Static method:</strong> <code>ClassName::staticMethodName</code></li>
+                <li><strong>Instance method of object:</strong> <code>instance::instanceMethodName</code></li>
+                <li><strong>Instance method of arbitrary object:</strong> <code>ClassName::instanceMethodName</code></li>
+                <li><strong>Constructor:</strong> <code>ClassName::new</code></li>
+            </ul>
         </div>
     </div>
 </body>
