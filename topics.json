@@ -1145,6 +1145,17 @@
                 ],
                 "content_html": "java8_parallel_streams.html"
             }
+,
+            {
+                "sl_no": "Assignment",
+                "title": "Streams in Java",
+                "description": "Complete the following tasks:.",
+                "references": [
+                                  
+                ],
+                "content_html": "java8-streams-assignment.html"
+            }
+            
         ]
       },
       {
