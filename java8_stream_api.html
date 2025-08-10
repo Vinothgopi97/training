@@ -9,6 +9,7 @@
         .content { background: #fff; border-radius: 8px; padding: 2em; box-shadow: 0 2px 8px #eee; }
         h2 { color: #2c3e50; }
         code { background: #eef; padding: 2px 6px; border-radius: 4px; }
+        .section-title { margin-top: 2em; color: #34495e; }
     </style>
 </head>
 <body>
@@ -16,16 +17,87 @@
         <h2>Stream API in Java 8</h2>
         <div class="content">
             <p>
-                The Stream API allows processing collections of objects in a functional style. It supports operations like filter, map, reduce, and more.
+                The Stream API allows processing collections of objects in a functional style. It supports operations like <code>filter</code>, <code>map</code>, <code>reduce</code>, and more.
             </p>
-            <p><strong>Example:</strong></p>
-            <pre><code>
-List&lt;String&gt; names = Arrays.asList("A", "B", "C");
-names.stream().filter(s -> s.startsWith("A")).forEach(System.out::println);
-            </code></pre>
             <p>
                 Streams can be sequential or parallel, and help write concise and readable code for data manipulation.
             </p>
+            <h4 class="section-title">Creating Streams</h4>
+            <ul>
+                <li><code>Collection.stream()</code> - from collections</li>
+                <li><code>Arrays.stream(array)</code> - from arrays</li>
+                <li><code>Stream.of(...)</code> - from values</li>
+            </ul>
+            <pre><code>
+List&lt;Integer&gt; numbers = Arrays.asList(1, 2, 3, 4, 5);
+Stream&lt;Integer&gt; stream = numbers.stream();
+            </code></pre>
+            <h4 class="section-title">Intermediate Operations</h4>
+            <ul>
+                <li><code>filter(Predicate)</code> - filters elements</li>
+                <li><code>map(Function)</code> - transforms elements</li>
+                <li><code>sorted()</code> - sorts elements</li>
+                <li><code>distinct()</code> - removes duplicates</li>
+                <li><code>limit(n)</code>, <code>skip(n)</code> - restricts elements</li>
+                <li><code>flatMap(Function)</code> - flattens nested structures</li>
+            </ul>
+            <pre><code>
+List&lt;String&gt; names = Arrays.asList("Alice", "Bob", "Charlie", "Anna");
+names.stream()
+    .filter(s -> s.startsWith("A"))
+    .map(String::toUpperCase)
+    .sorted()
+    .forEach(System.out::println);
+            </code></pre>
+            <h4 class="section-title">Terminal Operations</h4>
+            <ul>
+                <li><code>forEach(Consumer)</code> - performs action for each element</li>
+                <li><code>collect(Collector)</code> - collects results (e.g., to List, Set, Map)</li>
+                <li><code>reduce(BinaryOperator)</code> - combines elements</li>
+                <li><code>count()</code> - counts elements</li>
+                <li><code>findFirst()</code>, <code>findAny()</code> - finds elements</li>
+                <li><code>anyMatch()</code>, <code>allMatch()</code>, <code>noneMatch()</code> - checks conditions</li>
+                <li><code>min()</code>, <code>max()</code> - finds min/max</li>
+            </ul>
+            <pre><code>
+long count = names.stream().filter(s -> s.length() > 3).count();
+
+Optional&lt;String&gt; firstA = names.stream().filter(s -> s.startsWith("A")).findFirst();
+
+List&lt;String&gt; upperNames = names.stream().map(String::toUpperCase).collect(Collectors.toList());
+            </code></pre>
+            <h4 class="section-title">Reduce Example</h4>
+            <pre><code>
+int sum = numbers.stream().reduce(0, Integer::sum);
+            </code></pre>
+            <h4 class="section-title">Grouping Example</h4>
+            <pre><code>
+Map&lt;Integer, List&lt;String&gt;&gt; groupedByLength = names.stream()
+    .collect(Collectors.groupingBy(String::length));
+            </code></pre>
+            <h4 class="section-title">Parallel Streams</h4>
+            <p>
+                Use <code>parallelStream()</code> for parallel processing:
+            </p>
+            <pre><code>
+numbers.parallelStream().forEach(System.out::println);
+            </code></pre>
+            <h4 class="section-title">FlatMap Example</h4>
+            <pre><code>
+List&lt;List&lt;Integer&gt;&gt; listOfLists = Arrays.asList(
+    Arrays.asList(1, 2),
+    Arrays.asList(3, 4)
+);
+List&lt;Integer&gt; flatList = listOfLists.stream()
+    .flatMap(Collection::stream)
+    .collect(Collectors.toList());
+            </code></pre>
+            <h4 class="section-title">Summary</h4>
+            <ul>
+                <li>Streams do not store data, they operate on source data.</li>
+                <li>Operations are either intermediate (return Stream) or terminal (produce result).</li>
+                <li>Streams support functional-style programming for collections.</li>
+            </ul>
         </div>
     </div>
 </body>
