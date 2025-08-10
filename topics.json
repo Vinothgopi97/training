@@ -1329,6 +1329,15 @@
                                   
                 ],
                 "content_html": "java_collections_utilities.html"
+            },
+             {
+                "sl_no": "Assignment",
+                "title": "Collection in Java",
+                "description": "Complete the following tasks:.",
+                "references": [
+                                  
+                ],
+                "content_html": "java_collections_assignment.html"
             }
         ]
     }
