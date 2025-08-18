@@ -1154,7 +1154,18 @@
                                   
                 ],
                 "content_html": "java8-streams-assignment.html"
+            },
+             {
+                "sl_no": "Assignment",
+                "title": "Java 8 (Except Streams)",
+                "description": "Complete the following tasks:.",
+                "references": [
+                                  
+                ],
+                "content_html": "java_8_assignment.html"
             }
+
+            
             
         ]
       },
