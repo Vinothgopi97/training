@@ -1,0 +1,28 @@
+<!-- Java 12 - Important Concepts -->
+<h2>Java 12 - Important Concepts</h2>
+
+<h3>1. Switch Expressions (Preview)</h3>
+<p>
+  Switch expressions allow switch to be used as an expression, returning a value. This feature was introduced as a preview.
+</p>
+<pre>
+<code>
+int day = 3;
+String result = switch (day) {
+    case 1, 2, 3 -> "Start of week";
+    case 4, 5 -> "Midweek";
+    default -> "Weekend";
+};
+System.out.println(result);
+</code>
+</pre>
+
+<h3>2. JVM Constants API</h3>
+<p>
+  Introduces a new API to model nominal descriptions of key class-file and run-time artifacts, such as constants that are loadable from the constant pool.
+</p>
+
+<h3>3. Shenandoah and ZGC Improvements</h3>
+<p>
+  Enhancements to low-pause-time garbage collectors (Shenandoah and ZGC) for better performance and scalability.
+</p>

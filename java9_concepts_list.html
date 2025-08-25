@@ -1,0 +1,77 @@
+<!-- Java 9 - Important Concepts -->
+<h2>Java 9 - Important Concepts</h2>
+
+<h3>1. Module System (Project Jigsaw)</h3>
+<p>
+  Java 9 introduced the Java Platform Module System (JPMS), also known as Project Jigsaw. It allows you to modularize your code, improving maintainability and security. Modules explicitly declare their dependencies and the packages they export.
+</p>
+<pre>
+<code>
+// module-info.java
+module com.example.myapp {
+    requires java.base;
+    exports com.example.myapp.api;
+}
+</code>
+</pre>
+
+<h3>2. JShell (REPL)</h3>
+<p>
+  JShell is an interactive Read-Eval-Print Loop (REPL) tool for Java. It allows you to quickly test Java code snippets without creating a full class or method.
+</p>
+<pre>
+<code>
+jshell> int x = 5;
+jshell> System.out.println(x * 2);
+10
+</code>
+</pre>
+
+<h3>3. Collection Factory Methods</h3>
+<p>
+  Java 9 introduced convenient static factory methods for creating immutable lists, sets, and maps.
+</p>
+<pre>
+<code>
+List&lt;String&gt; list = List.of("a", "b", "c");
+Set&lt;Integer&gt; set = Set.of(1, 2, 3);
+Map&lt;String, Integer&gt; map = Map.of("a", 1, "b", 2);
+</code>
+</pre>
+
+<h3>4. Private Interface Methods</h3>
+<p>
+  Interfaces can now have private methods, which can be used to share code between default and static methods within the interface.
+</p>
+<pre>
+<code>
+interface MyInterface {
+    private void log(String msg) {
+        System.out.println("Log: " + msg);
+    }
+    default void doSomething() {
+        log("Doing something");
+    }
+}
+</code>
+</pre>
+
+<h3>5. Other Enhancements</h3>
+<ul>
+  <li><b>Stream API Improvements:</b> New methods like <code>takeWhile</code>, <code>dropWhile</code>, and <code>ofNullable</code> were added.</li>
+  <li><b>Try-With-Resources Enhancement:</b> Effectively final variables can be used in try-with-resources.</li>
+  <li><b>Diamond Operator for Anonymous Inner Classes:</b> The diamond operator (<code>&lt;&gt;</code>) can now be used with anonymous inner classes.</li>
+</ul>
+<pre>
+<code>
+// Stream API example
+List&lt;Integer&gt; nums = List.of(1, 2, 3, 4, 5, 6);
+nums.stream().takeWhile(n -> n &lt; 4).forEach(System.out::println); // prints 1, 2, 3
+
+// Try-with-resources example
+BufferedReader br = new BufferedReader(new FileReader("file.txt"));
+try (br) {
+    System.out.println(br.readLine());
+}
+</code>
+</pre>

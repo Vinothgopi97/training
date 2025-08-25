@@ -1,0 +1,37 @@
+<!-- Java 21 - Important Concepts (LTS) -->
+<h2>Java 21 - Important Concepts (LTS)</h2>
+
+<h3>1. Virtual Threads (Standard)</h3>
+<p>
+  Virtual threads are now a standard feature, enabling lightweight concurrency at scale.
+</p>
+<pre>
+<code>
+Thread.startVirtualThread(() -> System.out.println("Hello from virtual thread!"));
+</code>
+</pre>
+
+<h3>2. String Templates (Preview)</h3>
+<p>
+  String templates allow embedding expressions inside string literals for easier string formatting.
+</p>
+<pre>
+<code>
+// Example syntax (subject to change as it's a preview feature)
+String name = "Java";
+String message = STR."Hello, \{name}!";
+System.out.println(message); // Hello, Java!
+</code>
+</pre>
+
+<h3>3. Sequenced Collections</h3>
+<p>
+  New interfaces <code>SequencedCollection</code>, <code>SequencedSet</code>, and <code>SequencedMap</code> provide a uniform API for collections with a defined encounter order.
+</p>
+<pre>
+<code>
+SequencedCollection<String> sc = new ArrayList<>();
+sc.addFirst("first");
+sc.addLast("last");
+</code>
+</pre>

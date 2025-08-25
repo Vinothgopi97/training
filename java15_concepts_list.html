@@ -1,0 +1,35 @@
+<!-- Java 15 - Important Concepts -->
+<h2>Java 15 - Important Concepts</h2>
+
+<h3>1. Text Blocks (Standard)</h3>
+<p>
+  Text blocks became a standard feature, allowing multi-line string literals.
+</p>
+<pre>
+<code>
+String json = """
+    {
+      "name": "Java",
+      "version": 15
+    }
+    """;
+System.out.println(json);
+</code>
+</pre>
+
+<h3>2. Sealed Classes (Preview)</h3>
+<p>
+  Sealed classes restrict which other classes or interfaces may extend or implement them.
+</p>
+<pre>
+<code>
+public sealed class Shape permits Circle, Square {}
+final class Circle extends Shape {}
+final class Square extends Shape {}
+</code>
+</pre>
+
+<h3>3. Hidden Classes</h3>
+<p>
+  Hidden classes are classes that cannot be used directly by the bytecode of other classes and are intended for use by frameworks that generate classes at runtime.
+</p>

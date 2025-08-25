@@ -1,0 +1,32 @@
+<!-- Java 13 - Important Concepts -->
+<h2>Java 13 - Important Concepts</h2>
+
+<h3>1. Text Blocks (Preview)</h3>
+<p>
+  Text blocks provide a new way to declare multi-line string literals using <code>"""</code>.
+</p>
+<pre>
+<code>
+String html = """
+    &lt;html&gt;
+      &lt;body&gt;
+        Hello, world!
+      &lt;/body&gt;
+    &lt;/html&gt;
+    """;
+System.out.println(html);
+</code>
+</pre>
+
+<h3>2. Switch Expressions (2nd Preview)</h3>
+<p>
+  Further refinements to switch expressions, allowing both statement and expression forms.
+</p>
+<pre>
+<code>
+String dayType = switch (day) {
+    case 1, 7 -> "Weekend";
+    default -> "Weekday";
+};
+</code>
+</pre>

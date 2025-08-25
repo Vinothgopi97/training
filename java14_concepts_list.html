@@ -1,0 +1,31 @@
+<!-- Java 14 - Important Concepts -->
+<h2>Java 14 - Important Concepts</h2>
+
+<h3>1. Records (Preview)</h3>
+<p>
+  Records provide a compact syntax for declaring classes which are transparent holders for shallowly immutable data.
+</p>
+<pre>
+<code>
+record Point(int x, int y) {}
+Point p = new Point(1, 2);
+System.out.println(p.x()); // 1
+</code>
+</pre>
+
+<h3>2. Pattern Matching for instanceof (Preview)</h3>
+<p>
+  Simplifies the common pattern of using <code>instanceof</code> followed by a cast.
+</p>
+<pre>
+<code>
+if (obj instanceof String s) {
+    System.out.println(s.toUpperCase());
+}
+</code>
+</pre>
+
+<h3>3. Helpful NullPointerExceptions</h3>
+<p>
+  The JVM provides more informative NullPointerException messages, indicating which variable was null.
+</p>

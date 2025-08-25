@@ -1,0 +1,47 @@
+<!-- Java 11 - Important Concepts -->
+<h2>Java 11 - Important Concepts</h2>
+
+<h3>1. New String Methods</h3>
+<p>
+  Java 11 introduced several new methods for the <code>String</code> class, such as <code>isBlank()</code>, <code>lines()</code>, <code>strip()</code>, <code>stripLeading()</code>, <code>stripTrailing()</code>, and <code>repeat(int)</code>.
+</p>
+<pre>
+<code>
+String s = "  Hello World  ";
+System.out.println(s.isBlank()); // false
+System.out.println("   ".isBlank()); // true
+System.out.println(s.strip()); // "Hello World"
+System.out.println("Line1\nLine2".lines().count()); // 2
+System.out.println("abc".repeat(3)); // abcabcabc
+</code>
+</pre>
+
+<h3>2. Local-Variable Syntax for Lambda Parameters</h3>
+<p>
+  You can use <code>var</code> in lambda parameters for local variable type inference.
+</p>
+<pre>
+<code>
+BiFunction<Integer, Integer, Integer> add = (var x, var y) -> x + y;
+</code>
+</pre>
+
+<h3>3. HTTP Client API</h3>
+<p>
+  The new <code>java.net.http.HttpClient</code> API provides a modern way to perform HTTP requests.
+</p>
+<pre>
+<code>
+HttpClient client = HttpClient.newHttpClient();
+HttpRequest request = HttpRequest.newBuilder()
+    .uri(URI.create("https://example.com"))
+    .build();
+HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+System.out.println(response.body());
+</code>
+</pre>
+
+<h3>4. Removal of Java EE and CORBA Modules</h3>
+<p>
+  Java EE modules (like JAXB, JAX-WS) and CORBA modules were removed from the JDK. You need to add them as external dependencies if required.
+</p>

@@ -1,0 +1,37 @@
+<!-- Java 20 - Important Concepts -->
+<h2>Java 20 - Important Concepts</h2>
+
+<h3>1. Record Patterns (2nd Preview)</h3>
+<p>
+  Enhancements to record patterns, allowing more expressive and concise pattern matching.
+</p>
+<pre>
+<code>
+record Range(int start, int end) {}
+Object obj = new Range(1, 10);
+if (obj instanceof Range(int s, int e)) {
+    System.out.println("Range: " + s + " to " + e);
+}
+</code>
+</pre>
+
+<h3>2. Pattern Matching for switch (3rd Preview)</h3>
+<p>
+  More powerful and flexible pattern matching in switch statements.
+</p>
+<pre>
+<code>
+static String describe(Object o) {
+    return switch (o) {
+        case Integer i -> "Integer: " + i;
+        case String s -> "String: " + s;
+        default -> "Unknown";
+    };
+}
+</code>
+</pre>
+
+<h3>3. Scoped Values (Incubator)</h3>
+<p>
+  Scoped values provide a way to share immutable data within and across threads, as an alternative to thread-local variables.
+</p>

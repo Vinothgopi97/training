@@ -1362,6 +1362,155 @@
                 "content_html": "java-collections-assignment.html"
             }
         ]
+    },
+    {
+        "sl_no": 12,
+        "title": "Java 9 to 24",
+        "subtopics": [
+            {
+                "sl_no": 12.1,
+                "title": "Java 9",
+                "description": "An overview of Java 9, including its new features and enhancements over previous versions.",
+                "references": [
+  
+                ],
+                "content_html": "java9_concepts_list.html"
+            },
+            {
+                "sl_no": 12.2,
+                "title": "Java 10",
+                "description": "An overview of Java 10, including its new features and enhancements over previous versions.",
+                "references": [
+  
+                ],
+                "content_html": "java10_concepts_list.html"
+            },
+            {
+                "sl_no": 12.3,
+                "title": "Java 11",
+                "description": "An overview of Java 11, including its new features and enhancements over previous versions.",
+                "references": [
+  
+                ],
+                "content_html": "java11_concepts_list.html"
+            },
+            {
+                "sl_no": 12.4,
+                "title": "Java 12",
+                "description": "An overview of Java 12, including its new features and enhancements over previous versions.",
+                "references": [
+  
+                ],
+                "content_html": "java12_concepts_list.html"
+            },
+            {
+                "sl_no": 12.5,
+                "title": "Java 13",
+                "description": "An overview of Java 13, including its new features and enhancements over previous versions.",
+                "references": [
+  
+                ],
+                "content_html": "java13_concepts_list.html"
+            },
+            {
+                "sl_no": 12.6,
+                "title": "Java 14",
+                "description": "An overview of Java 14, including its new features and enhancements over previous versions.",
+                "references": [
+  
+                ],
+                "content_html": "java14_concepts_list.html"
+            },
+            {
+                "sl_no": 12.7,
+                "title": "Java 15",
+                "description": "An overview of Java 15, including its new features and enhancements over previous versions.",
+                "references": [
+  
+                ],
+                "content_html": "java15_concepts_list.html"
+            },
+            {
+                "sl_no": 12.8,
+                "title": "Java 16",
+                "description": "An overview of Java 16, including its new features and enhancements over previous versions.",
+                "references": [
+  
+                ],
+                "content_html": "java16_concepts_list.html"
+            },
+            {
+                "sl_no": 12.9,
+                "title": "Java 17",
+                "description": "An overview of Java 17, including its new features and enhancements over previous versions.",
+                "references": [
+  
+                ],
+                "content_html": "java17_concepts_list.html"
+            },
+            {
+                "sl_no": 12.9,
+                "title": "Java 18",
+                "description": "An overview of Java 18, including its new features and enhancements over previous versions.",
+                "references": [
+  
+                ],
+                "content_html": "java18_concepts_list.html"
+            },
+            {
+                "sl_no": 12.9,
+                "title": "Java 19",
+                "description": "An overview of Java 19, including its new features and enhancements over previous versions.",
+                "references": [
+  
+                ],
+                "content_html": "java19_concepts_list.html"
+            },
+            {
+                "sl_no": 12.9,
+                "title": "Java 20",
+                "description": "An overview of Java 20, including its new features and enhancements over previous versions.",
+                "references": [
+  
+                ],
+                "content_html": "java20_concepts_list.html"
+            },
+            {
+                "sl_no": 12.9,
+                "title": "Java 21",
+                "description": "An overview of Java 21, including its new features and enhancements over previous versions.",
+                "references": [
+  
+                ],
+                "content_html": "java21_concepts_list.html"
+            },
+            {
+                "sl_no": 12.9,
+                "title": "Java 22",
+                "description": "An overview of Java 22, including its new features and enhancements over previous versions.",
+                "references": [
+  
+                ],
+                "content_html": "java22_concepts_list.html"
+            },
+            {
+                "sl_no": 12.9,
+                "title": "Java 23",
+                "description": "An overview of Java 23, including its new features and enhancements over previous versions.",
+                "references": [
+  
+                ],
+                "content_html": "java23_concepts_list.html"
+            },
+            {
+                "sl_no": 12.9,
+                "title": "Java 24",
+                "description": "An overview of Java 24, including its new features and enhancements over previous versions.",
+                "references": [ 
+                ],
+                "content_html": "java24_concepts_list.html"
+            }
+        ]
     }
     ]
   }

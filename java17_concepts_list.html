@@ -1,0 +1,36 @@
+<!-- Java 17 - Important Concepts (LTS) -->
+<h2>Java 17 - Important Concepts (LTS)</h2>
+
+<h3>1. Sealed Classes (Standard)</h3>
+<p>
+  Sealed classes became a standard feature, allowing class hierarchies to be more strictly controlled.
+</p>
+<pre>
+<code>
+public sealed interface Service permits EmailService, SmsService {}
+final class EmailService implements Service {}
+final class SmsService implements Service {}
+</code>
+</pre>
+
+<h3>2. Pattern Matching for switch (Preview)</h3>
+<p>
+  Pattern matching for <code>switch</code> allows more concise and type-safe switch statements.
+</p>
+<pre>
+<code>
+static String formatter(Object o) {
+    return switch (o) {
+        case Integer i -> "int " + i;
+        case Long l    -> "long " + l;
+        case String s  -> "String " + s;
+        default        -> o.toString();
+    };
+}
+</code>
+</pre>
+
+<h3>3. Strongly Encapsulate JDK Internals</h3>
+<p>
+  Most internal elements of the JDK are now strongly encapsulated, improving security and maintainability.
+</p>

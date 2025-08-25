@@ -1,0 +1,44 @@
+<!-- Java 22 - Important Concepts -->
+<h2>Java 22 - Important Concepts</h2>
+
+<h3>1. Statements before super()</h3>
+<p>
+  Java 22 allows statements to appear before <code>super()</code> or <code>this()</code> in constructors, enabling more flexible initialization.
+</p>
+<pre>
+<code>
+class Parent {
+    Parent(String msg) { System.out.println(msg); }
+}
+class Child extends Parent {
+    Child() {
+        String greeting = "Hello from Child";
+        super(greeting);
+    }
+}
+</code>
+</pre>
+
+<h3>2. Unnamed Variables and Patterns (Preview)</h3>
+<p>
+  The underscore <code>_</code> can be used as an unnamed variable or pattern, indicating that the value is intentionally ignored.
+</p>
+<pre>
+<code>
+if (obj instanceof String _) {
+    System.out.println("It's a string, but we don't care about the value.");
+}
+</code>
+</pre>
+
+<h3>3. Stream Gatherers (Preview)</h3>
+<p>
+  Stream gatherers provide a new way to collect and transform data in streams, enabling more advanced data processing patterns.
+</p>
+<pre>
+<code>
+// Example usage (API subject to change)
+Stream<Integer> numbers = Stream.of(1, 2, 3, 4, 5);
+// Gatherers can be used for advanced grouping, windowing, etc.
+</code>
+</pre>

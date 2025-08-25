@@ -1,0 +1,39 @@
+<!-- Java 10 - Important Concepts -->
+<h2>Java 10 - Important Concepts</h2>
+
+<h3>1. Local-Variable Type Inference (var)</h3>
+<p>
+  Java 10 introduced the <code>var</code> keyword, allowing local variable types to be inferred by the compiler. This makes code more concise while retaining type safety.
+</p>
+<pre>
+<code>
+var list = List.of("a", "b", "c"); // inferred as List&lt;String&gt;
+for (var item : list) {
+    System.out.println(item);
+}
+</code>
+</pre>
+
+<h3>2. Application Class-Data Sharing (AppCDS)</h3>
+<p>
+  Application Class-Data Sharing allows class metadata to be shared between Java processes, reducing startup time and memory footprint.
+</p>
+<pre>
+<code>
+# Example usage (command line)
+$ java -Xshare:dump -XX:SharedClassListFile=classes.lst -XX:SharedArchiveFile=app-cds.jsa -cp myapp.jar
+$ java -XX:SharedArchiveFile=app-cds.jsa -cp myapp.jar Main
+</code>
+</pre>
+
+<h3>3. Other Enhancements</h3>
+<ul>
+  <li><b>Optional.orElseThrow():</b> <code>Optional.get()</code> is deprecated; use <code>orElseThrow()</code> instead.</li>
+  <li><b>Unmodifiable Collections:</b> <code>copyOf()</code> methods for List, Set, and Map create unmodifiable copies.</li>
+</ul>
+<pre>
+<code>
+List&lt;String&gt; original = List.of("a", "b");
+List&lt;String&gt; copy = List.copyOf(original); // unmodifiable copy
+</code>
+</pre>

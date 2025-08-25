@@ -1,0 +1,31 @@
+<!-- Java 16 - Important Concepts -->
+<h2>Java 16 - Important Concepts</h2>
+
+<h3>1. Records (Standard)</h3>
+<p>
+  Records became a standard feature, providing a concise way to create data-carrying classes.
+</p>
+<pre>
+<code>
+record User(String name, int age) {}
+User user = new User("Alice", 30);
+System.out.println(user.name());
+</code>
+</pre>
+
+<h3>2. Pattern Matching for instanceof (Standard)</h3>
+<p>
+  Pattern matching for <code>instanceof</code> became a standard feature.
+</p>
+<pre>
+<code>
+if (obj instanceof User u) {
+    System.out.println(u.name());
+}
+</code>
+</pre>
+
+<h3>3. JEP 376: ZGC: Concurrent Thread-Stack Processing</h3>
+<p>
+  Improves the Z Garbage Collector (ZGC) by making thread-stack processing concurrent, reducing pause times.
+</p>
