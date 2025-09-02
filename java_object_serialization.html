@@ -1,0 +1,59 @@
+<h2>Storing and Retrieving Objects as Files in Java (Serialization & Deserialization)</h2>
+
+<p>
+  In Java, <b>serialization</b> is the process of converting an object into a byte stream so it can be saved to a file or transmitted over a network. <b>Deserialization</b> is the reverse process—reconstructing the object from the byte stream.
+</p>
+
+<h3>1. Making a Class Serializable</h3>
+<p>
+  To serialize an object, the class must implement the <code>java.io.Serializable</code> interface.
+</p>
+<pre>
+<code>
+import java.io.Serializable;
+
+public class Person implements Serializable {
+    private String name;
+    private int age;
+    // Constructor, getters, setters
+}
+</code>
+</pre>
+
+<h3>2. Writing an Object to a File (Serialization)</h3>
+<pre>
+<code>
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
+
+Person person = new Person("Alice", 30);
+try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("person.ser"))) {
+    oos.writeObject(person);
+    System.out.println("Object serialized to person.ser");
+} catch (Exception e) {
+    e.printStackTrace();
+}
+</code>
+</pre>
+
+<h3>3. Reading an Object from a File (Deserialization)</h3>
+<pre>
+<code>
+import java.io.FileInputStream;
+import java.io.ObjectInputStream;
+
+try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("person.ser"))) {
+    Person p = (Person) ois.readObject();
+    System.out.println("Name: " + p.getName() + ", Age: " + p.getAge());
+} catch (Exception e) {
+    e.printStackTrace();
+}
+</code>
+</pre>
+
+<h3>4. Notes</h3>
+<ul>
+  <li>All fields of the class (and referenced objects) must be serializable.</li>
+  <li>Mark fields as <code>transient</code> if you do not want them to be serialized.</li>
+  <li>Serialization is commonly used for saving application state, caching, or sending objects over a network.</li>
+</ul>

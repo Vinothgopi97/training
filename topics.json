@@ -1375,6 +1375,15 @@
                           
                 ],
                 "content_html": "mini_banking_project_assignment.html"
+            },
+            {
+                "sl_no": 12.2,
+                "title": "Supporting Topics for Mini Banking Project",
+                "description": "A mini project to create a simple banking application using Java, demonstrating the concepts learned in the course.",
+                "references": [
+                          
+                ],
+                "content_html": "java_object_serialization.html"
             }
         ]
     },
