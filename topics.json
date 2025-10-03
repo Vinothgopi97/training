@@ -1384,6 +1384,24 @@
                           
                 ],
                 "content_html": "java_object_serialization.html"
+            },
+            {
+                "sl_no": 12.3,
+                "title": "Java Logging API",
+                "description": "Understanding the Java Logging API, which provides a framework for logging messages from Java applications, allowing developers to track and diagnose issues during runtime.",
+                "references": [
+                          
+                ],
+                "content_html": "java_logger_classes.html"
+            },
+            {
+                "sl_no": 12.4,
+                "title": "Java Regex",
+                "description": "Understanding regular expressions (regex) in Java, which provide a powerful way to search, match, and manipulate strings based on specific patterns.",
+                "references": [
+                          
+                ],
+                "content_html": "java_regex_classes.html"
             }
         ]
     },

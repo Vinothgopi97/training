@@ -1,0 +1,37 @@
+<h2>Regular Expression Classes in Java</h2>
+
+<p>
+  Java provides the <code>java.util.regex</code> package for working with regular expressions. The main classes are <code>Pattern</code> and <code>Matcher</code>.
+</p>
+
+<h3>Basic Usage Example</h3>
+<pre>
+<code>
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+
+public class RegexExample {
+    public static void main(String[] args) {
+        Pattern pattern = Pattern.compile("\\d+");
+        Matcher matcher = pattern.matcher("There are 123 apples");
+        while (matcher.find()) {
+            System.out.println("Found number: " + matcher.group());
+        }
+    }
+}
+</code>
+</pre>
+
+<h3>Common Methods</h3>
+<ul>
+  <li><code>Pattern.matches()</code>: Checks if the entire string matches the pattern.</li>
+  <li><code>Matcher.find()</code>: Finds the next subsequence matching the pattern.</li>
+  <li><code>Matcher.group()</code>: Returns the matched subsequence.</li>
+</ul>
+
+<h3>References</h3>
+<ul>
+  <li><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/regex/package-summary.html" target="_blank">Official Java Regex API Documentation</a></li>
+  <li><a href="https://www.geeksforgeeks.org/regular-expressions-in-java/" target="_blank">Regular Expressions in Java - GeeksforGeeks</a></li>
+  <li><a href="https://regex101.com/" target="_blank">Online Regex Tester</a></li>
+</ul>

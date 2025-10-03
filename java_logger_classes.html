@@ -1,0 +1,39 @@
+<h2>Logger Classes in Java</h2>
+
+<p>
+  Java provides built-in logging capabilities via the <code>java.util.logging</code> package. The main class is <code>Logger</code>, which is used to log messages at different levels (INFO, WARNING, SEVERE, etc.).
+</p>
+
+<h3>Basic Usage Example</h3>
+<pre>
+<code>
+import java.util.logging.Logger;
+
+public class LoggingExample {
+    private static final Logger logger = Logger.getLogger(LoggingExample.class.getName());
+
+    public static void main(String[] args) {
+        logger.info("This is an info message");
+        logger.warning("This is a warning message");
+        logger.severe("This is a severe message");
+    }
+}
+</code>
+</pre>
+
+<h3>Customizing Logger</h3>
+<p>
+  You can configure log levels, handlers, and formatters for more control.
+</p>
+<pre>
+<code>
+logger.setLevel(Level.FINE);
+logger.fine("This is a fine-grained debug message");
+</code>
+</pre>
+
+<h3>References</h3>
+<ul>
+  <li><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.logging/java/util/logging/package-summary.html" target="_blank">Official Java Logging API Documentation</a></li>
+  <li><a href="https://www.geeksforgeeks.org/logging-in-java/" target="_blank">Logging in Java - GeeksforGeeks</a></li>
+</ul>
